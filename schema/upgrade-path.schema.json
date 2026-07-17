@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/upgrade-path.schema.json",
+  "title": "upgrade-path",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "upgrade-path" },
+    "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
+    "family": { "type": "string", "description": "e.g. 'Datacenter', 'GeForce (consumer)'" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gpu_id", "architecture_id", "year"],
+        "properties": {
+          "gpu_id": { "type": "string" },
+          "architecture_id": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
+          "year": { "type": "integer" }
+        }
+      }
+    }
+  },
+  "required": ["vendor", "family", "steps"]
+}

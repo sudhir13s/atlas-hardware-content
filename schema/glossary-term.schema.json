@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/glossary-term.schema.json",
+  "title": "glossary-term",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "glossary-term" },
+    "term": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["compute", "memory", "interconnect", "precision", "power", "packaging", "software"]
+    },
+    "examples": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["term", "category", "examples"]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "shared": "schema/_shared.schema.json",
+  "types": {
+    "gpu-architecture": {
+      "folder": "architectures",
+      "schema": "schema/gpu-architecture.schema.json",
+      "id_prefix": "gpu-architecture/",
+      "sections": ["What Changed"]
+    },
+    "timeline-event": {
+      "folder": "timeline",
+      "schema": "schema/timeline-event.schema.json",
+      "id_prefix": "timeline-event/",
+      "sections": ["Description"]
+    },
+    "glossary-term": {
+      "folder": "glossary",
+      "schema": "schema/glossary-term.schema.json",
+      "id_prefix": "glossary-term/",
+      "sections": ["Definition", "Why You Care"]
+    },
+    "upgrade-path": {
+      "folder": "upgrade-paths",
+      "schema": "schema/upgrade-path.schema.json",
+      "id_prefix": "upgrade-path/",
+      "sections": ["Overview"]
+    },
+    "name-decoder": {
+      "folder": "name-decoders",
+      "schema": "schema/name-decoder.schema.json",
+      "id_prefix": "name-decoder/",
+      "sections": ["How To Read"]
+    }
+  }
+}

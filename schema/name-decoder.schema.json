@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/name-decoder.schema.json",
+  "title": "name-decoder",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "name-decoder" },
+    "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
+    "prefixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["symbol", "meaning"],
+        "properties": {
+          "symbol": { "type": "string" },
+          "meaning": { "type": "string" }
+        }
+      }
+    },
+    "numbering": { "type": "string" },
+    "suffixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["symbol", "meaning"],
+        "properties": {
+          "symbol": { "type": "string" },
+          "meaning": { "type": "string" }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "parts"],
+        "properties": {
+          "name": { "type": "string" },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["token", "explains"],
+              "properties": {
+                "token": { "type": "string" },
+                "explains": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["vendor", "prefixes", "numbering", "suffixes", "examples"]
+}

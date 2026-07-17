@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/gpu-architecture.schema.json",
+  "title": "gpu-architecture",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "gpu-architecture" },
+    "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
+    "name": { "type": "string" },
+    "codename": { "type": "string" },
+    "year": { "type": "integer" },
+    "predecessor": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
+    "successor": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
+    "process_node": { "type": "string", "description": "e.g. 'TSMC 4N', 'Samsung 8nm'" },
+    "segment": { "type": "string", "description": "e.g. 'consumer', 'datacenter', 'consumer + datacenter'" },
+    "representative_gpus": { "type": "array", "items": { "type": "string" } },
+    "key_innovation": { "type": "string" },
+    "innovations": { "type": "array", "items": { "type": "string" } },
+    "precision_support": { "type": "array", "items": { "type": "string" } },
+    "memory_tech": { "type": "string" },
+    "interconnect": { "type": "string" }
+  },
+  "required": [
+    "vendor",
+    "name",
+    "year",
+    "process_node",
+    "segment",
+    "representative_gpus",
+    "key_innovation",
+    "innovations",
+    "precision_support",
+    "memory_tech",
+    "interconnect"
+  ]
+}

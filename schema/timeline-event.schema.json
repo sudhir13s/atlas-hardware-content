@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/timeline-event.schema.json",
+  "title": "timeline-event",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "timeline-event" },
+    "date": { "type": "string", "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$", "description": "ISO date or year/month prefix" },
+    "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
+    "event_type": { "type": "string", "enum": ["release", "milestone"] },
+    "architecture_id": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
+    "gpu_id": { "type": "string", "description": "free-form product identifier, not a cross-reference" }
+  },
+  "required": ["date", "vendor", "event_type"]
+}

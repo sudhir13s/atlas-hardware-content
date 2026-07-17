@@ -1,0 +1,22 @@
+{
+  "name": "ai-hardware-content",
+  "domain": "hardware",
+  "title": "AI Hardware — reference knowledge",
+  "schema_version": "1.0",
+  "description": "Portable, reusable reference knowledge for AI accelerators: GPU architecture generations (NVIDIA, AMD, Intel) with lineage, a release/milestone timeline, a plain-English glossary of hardware terms, vendor upgrade paths, and product-name decoders. Content only — Markdown + JSON Schema + docs, zero code.",
+  "entrypoints": {
+    "human": "README.md",
+    "agent": "AGENTS.md",
+    "conventions": "CONVENTIONS.md",
+    "registry": "schema/registry.json"
+  },
+  "types": [
+    "gpu-architecture",
+    "timeline-event",
+    "glossary-term",
+    "upgrade-path",
+    "name-decoder"
+  ],
+  "license": "CC-BY-4.0",
+  "standard": "https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/standards/content-repo-standard.md"
+}
