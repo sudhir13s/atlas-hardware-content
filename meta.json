@@ -1,5 +1,5 @@
 {
-  "name": "ai-hardware-content",
+  "name": "atlas-hardware-content",
   "domain": "hardware",
   "title": "AI Hardware — reference knowledge",
   "schema_version": "1.0",
@@ -18,5 +18,5 @@
     "name-decoder"
   ],
   "license": "CC-BY-4.0",
-  "standard": "https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/standards/content-repo-standard.md"
+  "standard": "https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/content-repo-standard.md"
 }

@@ -1,4 +1,4 @@
-# ai-hardware-content
+# atlas-hardware-content
 
 Portable, reusable reference knowledge about **AI hardware** — GPU and accelerator generations,
 their release timeline, the vocabulary you need to read a spec sheet, vendor upgrade paths, and
@@ -8,9 +8,9 @@ build step, no framework lock-in. Any project can vendor it (as a git submodule 
 checkout) and render it however it likes.
 
 It is the `hardware` domain of a multi-repo reference library
-(`ai-models-content`, `ai-hardware-content`, `ai-evaluation-content`, `ai-licenses-content`,
-`ai-frameworks-content`), all following the same
-[content-repo standard](https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/standards/content-repo-standard.md).
+(`atlas-models-content`, `atlas-evaluation-content`, `atlas-frameworks-content`,
+`atlas-hardware-content`, `atlas-news-content`, `atlas-practices-content`, `atlas-research-content`), all following the same
+[content-repo standard](https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/content-repo-standard.md).
 
 ## What's inside
 
@@ -26,9 +26,9 @@ It is the `hardware` domain of a multi-repo reference library
 
 ```bash
 # Vendor it
-git clone https://github.com/sudhir13s/ai-hardware-content.git
+git clone https://github.com/sudhir13s/atlas-hardware-content.git
 # or as a submodule of your project
-git submodule add https://github.com/sudhir13s/ai-hardware-content.git content/hardware-src
+git submodule add https://github.com/sudhir13s/atlas-hardware-content.git content/hardware-src
 ```
 
 Every content file is a Markdown file with YAML frontmatter (the structured fields) and a Markdown

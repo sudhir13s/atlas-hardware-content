@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/_shared.schema.json",
-  "title": "Shared definitions for ai-hardware-content",
+  "title": "Shared definitions for atlas-hardware-content",
   "$defs": {
     "slug": {
       "type": "string",
