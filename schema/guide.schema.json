@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/hardware/guide.schema.json",
+  "title": "guide",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "description": "One section of the GPU buying advice. Lead-in and closing text live in the body; tables and lists live here as rows of strings exactly as the page shows them.",
+  "properties": {
+    "type": { "const": "guide" },
+    "order": { "type": "integer", "minimum": 1, "description": "position of the section in the buying guide" },
+    "vram_by_model_size": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["model_size", "fp16", "int8", "int4", "recommended_gpu"] }
+    },
+    "rules_of_thumb": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "memory_technologies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["technology", "devices", "description"] }
+    },
+    "ecosystems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["name", "description"] }
+    },
+    "quantization_methods": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["method", "bits", "memory_savings", "quality", "best_for"] }
+    },
+    "interconnects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["name", "description"] }
+    },
+    "power_costs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["gpu", "tdp", "electricity_per_year", "cooling", "psu_needed"] }
+    },
+    "mistakes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["mistake", "why"] }
+    },
+    "decisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["scenario", "recommendation", "icon"] }
+    },
+    "decision_flowchart": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/row", "required": ["question", "answer"] }
+    }
+  },
+  "required": ["order"],
+  "$defs": {
+    "row": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    }
+  }
+}

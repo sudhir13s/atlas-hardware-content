@@ -5,6 +5,20 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 1.1 (migration of the GPU snapshot and the buying guide)
+
+- **Added** the `gpu` type (`gpus/`, `gpu/<slug>`): `vendor` (NVIDIA, AMD, Intel, Apple, Google),
+  `segment`, `series`, `generation`, `release_date`, `signal_strength`, `summary`, `aliases`,
+  `specifications` (structured: `interconnect`, `process_node`, `form_factor[]`, numeric `pcie_gen`,
+  `unit_kind` / `gpus_per_module`, `memory_kind`, `memory_bandwidth_gb_per_s`), `performance`,
+  `ml_capabilities` (with structured `multi_gpu_scaling`), `framework_support`, the agent-owned
+  `market` block, label lists and `image`; optional body section Overview.
+- **Added** the `guide` type (`guides/`, `guide/<slug>`): `order` plus the section's tables and
+  lists as rows of strings; optional body sections Overview and Takeaway.
+- **Added** the shared optional `locked` field (field paths no job may change) to every type.
+- **Added** 44 `gpu` records (one per GPU of the snapshot, built by code, no model call) and 8
+  `guide` records (the buying advice, copied word for word from the guide page).
+
 ### Added
 - Repository scaffold to the content-repo standard: `meta.json`, `schema/registry.json`, the six
   JSON Schemas (`_shared`, `gpu-architecture`, `timeline-event`, `glossary-term`, `upgrade-path`,
@@ -24,3 +38,4 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 ## Schema versions
 
 - **1.0** — initial schema for all five hardware content types.
+- **1.1** — `gpu` and `guide` types, shared `locked`.

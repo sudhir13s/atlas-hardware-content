@@ -44,8 +44,23 @@ step lists) so it stays machine-parseable.
   - `glossary-term` → `Definition` and `Why You Care`
   - `upgrade-path` → `Overview`
   - `name-decoder` → `How To Read`
+  - `gpu` → optional `Overview` (the `summary`, verbatim)
+  - `guide` → optional `Overview` (lead-in) and `Takeaway` (closing rule or footnote)
 
 ## Per-type specifics
+
+- **gpu** — one file per product, slug = the product's catalog id (`nvidia-h100-sxm`). Everything
+  that is a number or a unit is a field, never text: `specifications` (`memory_gb`,
+  `memory_bandwidth_gb_per_s`, `tdp_watts`, `form_factor[]`, `pcie_gen`, `interconnect`
+  `{name, bandwidth_gb_per_s?, note?}`, `process_node` `{nodes_nm[], note?}`), `performance`
+  (peak `*_tflops` / `int8_tops`), `ml_capabilities`, `framework_support`. A value the vendor does not
+  publish is **absent**, never `0` or `"Unknown"`. `unit_kind: module` (with `gpus_per_module`) marks
+  several GPUs sold as one unit: its memory, compute units and TDP cover the whole module.
+  `memory_kind: unified` marks memory shared with the CPU. `market` is agent-owned (prices change)
+  and carries `observed_at` and `source`. Body: Overview.
+- **guide** — one file per advice section, `order` = position in the guide. Tables and lists are
+  frontmatter lists of string rows (see the schema for each list's keys); lead-in and closing text
+  are body sections. Wording is the guide's own and is changed only on purpose.
 
 - **gpu-architecture** — one file per generation. Carries `vendor`, `year`, `process_node`,
   `segment`, `memory_tech`, `interconnect`, `key_innovation`, and the arrays `representative_gpus`,
