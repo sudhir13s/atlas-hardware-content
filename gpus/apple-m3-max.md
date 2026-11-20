@@ -74,8 +74,10 @@ tags:
 - apple
 - workstation
 - m3
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.apple.com/newsroom/2023/10/apple-unveils-m3-m3-pro-and-m3-max-the-most-advanced-chips-for-a-personal-computer/
+  title: Apple unveils M3, M3 Pro, and M3 Max (Apple Newsroom)
 ---
 
 ## Overview

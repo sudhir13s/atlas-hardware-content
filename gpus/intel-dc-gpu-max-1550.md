@@ -87,6 +87,8 @@ tags:
 - xe-hpc
 updated: '2026-11-20'
 sources:
+- url: https://www.intel.com/content/www/us/en/products/sku/232873/intel-data-center-gpu-max-1550/specifications.html
+  title: Intel Data Center GPU Max 1550 specifications (Intel)
 - url: https://epoch.ai/data/ml_hardware.csv
   title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
 ---

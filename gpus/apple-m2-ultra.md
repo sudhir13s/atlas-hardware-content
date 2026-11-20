@@ -79,8 +79,10 @@ tags:
 - apple
 - workstation
 - m2
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.apple.com/newsroom/2023/06/apple-introduces-m2-ultra/
+  title: Apple introduces M2 Ultra (Apple Newsroom)
 ---
 
 ## Overview

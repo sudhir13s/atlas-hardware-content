@@ -11,7 +11,7 @@ year: 2024
 predecessor: gpu-architecture/hopper
 process_node: "TSMC 4NP"
 segment: "consumer + datacenter"
-representative_gpus: ["B200 (2024)", "GB200 Grace Blackwell Superchip (2024)", "B100 (2024)", "GeForce RTX 5090 (2025)"]
+representative_gpus: ["B200 (2024)", "GB200 Grace Blackwell Superchip (2024)", "GeForce RTX 5090 (2025)"]
 key_innovation: "A dual-die GPU joined by a ~10 TB/s die-to-die link, with a second-generation Transformer Engine adding FP4 and FP6 microscaling precision."
 innovations: ["5th-generation Tensor Cores", "FP4 and FP6 microscaling formats", "2nd-generation Transformer Engine", "Dual-die design (two reticle-limited dies as one GPU via NV-HBI)", "NVLink 5.0", "Dedicated decompression engine", "RAS reliability engine"]
 precision_support: ["FP64", "BF16", "FP16", "FP8", "FP6", "FP4"]

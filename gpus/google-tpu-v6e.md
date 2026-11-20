@@ -83,8 +83,10 @@ tags:
 - google
 - datacenter
 - v6e-trillium
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://docs.cloud.google.com/tpu/docs/v6e
+  title: TPU v6e (Google Cloud documentation)
 ---
 
 ## Overview

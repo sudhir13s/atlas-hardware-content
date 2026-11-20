@@ -88,8 +88,10 @@ tags:
 - intel
 - datacenter
 - gaudi-2
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.intel.com/content/www/us/en/content-details/839363/intel-gaudi-2-ai-accelerators-white-paper.html
+  title: Intel Gaudi 2 AI Accelerators White Paper (Intel)
 ---
 
 ## Overview

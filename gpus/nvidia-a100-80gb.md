@@ -91,8 +91,12 @@ tags:
 - nvidia
 - datacenter
 - ampere
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
+  title: NVIDIA A100 Tensor Core GPU data sheet (NVIDIA)
+- url: https://www.nvidia.com/en-us/data-center/a100/
+  title: NVIDIA A100 Tensor Core GPU (NVIDIA)
 ---
 
 ## Overview

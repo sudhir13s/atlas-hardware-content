@@ -88,8 +88,12 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.nvidia.com/en-us/data-center/h100/
+  title: NVIDIA H100 Tensor Core GPU (NVIDIA)
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs22/data-center/h100/PB-11133-001_v01.pdf
+  title: NVIDIA H100 PCIe GPU Product Brief (NVIDIA)
 ---
 
 ## Overview

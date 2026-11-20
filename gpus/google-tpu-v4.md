@@ -86,8 +86,10 @@ tags:
 - google
 - datacenter
 - v4
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://docs.cloud.google.com/tpu/docs/v4
+  title: TPU v4 (Google Cloud documentation)
 ---
 
 ## Overview

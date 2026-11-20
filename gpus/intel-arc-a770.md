@@ -77,8 +77,10 @@ tags:
 - intel
 - consumer
 - alchemist
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html
+  title: Intel Arc A770 Graphics 16GB specifications (Intel)
 ---
 
 ## Overview

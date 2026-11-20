@@ -87,8 +87,12 @@ tags:
 - nvidia
 - datacenter
 - volta
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf
+  title: NVIDIA Tesla V100 GPU Accelerator data sheet (NVIDIA)
+- url: https://nvidianews.nvidia.com/news/nvidia-launches-revolutionary-volta-gpu-platform-fueling-next-era-of-ai-and-high-performance-computing
+  title: NVIDIA Launches Revolutionary Volta GPU Platform (NVIDIA Newsroom)
 ---
 
 ## Overview

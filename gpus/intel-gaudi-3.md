@@ -83,8 +83,12 @@ tags:
 - intel
 - datacenter
 - gaudi-3
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators/gaudi.html
+  title: Intel Gaudi AI accelerators (Intel)
+- url: https://www.intel.com/content/www/us/en/content-details/817487/intel-gaudi-3-ai-accelerator-325-l-oam-mezzanine-card-product-brief.html
+  title: Intel Gaudi 3 AI Accelerator 325-L OAM Mezzanine Card Product Brief (Intel)
 ---
 
 ## Overview

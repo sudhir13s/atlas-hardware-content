@@ -79,8 +79,10 @@ tags:
 - apple
 - workstation
 - m1
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
+  title: Apple unveils M1 Ultra (Apple Newsroom)
 ---
 
 ## Overview

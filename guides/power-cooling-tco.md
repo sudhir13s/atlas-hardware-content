@@ -26,11 +26,6 @@ power_costs:
   electricity_per_year: ~$735
   cooling: Liquid cooling
   psu_needed: DGX/HGX system
-- gpu: M4 Ultra
-  tdp: ~125W
-  electricity_per_year: ~$130
-  cooling: Silent (passive)
-  psu_needed: Integrated
 tags:
 - gpu-buying-guide
 - power-cooling-tco

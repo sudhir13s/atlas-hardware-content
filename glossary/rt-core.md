@@ -11,7 +11,7 @@ related: [glossary-term/cuda-core, glossary-term/tensor-core]
 tags: [compute, rt-core, ray-tracing]
 updated: 2026-07-17
 sources:
-  - { url: "https://www.nvidia.com/en-us/geforce/technologies/rtx/", title: "NVIDIA RTX Ray Tracing", trust: 0.9 }
+  - { url: "https://www.nvidia.com/en-us/technologies/rtx/", title: "NVIDIA RTX Ray Tracing", trust: 0.9 }
 ---
 
 ## Definition

@@ -85,8 +85,12 @@ tags:
 - nvidia
 - datacenter
 - blackwell-ultra
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/
+  title: 'Inside NVIDIA Blackwell Ultra: The Chip Powering the AI Factory Era (NVIDIA Technical Blog)'
+- url: https://www.nvidia.com/en-us/data-center/hgx/
+  title: NVIDIA HGX platform, HGX B300 (NVIDIA)
 ---
 
 ## Overview

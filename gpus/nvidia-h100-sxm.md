@@ -91,8 +91,12 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://www.nvidia.com/en-us/data-center/h100/
+  title: NVIDIA H100 Tensor Core GPU (NVIDIA)
+- url: https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing
+  title: NVIDIA Announces Hopper Architecture (NVIDIA Newsroom)
 ---
 
 ## Overview

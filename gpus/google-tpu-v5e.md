@@ -87,6 +87,8 @@ tags:
 - v5e
 updated: '2026-11-20'
 sources:
+- url: https://docs.cloud.google.com/tpu/docs/v5e
+  title: TPU v5e (Google Cloud documentation)
 - url: https://epoch.ai/data/ml_hardware.csv
   title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
 ---

@@ -30,7 +30,7 @@ vram_by_model_size:
   fp16: 140 GB
   int8: 70 GB
   int4: 35-40 GB
-  recommended_gpu: A100 80GB / MI300X / M4 Ultra
+  recommended_gpu: A100 80GB / MI300X / M3 Ultra
 - model_size: 405B
   fp16: 810 GB
   int8: 405 GB
