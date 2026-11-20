@@ -56,12 +56,12 @@ framework_support:
   vllm: true
   deepspeed: false
 market:
-  cloud_hourly_usd: 0.76
+  cloud_hourly_usd: 1.5
   cloud_providers:
   - name: AWS
     instance_note: g5 instances
-  observed_at: '2026-06-15'
-  source: snapshot
+  observed_at: '2026-11-20'
+  source: GetDeploying GPU cloud prices
 best_for:
 - Inference for small-medium models
 - Fine-tuning 7B models
@@ -84,8 +84,10 @@ tags:
 - nvidia
 - datacenter
 - ampere
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

@@ -63,12 +63,12 @@ framework_support:
   deepspeed: true
 market:
   msrp_usd: 15000
-  cloud_hourly_usd: 2.5
+  cloud_hourly_usd: 2.7156
   cloud_providers:
   - name: Microsoft Azure
     instance_note: ND MI300X
-  observed_at: '2026-06-15'
-  source: snapshot
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - Large model inference (memory advantage)
 - Training with ROCm
@@ -91,8 +91,10 @@ tags:
 - amd
 - datacenter
 - cdna-3
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

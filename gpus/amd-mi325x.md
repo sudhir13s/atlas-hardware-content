@@ -63,8 +63,9 @@ framework_support:
   deepspeed: true
 market:
   msrp_usd: 20000
-  observed_at: '2026-06-15'
-  source: snapshot
+  cloud_hourly_usd: 3.155
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - Ultra-large model inference
 - Memory-intensive training
@@ -86,8 +87,10 @@ tags:
 - amd
 - datacenter
 - cdna-3
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

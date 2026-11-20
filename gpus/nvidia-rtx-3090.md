@@ -64,8 +64,9 @@ framework_support:
   deepspeed: true
 market:
   msrp_usd: 1499
-  observed_at: '2026-06-15'
-  source: snapshot
+  cloud_hourly_usd: 0.22
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - Budget local AI
 - Used market value
@@ -87,8 +88,10 @@ tags:
 - nvidia
 - consumer
 - ampere
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

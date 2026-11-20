@@ -54,13 +54,13 @@ framework_support:
   deepspeed: false
 market:
   msrp_usd: 2200
-  cloud_hourly_usd: 0.3
+  cloud_hourly_usd: 0.752
   cloud_providers:
   - name: AWS
     instance_note: g4dn
   - name: GCP
-  observed_at: '2026-06-15'
-  source: snapshot
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - Budget inference
 - Batch processing
@@ -84,8 +84,10 @@ tags:
 - nvidia
 - datacenter
 - turing
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

@@ -58,8 +58,9 @@ framework_support:
   deepspeed: false
 market:
   msrp_usd: 1199
-  observed_at: '2026-06-15'
-  source: snapshot
+  cloud_hourly_usd: 0.304
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - Local inference of quantized models
 - Light fine-tuning
@@ -80,8 +81,10 @@ tags:
 - nvidia
 - consumer
 - ada-lovelace
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

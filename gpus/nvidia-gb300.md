@@ -27,6 +27,7 @@ specifications:
   tdp_watts: 2900
   form_factor:
   - Superchip Module
+  pcie_gen: 6.0
   interconnect:
     name: NVLink 5.0 + Grace CPU coherent link
     bandwidth_gb_per_s: 1800
@@ -65,8 +66,9 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  observed_at: '2026-06-15'
-  source: snapshot
+  cloud_hourly_usd: 18.0
+  observed_at: '2026-11-20'
+  source: GetDeploying GPU cloud prices
 best_for:
 - Next-generation frontier models
 - Massive-scale training clusters
@@ -87,8 +89,12 @@ tags:
 - nvidia
 - datacenter
 - blackwell-ultra
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-models/gpu-models.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview

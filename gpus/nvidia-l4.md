@@ -58,13 +58,13 @@ framework_support:
   deepspeed: false
 market:
   msrp_usd: 2500
-  cloud_hourly_usd: 0.35
+  cloud_hourly_usd: 0.7946
   cloud_providers:
   - name: GCP
     instance_note: g2 instances
   - name: AWS
-  observed_at: '2026-06-15'
-  source: snapshot
+  observed_at: '2026-11-20'
+  source: snapshot; GetDeploying GPU cloud prices
 best_for:
 - High-density inference
 - Edge AI deployment
@@ -87,8 +87,10 @@ tags:
 - nvidia
 - datacenter
 - ada-lovelace
-updated: '2026-11-19'
-sources: []
+updated: '2026-11-20'
+sources:
+- url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
+  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
