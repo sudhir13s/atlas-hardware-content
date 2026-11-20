@@ -30,7 +30,7 @@ It is the `hardware` domain of a multi-repo reference library
 # Vendor it
 git clone https://github.com/sudhir13s/atlas-hardware-content.git
 # or as a submodule of your project
-git submodule add https://github.com/sudhir13s/atlas-hardware-content.git content/hardware-src
+git submodule add https://github.com/sudhir13s/atlas-hardware-content.git content/atlas-hardware-content
 ```
 
 Every content file is a Markdown file with YAML frontmatter (the structured fields) and a Markdown
