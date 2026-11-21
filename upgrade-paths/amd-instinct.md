@@ -11,12 +11,19 @@ steps:
   - { gpu_id: "Instinct MI250X", architecture_id: gpu-architecture/cdna-2, year: 2021 }
   - { gpu_id: "Instinct MI300X", architecture_id: gpu-architecture/cdna-3, year: 2023 }
 tags: [amd, instinct, datacenter]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/AMD_Instinct", title: "AMD Instinct — Wikipedia", trust: 0.8 }
+  - { url: "https://ir.amd.com/news-events/press-releases/detail/980/amd-epyc-processors-and-new-amd-instinct-mi100-accelerator-redefine-performance-for-hpc-and-scientific-research", title: "AMD — Instinct MI100 launch (16 November 2020)", trust: 0.95 }
+  - { url: "https://ir.amd.com/news-events/press-releases/detail/981/amd-announces-worlds-fastest-hpc-accelerator-for-scientific-research", title: "AMD — Instinct MI100 announcement", trust: 0.95 }
+  - { url: "https://ir.amd.com/news-events/press-releases/detail/1032/new-amd-instinct-mi200-series-accelerators-bring-leadership-hpc-and-ai-performance-to-power-exascale-systems-and-more", title: "AMD — Instinct MI200 Series announcement (8 November 2021)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/newsroom/press-releases/2023-12-6-amd-delivers-leadership-portfolio-of-data-center-a.html", title: "AMD — Instinct MI300 Series launch (6 December 2023)", trust: 0.95 }
 ---
 
 ## Overview
-AMD's datacenter accelerator line on the compute-only CDNA architecture: from the first Matrix Cores
-(MI100), to a dual-die exascale HPC part (MI250X), to the 192 GB HBM3 AI accelerator (MI300X) that made
-AMD a credible alternative to NVIDIA for large-model inference.
+AMD's Instinct data center accelerators across the CDNA generations:
+
+- **MI100** (CDNA), which AMD calls the first accelerator on its CDNA architecture, with AMD Matrix Core
+  technology.
+- **MI250X** (CDNA 2), a two-die accelerator from the MI200 Series, which AMD describes as the first exascale-class GPU
+  accelerators.
+- **MI300X** (CDNA 3), with 192 GB of HBM3 memory.

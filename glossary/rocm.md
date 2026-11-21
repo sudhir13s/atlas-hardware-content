@@ -6,21 +6,20 @@ schema_version: 1.0
 title: "ROCm"
 term: "ROCm"
 category: software
-examples: ["ROCm on Instinct MI250X / MI300X", "HIP: AMD's CUDA-like C++ dialect", "PyTorch and vLLM support on ROCm"]
+examples: ["HIP: AMD's C++ runtime API and kernel language", "HIPIFY: tools that translate CUDA API calls to HIP", "PyTorch on ROCm"]
 related: []
 tags: [software, rocm, amd]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://rocm.docs.amd.com/", title: "AMD ROCm Documentation", trust: 0.9 }
+  - { url: "https://rocm.docs.amd.com/en/latest/what-is-rocm.html", title: "What is ROCm? (AMD ROCm documentation)", trust: 0.95 }
+  - { url: "https://rocm.docs.amd.com/projects/HIP/en/latest/what_is_hip.html", title: "What is HIP? (AMD ROCm documentation)", trust: 0.95 }
 ---
 
 ## Definition
-ROCm (Radeon Open Compute) is AMD's open-source GPU-compute software stack — drivers, libraries, and the
-HIP programming model — the counterpart to NVIDIA's CUDA. HIP code can often be compiled to run on both
-AMD and NVIDIA GPUs.
+ROCm is AMD's open software stack for GPU computing: runtimes, compilers, system utilities, and math
+and compute libraries. Its programming model, HIP, is a C++ runtime API and kernel language for AMD GPUs.
 
 ## Why You Care
-Hardware is only as useful as its software. NVIDIA's dominance rests heavily on CUDA's maturity; AMD's
-competitiveness in AI depends on ROCm supporting the frameworks people actually use (PyTorch, vLLM,
-Triton) well enough to run models without heroics. When comparing an MI300X to an H100, ROCm's maturity
-for your specific workload is often the deciding factor, not the raw specs.
+Hardware is only usable through its software. AMD states that HIP is not a drop-in replacement for
+CUDA, so porting CUDA code usually needs manual work and tuning; check ROCm support for your framework
+and workload before choosing AMD hardware.

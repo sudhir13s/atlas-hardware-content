@@ -6,31 +6,36 @@ schema_version: 1.0
 title: "NVIDIA Ampere"
 name: "Ampere"
 vendor: NVIDIA
-codename: "GA100 / GA10x"
+codename: "GA100 / GA102"
 year: 2020
 predecessor: gpu-architecture/turing
 successor: gpu-architecture/hopper
-process_node: "TSMC 7N (A100) / Samsung 8N (GeForce)"
+process_node: "TSMC 7nm N7 (A100) / Samsung 8nm 8N (GA102)"
 segment: "consumer + datacenter"
-representative_gpus: ["A100 (2020)", "GeForce RTX 3090 (2020)", "GeForce RTX 3080 (2020)", "A40 (2020)"]
-key_innovation: "Third-generation Tensor Cores added TF32, BF16, and 2:4 structured sparsity, and the A100 introduced Multi-Instance GPU (MIG) partitioning."
-innovations: ["3rd-generation Tensor Cores", "TF32 math format (drop-in FP32 range, Tensor-Core speed)", "BF16 support", "2:4 structured sparsity acceleration", "Multi-Instance GPU (MIG)", "NVLink 3.0"]
+representative_gpus: ["nvidia-a100-40gb", "nvidia-a100-80gb", "nvidia-rtx-3090", "nvidia-rtx-3080"]
+key_innovation: "Third-generation Tensor Cores added TF32, BF16, FP64 and 2:4 fine-grained structured sparsity, and the A100 introduced Multi-Instance GPU (MIG) partitioning."
+innovations: ["Third-generation Tensor Cores", "TF32 Tensor Core format (FP32 range, FP16 precision)", "BF16 Tensor Core support", "2:4 fine-grained structured sparsity", "Multi-Instance GPU (MIG)", "Third-generation NVLink"]
 precision_support: ["FP64", "TF32", "BF16", "FP16", "INT8", "INT4"]
-memory_tech: "HBM2e (A100) / GDDR6X (GeForce)"
-interconnect: "NVLink 3.0 / PCIe 4.0"
+memory_tech: "HBM2 (A100 40GB) / HBM2e (A100 80GB) / GDDR6X (GeForce RTX 3090, 3080)"
+interconnect: "Third-generation NVLink / PCIe Gen 4"
 tags: [nvidia, ampere, a100, tf32, bf16, sparsity, mig]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Ampere_(microarchitecture)", title: "Ampere (microarchitecture) — Wikipedia", trust: 0.8 }
-  - { url: "https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf", title: "NVIDIA A100 Ampere Architecture Whitepaper", trust: 0.95 }
+  - { url: "https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf", title: "NVIDIA A100 Tensor Core GPU Architecture Whitepaper", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/data-center/a100/", title: "NVIDIA A100 Tensor Core GPU", trust: 0.95 }
+  - { url: "https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf", title: "NVIDIA Ampere GA102 GPU Architecture Whitepaper", trust: 0.95 }
 ---
 
 ## What Changed
-Ampere's A100 became the defining training GPU of the early LLM boom. Its **third-generation Tensor
-Cores** introduced **TF32** — a format with FP32's dynamic range but reduced mantissa, giving
-Tensor-Core speed as a near drop-in for FP32 training — plus native **BF16** and hardware acceleration
-for **2:4 structured sparsity** (skipping half the weights in a fixed pattern). The A100 also added
-**Multi-Instance GPU (MIG)**, letting one physical GPU be partitioned into up to seven isolated
-instances so smaller jobs need not waste a whole card. On the consumer side, Ampere GeForce (RTX 30
-series) paired a Samsung 8nm process with **GDDR6X** memory. Ampere is where the datacenter feature set
-(TF32, BF16, sparsity, MIG, HBM2e, NVLink 3.0) pulled decisively ahead of the gaming line.
+The **A100** (GA100, TSMC 7 nm N7) brought **third-generation Tensor Cores** with new formats.
+
+- **TF32** has FP32's range with FP16's precision; NVIDIA states A100 uses TF32 Tensor Cores for
+  FP32 work by default, with no change to user scripts.
+- **BF16** runs at the same Tensor Core rate as FP16, and **FP64** Tensor Core operations serve HPC.
+- **2:4 fine-grained structured sparsity** (two non-zero weights in every four) doubles Tensor Core
+  throughput on pruned networks.
+- **Multi-Instance GPU (MIG)** splits one A100 into as many as seven isolated GPU instances.
+- **Third-generation NVLink** and **PCIe Gen 4** connect A100 GPUs.
+
+The A100 ships with 40 GB of HBM2 or 80 GB of HBM2e. The consumer **GA102** (GeForce RTX 3090,
+RTX 3080) uses Samsung's 8 nm 8N process and GDDR6X memory.

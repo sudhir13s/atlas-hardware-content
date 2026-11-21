@@ -6,30 +6,34 @@ schema_version: 1.0
 title: "Intel Xe"
 name: "Xe"
 vendor: Intel
-codename: "Xe-LP (Gen12)"
+codename: "Xe-LP"
 year: 2020
 successor: gpu-architecture/xe-hpg
 process_node: "Intel 10nm SuperFin"
 segment: "consumer"
-representative_gpus: ["Iris Xe Graphics (Tiger Lake, 2020)", "Iris Xe MAX / DG1 (2020)", "Server GPU SG1 (2021)"]
-key_innovation: "A single, scalable Xe GPU architecture intended to span integrated graphics, discrete gaming, and datacenter compute under one microarchitecture and the oneAPI software stack."
-innovations: ["Unified, scalable Xe architecture (LP / HPG / HPC tiers)", "Intel's return to discrete GPUs (DG1)", "oneAPI cross-architecture programming model", "Foundation for later XMX matrix engines"]
+representative_gpus: []
+key_innovation: "One Xe GPU architecture with microarchitectures for integrated, discrete gaming and datacenter graphics; its first microarchitecture, Xe-LP, also gave Intel its first Xe-based discrete GPU."
+innovations: ["Xe-LP microarchitecture shared by Intel Iris Xe (integrated) and Intel Iris Xe MAX (discrete)", "Intel Iris Xe MAX: Intel's first Xe-based discrete GPU", "INT8 inference through the DP4a instruction", "oneAPI cross-architecture toolkits"]
 precision_support: ["FP32", "FP16", "INT8"]
-memory_tech: "LPDDR4X / GDDR6"
-interconnect: "PCIe 4.0"
+memory_tech: "Shared system memory (integrated Iris Xe); dedicated memory (discrete Iris Xe MAX)"
+interconnect: "PCIe 4.0 (Iris Xe MAX)"
 tags: [intel, xe, dg1, oneapi]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Intel_Xe", title: "Intel Xe — Wikipedia", trust: 0.8 }
-  - { url: "https://www.intel.com/content/www/us/en/products/docs/discrete-gpus/arc/technology/xe-hpg-microarchitecture.html", title: "Intel Xe Architecture Overview", trust: 0.85 }
+  - { url: "https://www.intel.com/content/www/us/en/newsroom/news/iris-xe-max-discrete-graphics-deep-link.html", title: "Intel Newsroom: Innovation Extends with Intel Iris Xe MAX Graphics and Deep Link (31 October 2020)", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-0/intel-xe-gpu-architecture.html", title: "Intel oneAPI GPU Optimization Guide: Intel Xe GPU Architecture", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-the-xe-hpg-architecture.html", title: "Intel: Introduction to the Xe-HPG Architecture (Xe-LP comparison table)", trust: 0.95 }
 ---
 
 ## What Changed
-Xe marked **Intel's re-entry into discrete GPUs** and its bet on a **single scalable architecture**
-spanning four tiers: Xe-LP (low power, integrated and entry discrete), Xe-HPG (high-performance
-gaming), Xe-HP, and Xe-HPC (datacenter). The first products were the Iris Xe integrated graphics in
-Tiger Lake laptops and the modest **DG1** discrete card — not competitive with high-end NVIDIA or AMD,
-but proof Intel could ship a standalone GPU again. The strategic pieces were the **oneAPI** software
-stack, meant to program CPUs, GPUs, and accelerators with one model, and the groundwork for the **XMX
-matrix engines** that later Xe variants (Arc, and the datacenter Ponte Vecchio) would use for AI. Xe
-was the platform; Arc and Gaudi are where Intel's AI-relevant hardware actually landed.
+Xe is Intel's GPU architecture family, with the Xe-LP, Xe-HPG and Xe-HPC microarchitectures. Intel
+describes Xe as spanning integrated, entry discrete, high-end gaming and datacenter graphics.
+
+- **Xe-LP products:** Intel Iris Xe graphics in 11th Gen Intel Core mobile processors, and **Intel Iris
+  Xe MAX**, launched 31 October 2020 on Intel 10nm SuperFin with PCIe Gen 4.
+- **Discrete:** Intel calls Iris Xe MAX its first Xe-based discrete GPU, part of its strategy to enter
+  the discrete graphics market.
+- **AI:** Xe-LP runs INT8 inference through the DP4a instruction; the XMX matrix engines came later with
+  Xe-HPG.
+- **Datacenter:** the Xe-HPC microarchitecture powers the Intel Data Center GPU Max (formerly code
+  named Ponte Vecchio).

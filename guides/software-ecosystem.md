@@ -8,18 +8,22 @@ page_section: background
 order: 5
 points:
 - name: NVIDIA CUDA
-  text: The most mature stack. PyTorch, TensorFlow, JAX, TensorRT, vLLM and DeepSpeed all assume CUDA first. For the least friction, choose NVIDIA.
+  text: NVIDIA's development environment for GPU-accelerated applications on its GPUs. vLLM lists NVIDIA CUDA as a supported GPU platform.
 - name: AMD ROCm
-  text: Catching up fast. PyTorch works well; TensorFlow and JAX have gaps, and vLLM and DeepSpeed support keeps improving. Expect the occasional compatibility issue.
+  text: AMD's open-source GPU computing platform for AMD Instinct, Radeon and Ryzen AI devices, on Linux and Windows. vLLM lists AMD ROCm as a supported GPU platform.
 - name: Apple MLX
-  text: 'Excellent for local inference on a Mac: light, fast and Apple-optimized. It has no multi-GPU support and limited training support, and many libraries are CUDA-only. Best for personal use.'
+  text: An array framework for Apple silicon from Apple machine learning research. Arrays live in shared memory, so CPU and GPU operations need no data copy.
 tags:
 - gpu-buying-guide
 - software-ecosystem
 updated: '2026-11-21'
-sources: []
+sources:
+- {url: "https://developer.nvidia.com/cuda-toolkit", title: "CUDA Toolkit (NVIDIA Developer)", trust: 0.95}
+- {url: "https://rocm.docs.amd.com/en/latest/", title: "AMD ROCm documentation", trust: 0.95}
+- {url: "https://github.com/ml-explore/mlx", title: "MLX: an array framework for Apple silicon", trust: 0.95}
+- {url: "https://docs.vllm.ai/en/latest/getting_started/installation/", title: "Installation - vLLM documentation", trust: 0.9}
 ---
 
 ## Overview
 
-The software stack decides how much friction you meet before the first token.
+The software stack decides which frameworks and tools run on a GPU.

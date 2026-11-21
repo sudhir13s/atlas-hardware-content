@@ -9,18 +9,16 @@ category: compute
 examples: ["FP32 TFLOPS for general compute", "FP16/BF16 Tensor TFLOPS for AI", "INT8 TOPS for inference"]
 related: [glossary-term/tensor-core, glossary-term/bf16]
 tags: [compute, tflops, benchmark]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/FLOPS", title: "FLOPS — Wikipedia", trust: 0.8 }
+  - { url: "https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html", title: "AMD Instinct MI300X Accelerators (AMD)", trust: 0.95 }
 ---
 
 ## Definition
-TFLOPS is trillions (10^12) of floating-point operations per second; TOPS is the same for integer
-operations. It is a peak theoretical throughput derived from core count × clock × ops-per-core, always
-quoted at a specific precision (FP64, FP32, TF32, BF16, FP16, FP8, INT8).
+TFLOPS is trillions (10^12) of floating-point operations per second; TOPS counts integer operations,
+for example INT8. Makers publish peak theoretical figures, each at a stated precision.
 
 ## Why You Care
-A TFLOPS number is meaningless without its precision and its dense/sparse basis — an "AI TFLOPS" figure at
-FP8 with sparsity can be 16x the FP32 figure for the same chip. It is also a peak the hardware rarely
-reaches; real utilization depends on memory bandwidth, kernel quality, and batch size. Use it to compare
-like-for-like, never as a standalone performance promise.
+A figure means little without its precision and its dense or sparse basis. AMD lists the Instinct MI300X
+at 163.4 TFLOPs peak FP32, 1.3 PFLOPs peak FP16, 2.61 PFLOPs peak FP8 and 5.22 PFLOPs FP8 with
+structured sparsity. Compare like with like, and treat any peak as a ceiling, not a measured speed.

@@ -6,30 +6,36 @@ schema_version: 1.0
 title: "NVIDIA Kepler"
 name: "Kepler"
 vendor: NVIDIA
-codename: "GK1xx"
+codename: "GK104 / GK110 / GK210"
 year: 2012
 successor: gpu-architecture/maxwell
 process_node: "TSMC 28nm"
 segment: "consumer + datacenter"
-representative_gpus: ["GeForce GTX 680 (2012)", "GeForce GTX 780 Ti (2013)", "Tesla K40 (2013)", "Tesla K80 (2014)"]
-key_innovation: "The SMX streaming multiprocessor traded per-core clock for many more, lower-clocked cores, prioritizing performance-per-watt."
-innovations: ["SMX streaming multiprocessor", "GPU Boost dynamic clocking", "Dynamic Parallelism (GPU launches its own work)", "Hyper-Q multiple hardware work queues"]
+representative_gpus: []
+key_innovation: "The SMX streaming multiprocessor ran more cores at the lower GPU clock instead of a doubled shader clock; NVIDIA states its priority for Kepler was performance per watt."
+innovations: ["SMX streaming multiprocessor", "GPU Boost dynamic clocking", "Dynamic Parallelism (GPU launches its own work)", "Hyper-Q (32 hardware work queues)"]
 precision_support: ["FP64", "FP32"]
 memory_tech: "GDDR5"
-interconnect: "PCIe 3.0"
+interconnect: "PCI Express Gen 3"
 tags: [nvidia, kepler, cuda, datacenter]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Kepler_(microarchitecture)", title: "Kepler (microarchitecture) — Wikipedia", trust: 0.8 }
-  - { url: "https://www.nvidia.com/content/PDF/kepler/NVIDIA-Kepler-GK110-Architecture-Whitepaper.pdf", title: "NVIDIA Kepler GK110 Architecture Whitepaper", trust: 0.95 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidia-launches-first-geforce-gpus-based-on-next-generation-kepler-architecture", title: "NVIDIA Launches First GeForce GPUs Based on Next-Generation Kepler Architecture (March 22, 2012)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/documents/NVIDIA-Kepler-GK110-GK210-Architecture-Whitepaper.pdf", title: "NVIDIA Kepler GK110/GK210 Architecture Whitepaper", trust: 0.95 }
+  - { url: "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/TeslaK80-datasheet.pdf", title: "NVIDIA Tesla K40 and K80 GPU Accelerators Datasheet", trust: 0.95 }
+  - { url: "https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf", title: "NVIDIA A100 Tensor Core GPU Architecture Whitepaper", trust: 0.95 }
 ---
 
 ## What Changed
-Kepler was the first NVIDIA generation designed around **performance-per-watt** rather than raw
-per-core clock speed. Its SMX multiprocessor packed far more CUDA cores than Fermi's SM but ran them
-at a lower, more efficient clock, and GPU Boost opportunistically raised clocks within the power and
-thermal budget. Two features pointed at the future of GPU compute: **Dynamic Parallelism**, letting
-a running kernel launch further kernels without a CPU round trip, and **Hyper-Q**, exposing multiple
-hardware work queues so more of the chip stayed busy. The Tesla K40 and dual-GPU K80 made Kepler the
-workhorse of early deep-learning research — AlexNet-era training ran on Kepler-class cards — but the
-architecture had **no tensor/matrix units**; all math went through the general FP32/FP64 datapath.
+NVIDIA launched Kepler on March 22, 2012 with the **GeForce GTX 680**, built on TSMC's 28 nm process.
+NVIDIA states that its priority for Kepler was **performance per watt**.
+
+- **SMX** runs its cores at the primary GPU clock rather than the doubled shader clock of earlier
+  GPUs, using more cores at a lower, less power-hungry clock.
+- **GPU Boost** raises the core clock while power and thermal headroom remain.
+- **Dynamic Parallelism** (GK110 and GK210) lets a running kernel launch further kernels without
+  the CPU.
+- **Hyper-Q** gives the host 32 hardware-managed work queues to the GPU, where Fermi had one.
+
+The datacenter **Tesla K40** (GK110B) and dual-GPU **Tesla K80** (two GK210) carry GDDR5 memory.
+Kepler predates Tensor Cores, which NVIDIA first introduced with the Volta architecture.

@@ -10,7 +10,9 @@ tags:
 - gpu-buying-guide
 - power-cooling-tco
 updated: '2026-11-21'
-sources: []
+sources:
+- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/", title: "NVIDIA GeForce RTX 4090", trust: 0.95}
+- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/", title: "NVIDIA GeForce RTX 5090", trust: 0.95}
 ---
 
 ## Overview
@@ -19,4 +21,4 @@ The list price is not the total cost. Power draw, cooling and electricity add to
 
 ## Takeaway
 
-Rule of thumb: size a desktop power supply at roughly twice the card's rated power, and plan server-room cooling or liquid cooling for the highest-power datacenter cards.
+Size the power supply from the maker's figure: NVIDIA states 850 W required system power for the GeForce RTX 4090 (450 W total graphics power) and 1000 W for the RTX 5090 (575 W).

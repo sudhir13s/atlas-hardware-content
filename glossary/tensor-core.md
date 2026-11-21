@@ -6,22 +6,24 @@ schema_version: 1.0
 title: "Tensor Core"
 term: "Tensor Core"
 category: compute
-examples: ["1st-gen Tensor Cores in Volta (V100)", "4th-gen FP8 Tensor Cores in Hopper (H100)", "AMD's equivalent: Matrix Cores"]
+examples: ["Tensor Cores introduced with Volta (V100)", "4th-generation Tensor Cores with FP8 in Hopper (H100)", "AMD's counterpart: Matrix Cores (1,216 on Instinct MI300X)", "Intel's counterpart: XMX engines"]
 related: [glossary-term/cuda-core, glossary-term/tflops, glossary-term/bf16]
 tags: [compute, tensor-core, matrix]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://www.nvidia.com/en-us/data-center/tensor-cores/", title: "NVIDIA Tensor Cores", trust: 0.9 }
+  - { url: "https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/", title: "Programming Tensor Cores in CUDA 9 (NVIDIA)", trust: 0.95 }
+  - { url: "https://developer.nvidia.com/blog/nvidia-turing-architecture-in-depth/", title: "NVIDIA Turing Architecture In-Depth (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/data-center/h100/", title: "NVIDIA H100 Tensor Core GPU (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html", title: "AMD Instinct MI300X Accelerators (AMD)", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-the-xe-hpg-architecture.html", title: "Introduction to the Xe-HPG Architecture (Intel)", trust: 0.95 }
 ---
 
 ## Definition
-A Tensor Core is a specialized hardware unit that computes a small matrix multiply-accumulate
-(D = A × B + C) in a single operation, typically with reduced-precision inputs (FP16/BF16/FP8) and
-higher-precision accumulation (FP32). NVIDIA introduced them in Volta; AMD's equivalent is the Matrix
-Core, Intel's is the XMX engine.
+A Tensor Core is an NVIDIA unit for matrix math. On Volta, where Tensor Cores first appeared, each one
+performs D = A × B + C on 4×4 matrices with FP16 inputs and FP32 accumulation. AMD's counterpart is the
+Matrix Core; Intel's is the XMX (Xe Matrix Extensions) engine.
 
 ## Why You Care
-Neural-network training and inference are dominated by matrix multiplication. Tensor Cores do that math
-far faster than general-purpose CUDA cores, so a GPU's Tensor-Core throughput (not its raw FP32 rate) is
-the number that best predicts AI performance. When a vendor quotes a huge "AI TFLOPS" or "TOPS" figure,
-it is almost always a Tensor/Matrix-Core number at low precision.
+NVIDIA describes Tensor Cores as execution units built for the matrix operations at the core of deep
+learning training and inference. Their throughput is quoted per precision (FP16, FP8, INT8 and so on),
+so check which precision a figure uses.

@@ -10,21 +10,27 @@ table:
   columns: [Method, Bits, Memory savings, Quality, Best for]
   rows:
   - [FP16 and BF16, '16', Baseline, Full, 'Training, fine-tuning']
-  - [INT8 (bitsandbytes), '8', About 50%, Near-lossless, 'Inference, QLoRA training']
-  - [GPTQ, '4', About 75%, Good (calibrated), 'GPU inference (exl2, vLLM)']
-  - [AWQ, '4', About 75%, Good (activation-aware), GPU inference (vLLM)]
-  - [GGUF (llama.cpp), 2 to 8, 50% to 85%, Varies with the quant level, 'CPU, Metal and CUDA']
+  - [INT8 (LLM.int8() in bitsandbytes), '8', 50% of weights, No degradation up to 175B parameters (its paper), Inference]
+  - [GPTQ, 3 or 4, 75% of weights at 4 bits, Negligible accuracy loss at 3 or 4 bits (its paper), GPU inference (vLLM)]
+  - [AWQ, '4', 75% of weights, 'Activation-aware, weight-only', GPU inference (vLLM)]
+  - [GGUF (llama.cpp), 1.5 to 8, About 50% to 90% of weights, Varies with the quant level, 'CPU, Apple silicon (Metal), NVIDIA (CUDA), AMD (HIP)']
 tags:
 - gpu-buying-guide
 - quantization
 updated: '2026-11-21'
-sources: []
+sources:
+- {url: "https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/", title: "Mastering LLM Techniques: Inference Optimization (NVIDIA Technical Blog)", trust: 0.95}
+- {url: "https://arxiv.org/abs/2208.07339", title: "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale", trust: 0.95}
+- {url: "https://arxiv.org/abs/2210.17323", title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers", trust: 0.95}
+- {url: "https://arxiv.org/abs/2306.00978", title: "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration", trust: 0.95}
+- {url: "https://github.com/ggml-org/llama.cpp", title: "llama.cpp", trust: 0.9}
+- {url: "https://docs.vllm.ai/en/latest/features/quantization/", title: "Quantization - vLLM documentation", trust: 0.9}
 ---
 
 ## Overview
 
-Quantization lowers model precision from 16-bit to 8-bit or 4-bit, cutting memory by 2 to 4 times. For inference the quality loss is usually small.
+Quantization stores weights at 8 or 4 bits instead of 16. **Weight memory** is bits ÷ 8 bytes per parameter: 2 at 16-bit (NVIDIA: 7B × 2 bytes ≈ 14 GB), 1 at 8-bit, 0.5 at 4-bit. Savings shown are for weights only, before quantization scales.
 
 ## Takeaway
 
-For inference, start with Q4_K_M (GGUF) or AWQ: good quality at about a quarter of the memory. Use 16-bit for training and fine-tuning.
+For inference, start with a 4-bit method (GPTQ, AWQ or a 4-bit GGUF): weights take about a quarter of their 16-bit memory. Use 16-bit for training.

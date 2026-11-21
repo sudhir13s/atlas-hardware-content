@@ -13,12 +13,16 @@ steps:
   - { gpu_id: "H200", architecture_id: gpu-architecture/hopper, year: 2023 }
   - { gpu_id: "B200", architecture_id: gpu-architecture/blackwell, year: 2024 }
 tags: [nvidia, datacenter, training]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units", title: "List of NVIDIA GPUs — Wikipedia", trust: 0.8 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidia-launches-revolutionary-volta-gpu-platform-fueling-next-era-of-ai-and-high-performance-computing", title: "NVIDIA — Tesla V100 announcement (10 May 2017)", trust: 0.95 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidias-new-ampere-data-center-gpu-in-full-production", title: "NVIDIA — A100 announcement (14 May 2020)", trust: 0.95 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing", title: "NVIDIA — Hopper and H100 announcement (22 March 2022)", trust: 0.95 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidia-supercharges-hopper-the-worlds-leading-ai-computing-platform", title: "NVIDIA — H200 announcement (13 November 2023)", trust: 0.95 }
+  - { url: "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing", title: "NVIDIA — Blackwell platform announcement (18 March 2024)", trust: 0.95 }
 ---
 
 ## Overview
-The mainline of NVIDIA datacenter training accelerators — each generation adding Tensor-Core generations,
-new precisions (FP16 → TF32/BF16 → FP8 → FP4), faster memory (HBM2 → HBM2e → HBM3 → HBM3e), and higher
-NVLink bandwidth. This is the sequence most large models have been trained on.
+NVIDIA's data center GPUs by announcement year. Memory moved from **HBM2** (Tesla V100) to **HBM3**
+(H100) and **HBM3e** (H200). NVIDIA's announcements name **TF32** for the A100, **FP8** for the H100,
+and **4-bit floating point (FP4)** inference in Blackwell's second-generation Transformer Engine.

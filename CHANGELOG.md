@@ -5,6 +5,17 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Accuracy pass (2026-11-21)
+
+- **Changed** every architecture, timeline, glossary, name-decoder, upgrade-path and guide record so
+  each statement rests on a maker page, standards-body page or original paper listed in `sources`;
+  Wikipedia sources and statements without a primary source were removed.
+- **Changed** `representative_gpus` in the architecture records to hold only slugs of records in
+  `gpus/`; other products are named in the What Changed text where a maker page confirms them.
+- **Removed** superlatives, unattributed "first" claims and folklore name-decoder meanings;
+  maker claims that stay are attributed to the maker.
+- **Changed** the guide rules of thumb to shown arithmetic from sourced inputs, labelled as estimates.
+
 ### Schema 1.2 (the Buying Guide page reads the guide records)
 
 - **Changed** the `guide` type to the blocks the page shows: required `page_section`

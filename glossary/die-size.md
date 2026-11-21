@@ -6,21 +6,24 @@ schema_version: 1.0
 title: "Die Size and Reticle Limit"
 term: "Die Size and Reticle Limit"
 category: packaging
-examples: ["~814 mm2 GH100 (Hopper), near the reticle limit", "Blackwell: two dies joined to exceed one reticle", "Chiplets: many small dies vs one big die"]
+examples: ["814 mm² GH100 (Hopper)", "Blackwell: two reticle-limited dies joined by a 10 TB/s chip-to-chip interconnect", "Instinct MI300X: 8 CDNA 3 compute-die chiplets"]
 related: [glossary-term/process-node]
 tags: [packaging, die-size, chiplet]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Die_(integrated_circuit)", title: "Die (integrated circuit) — Wikipedia", trust: 0.8 }
+  - { url: "https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/", title: "NVIDIA Hopper Architecture In-Depth (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/", title: "NVIDIA Blackwell Architecture (NVIDIA)", trust: 0.95 }
+  - { url: "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm", title: "CoWoS (TSMC 3DFabric)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/technologies/cdna.html", title: "AMD CDNA Architecture (AMD)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/technologies/rdna.html", title: "AMD RDNA Architecture (AMD)", trust: 0.95 }
 ---
 
 ## Definition
-Die size is the physical area of a chip. The reticle limit (~800+ mm²) is the largest area a lithography
-machine can pattern in one exposure — a hard ceiling on how big a single monolithic die can be. Yield
-falls as die size grows, since one defect can ruin a larger, costlier chip.
+Die size is the physical area of one chip; NVIDIA gives 814 mm² for the GH100 die. The reticle is the
+area patterned in one lithography exposure. TSMC gives 3.3 reticles as about 2,700 mm², so one reticle
+is about 820 mm² by that arithmetic.
 
 ## Why You Care
-The reticle limit is why the industry turned to chiplets and multi-die packaging: AMD's MI300 and RDNA 3
-and NVIDIA's Blackwell all stitch multiple dies together to exceed what one die can do, while improving
-yield by using smaller dies. Understanding this explains a major recent architectural theme — "more
-performance" increasingly means "more dies working as one," not "one bigger die."
+A single die cannot exceed one reticle, so larger designs combine several dies in one package.
+NVIDIA describes Blackwell GPUs as two reticle-limited dies; AMD builds the Instinct MI300X from eight
+compute-die chiplets and describes RDNA 3 as a chiplet design.

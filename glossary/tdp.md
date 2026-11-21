@@ -6,21 +6,22 @@ schema_version: 1.0
 title: "TDP (Thermal Design Power)"
 term: "TDP (Thermal Design Power)"
 category: power
-examples: ["450 W on RTX 4090", "700 W on H100 SXM", "~1000 W+ on a Blackwell B200 module"]
+examples: ["Max TDP up to 700 W (configurable) on H100 SXM", "Total graphics power 450 W on GeForce RTX 4090", "Typical board power 750 W peak on Instinct MI300X"]
 related: []
 tags: [power, tdp, cooling]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Thermal_design_power", title: "Thermal design power — Wikipedia", trust: 0.8 }
+  - { url: "https://www.nvidia.com/en-us/data-center/h100/", title: "NVIDIA H100 Tensor Core GPU (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/", title: "GeForce RTX 4090 specifications (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html", title: "AMD Instinct MI300X Accelerators (AMD)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html", title: "Radeon RX 7900 XTX specifications (AMD)", trust: 0.95 }
 ---
 
 ## Definition
-TDP is the amount of heat (in watts) a GPU is designed to dissipate under sustained load, used as a proxy
-for its power draw and the cooling it requires. It is a design target, not a hard peak — transient spikes
-can exceed it.
+TDP (thermal design power) is a GPU's rated power in watts, as the maker publishes it. Makers name
+the rating differently: NVIDIA lists maximum TDP for H100 and total graphics power for GeForce; AMD
+lists typical board power.
 
 ## Why You Care
-TDP drives three practical things: the power supply and connectors you need, the cooling (air vs liquid)
-and case airflow, and the electricity and data-center cooling bill at scale. Modern datacenter
-accelerators pushing 700–1000+ W per module are why liquid cooling has become standard in AI racks, and
-why "performance-per-watt," not just raw performance, is a first-order metric for large deployments.
+The rating drives the power supply, connectors and cooling you need. AMD, for example, recommends a
+power supply of at least 800 W for a PC with the Radeon RX 7900 XTX (355 W typical board power).

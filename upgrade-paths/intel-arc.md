@@ -7,15 +7,19 @@ title: "Intel discrete GPUs (Xe → Arc)"
 vendor: Intel
 family: "Arc / Xe (consumer discrete)"
 steps:
-  - { gpu_id: "Iris Xe MAX (DG1)", architecture_id: gpu-architecture/xe, year: 2020 }
+  - { gpu_id: "Iris Xe MAX Graphics (DG1)", architecture_id: gpu-architecture/xe, year: 2020 }
   - { gpu_id: "Arc A770", architecture_id: gpu-architecture/xe-hpg, year: 2022 }
 tags: [intel, arc, xe, consumer]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/Intel_Arc", title: "Intel Arc — Wikipedia", trust: 0.8 }
+  - { url: "https://download.intel.com/newsroom/archive/Geos/LatinAmerica/La-innovaci-n-se-ampl-a-con-los-gr-ficos-Intel-Iris-Xe-MAX-y-Deep-Link--English-Only-_10-31-2020_15-16.pdf", title: "Intel — Intel Iris Xe MAX graphics introduction (31 October 2020)", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-the-xe-hpg-architecture.html", title: "Intel — Introduction to the Xe-HPG Architecture", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html", title: "Intel — Intel Arc A770 Graphics (16GB)", trust: 0.95 }
 ---
 
 ## Overview
-Intel's re-entry into discrete GPUs: from the modest DG1 (Xe-LP), which proved Intel could ship a
-standalone card again, to the Arc A770 (Xe-HPG), its first competitive gaming GPU with XMX AI matrix
-engines and hardware ray tracing.
+Intel's discrete GPUs, from Xe to Arc:
+
+- **Intel Iris Xe MAX graphics** (code-named DG1), introduced on 31 October 2020, which Intel describes
+  as its first Xe-based discrete GPU.
+- **Arc A770** (Xe-HPG), with Intel Xe Matrix Extensions (XMX) engines and ray tracing units.

@@ -6,30 +6,34 @@ schema_version: 1.0
 title: "AMD RDNA 3"
 name: "RDNA 3"
 vendor: AMD
-codename: "Navi 3x"
 year: 2022
 predecessor: gpu-architecture/rdna-2
 process_node: "TSMC 5nm (GCD) + 6nm (MCD)"
 segment: "consumer"
-representative_gpus: ["Radeon RX 7900 XTX (2022)", "Radeon RX 7900 XT (2022)", "Radeon RX 7800 XT (2023)"]
-key_innovation: "The first chiplet-based consumer GPU: a 5nm graphics compute die surrounded by 6nm memory-cache dies, plus dedicated AI accelerators."
-innovations: ["Chiplet design (GCD + memory-cache dies)", "Dedicated AI accelerators (WMMA / Wave Matrix Multiply-Accumulate)", "2nd-generation Ray Accelerators", "DisplayPort 2.1", "Decoupled shader and front-end clocks"]
+representative_gpus: ["amd-rx-7900-xtx"]
+key_innovation: "A chiplet design: a 5nm Graphics Compute Die with 6nm Memory Cache Dies, plus AI accelerators in the compute units."
+innovations: ["Chiplet design: 5nm Graphics Compute Die (GCD) + six 6nm Memory Cache Dies (MCD)", "AI accelerators (1st generation)", "Ray Accelerators (2nd generation)", "AMD Infinity Cache (2nd generation)", "AMD Radiance Display Engine with DisplayPort 2.1"]
 precision_support: ["FP32", "FP16", "BF16", "INT8", "INT4"]
 memory_tech: "GDDR6"
 interconnect: "PCIe 4.0"
-tags: [amd, rdna-3, navi, chiplet, wmma]
-updated: 2026-07-17
+tags: [amd, rdna-3, chiplet]
+updated: '2026-11-21'
 sources:
-  - { url: "https://en.wikipedia.org/wiki/RDNA_3", title: "RDNA 3 — Wikipedia", trust: 0.8 }
-  - { url: "https://www.amd.com/en/technologies/rdna-3", title: "AMD RDNA 3 Architecture", trust: 0.9 }
+  - { url: "https://ir.amd.com/news-events/press-releases/detail/1099/amd-unveils-worlds-most-advanced-gaming-graphics-cards-built-on-groundbreaking-amd-rdna-3-architecture-with-chiplet-design", title: "AMD press release: Radeon RX 7900 Series unveiled (3 November 2022)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html", title: "AMD Radeon RX 7900 XTX specifications", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/graphics/workstations/radeon-pro/w7900.html", title: "AMD Radeon PRO W7900 specifications (RDNA 3, TSMC 5nm GCD / 6nm MCD, PCIe 4.0 x16)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/technologies/rdna.html", title: "AMD RDNA Architecture (generation table)", trust: 0.95 }
 ---
 
 ## What Changed
-RDNA 3 brought **chiplets** — long used in AMD's Ryzen and EPYC CPUs — to a consumer GPU for the first
-time. The Radeon RX 7900 series is one **5nm Graphics Compute Die (GCD)** surrounded by several **6nm
-Memory Cache Dies (MCDs)** holding the Infinity Cache and memory controllers, letting AMD build the
-memory subsystem on a cheaper node and improve yields. RDNA 3 also added **dedicated AI accelerators**
-(WMMA instructions) that speed up matrix math with BF16/INT8, a first for AMD's gaming line, along with
-**second-generation Ray Accelerators** and decoupled shader/front-end clocks. It is still a gaming
-architecture rather than a training part, but the chiplet approach and on-die AI units point at where
-consumer GPUs are heading for local inference.
+RDNA 3 arrived with the **Radeon RX 7900 XTX** and **RX 7900 XT**, unveiled on 3 November 2022 and
+available from 13 December 2022.
+
+- **Chiplets:** one **5nm Graphics Compute Die (GCD)** with up to 96 compute units, plus six **6nm
+  Memory Cache Dies (MCD)**, each with up to 16 MB of Infinity Cache. AMD calls these the first gaming
+  graphics cards with a chiplet design.
+- **AI accelerators:** AMD's first generation in a gaming GPU. The RX 7900 XTX lists FP16, INT8 and
+  INT4 matrix throughput, and AMD cites BF16 rates.
+- **Ray tracing:** second-generation Ray Accelerators, which AMD says are up to 1.8x faster than RDNA 2.
+- **Efficiency:** AMD claims up to 54% more performance per watt than RDNA 2.
+- **Display:** the AMD Radiance Display Engine supports DisplayPort 2.1 and HDMI 2.1a.

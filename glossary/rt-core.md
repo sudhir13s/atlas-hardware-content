@@ -6,21 +6,23 @@ schema_version: 1.0
 title: "RT Core"
 term: "RT Core"
 category: compute
-examples: ["1st-gen RT Cores on Turing", "3rd-gen RT Cores on Ada Lovelace", "AMD Ray Accelerators; Intel RT units"]
+examples: ["RT Cores introduced with Turing", "3rd-generation RT Cores on Ada Lovelace", "AMD Ray Accelerators; Intel Ray Tracing Units"]
 related: [glossary-term/cuda-core, glossary-term/tensor-core]
 tags: [compute, rt-core, ray-tracing]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://www.nvidia.com/en-us/technologies/rtx/", title: "NVIDIA RTX Ray Tracing", trust: 0.9 }
+  - { url: "https://developer.nvidia.com/blog/nvidia-turing-architecture-in-depth/", title: "NVIDIA Turing Architecture In-Depth (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/geforce/ada-lovelace-architecture/", title: "NVIDIA Ada Lovelace Architecture (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/", title: "GeForce RTX 4090 specifications (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html", title: "Radeon RX 7900 XTX specifications (AMD)", trust: 0.95 }
+  - { url: "https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-the-xe-hpg-architecture.html", title: "Introduction to the Xe-HPG Architecture (Intel)", trust: 0.95 }
 ---
 
 ## Definition
-An RT Core is a fixed-function unit that accelerates ray tracing — specifically bounding-volume-hierarchy
-traversal and ray-triangle intersection — the geometry math behind realistic lighting, reflections, and
-shadows. AMD's equivalent is the Ray Accelerator; Intel has dedicated ray-tracing units.
+An RT Core is NVIDIA's dedicated ray-tracing unit; NVIDIA states it accelerates bounding volume
+hierarchy (BVH) traversal and ray/triangle intersection testing. AMD lists Ray Accelerators on its
+Radeon cards, and Intel has one Ray Tracing Unit per Xe-core.
 
 ## Why You Care
-RT Cores are a graphics feature, not an AI one — included here because they are the third specialized
-engine (with CUDA cores and Tensor Cores) that a modern GPU spends die area on, and understanding the
-split clarifies why "AI performance" and "gaming performance" are different numbers. For pure AI
-workloads, RT Core count is irrelevant; for a workstation doing both rendering and ML, it is not.
+RT Cores accelerate ray tracing, a graphics workload. They are listed separately from CUDA cores and
+Tensor Cores on the same specification sheet (GeForce RTX 4090), so their count is not an AI figure.

@@ -6,21 +6,19 @@ schema_version: 1.0
 title: "NVSwitch"
 term: "NVSwitch"
 category: interconnect
-examples: ["8-GPU all-to-all in a DGX/HGX server", "GB200 NVL72 rack: 72 GPUs in one NVLink domain"]
+examples: ["NVL72: 72 GPUs in one NVLink domain (Blackwell)"]
 related: [glossary-term/nvlink]
 tags: [interconnect, nvswitch, fabric]
-updated: 2026-07-17
+updated: '2026-11-21'
 sources:
-  - { url: "https://www.nvidia.com/en-us/data-center/nvlink/", title: "NVIDIA NVLink and NVSwitch", trust: 0.9 }
+  - { url: "https://www.nvidia.com/en-us/data-center/nvlink/", title: "NVIDIA NVLink and NVLink Switch (NVIDIA)", trust: 0.95 }
+  - { url: "https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/", title: "NVIDIA Blackwell Architecture (NVIDIA)", trust: 0.95 }
 ---
 
 ## Definition
-NVSwitch is a switch chip that connects many NVLink-capable GPUs in an all-to-all topology, so every GPU
-can talk to every other at full NVLink bandwidth rather than only its immediate neighbors. It is the
-fabric that turns a tray or rack of GPUs into a single NVLink domain.
+NVSwitch, which NVIDIA's current pages call the NVLink Switch, is a switch chip that connects multiple
+NVLinks to give all-to-all GPU communication. It also extends NVLink connections across nodes.
 
 ## Why You Care
-Point-to-point NVLink alone limits how many GPUs can be tightly coupled. NVSwitch is what lets an 8-GPU
-HGX baseboard — or a 72-GPU GB200 NVL72 rack — act as one memory-coherent accelerator, which is the unit
-frontier models are actually trained on. When you see "NVL72" or "all-to-all bandwidth," NVSwitch is the
-enabling hardware.
+Point-to-point NVLink alone couples only a few GPUs. With NVLink Switch chips, NVIDIA's NVL72 rack
+places 72 GPUs in one NVLink domain, which NVIDIA states can be used as a single accelerator.
