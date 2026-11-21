@@ -5,6 +5,22 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 1.2 (the Buying Guide page reads the guide records)
+
+- **Changed** the `guide` type to the blocks the page shows: required `page_section`
+  (`quick-decision`, `background`, `power`, `further-reading`) and `order`; lists `decisions`
+  (`scenario`, `recommendation`, optional `section`), `mistakes`, `points` (`name`, `text`) and one
+  `table` (`columns`, `rows`). `title` is the heading shown; Overview and Takeaway are the lead-in
+  and the closing rule.
+- **Removed** the guide fields `vram_by_model_size`, `rules_of_thumb`, `memory_technologies`,
+  `ecosystems`, `quantization_methods`, `interconnects`, `power_costs`, `decision_flowchart` and the
+  `icon` of a decision: the page computes memory and power figures from the GPU records and shows
+  none of the others.
+- **Changed** the wording of the seven kept guide records to the page's wording, which carries no
+  price or spec figure without a source (the 1.1 text had unsourced dollar amounts).
+- **Added** the `further-reading` guide record (outside links, kept in `sources`).
+- **Removed** the `vram` guide record: the page leaves VRAM to the `vram` glossary term.
+
 ### Schema 1.1 (migration of the GPU snapshot and the buying guide)
 
 - **Added** the `gpu` type (`gpus/`, `gpu/<slug>`): `vendor` (NVIDIA, AMD, Intel, Apple, Google),
@@ -39,3 +55,4 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 - **1.0** — initial schema for all five hardware content types.
 - **1.1** — `gpu` and `guide` types, shared `locked`.
+- **1.2** — `guide` reshaped to the blocks of the Buying Guide page.

@@ -2,47 +2,35 @@
 id: guide/quick-decision-framework
 type: guide
 slug: quick-decision-framework
-schema_version: 1.1
-title: Quick Decision Framework
-order: 8
+schema_version: 1.2
+title: Quick decision
+page_section: quick-decision
+order: 1
 decisions:
-- scenario: Learning / experimenting
-  recommendation: Free cloud tier (Colab, Kaggle) or your existing GPU
-  icon: 🟢
+- scenario: Learning or experimenting
+  recommendation: A free cloud tier (Colab, Kaggle) or the GPU you already have.
 - scenario: Running LLMs locally for personal use
-  recommendation: RTX 4090/5090 ($1.6-2K) or Mac M4 Max ($2.5-3.5K)
-  icon: 🟢
-- scenario: Fine-tuning 7-13B models
-  recommendation: RTX 4090 (24GB) with QLoRA, or cloud A100 for full fine-tune
-  icon: 🟡
-- scenario: Training from scratch (<70B)
-  recommendation: Cloud H100/A100 cluster — rent, don't buy
-  icon: 🔵
-- scenario: Production inference (low volume)
-  recommendation: Serverless cloud (Modal, Replicate, Together) — pay per token
-  icon: 🔵
-- scenario: Production inference (high volume)
-  recommendation: Dedicated cloud GPUs or co-located servers with H100/L40S
-  icon: 🟣
-- scenario: Frontier model training (70B+)
-  recommendation: Multi-node H100/B200 cluster — cloud or partnership only
-  icon: 🔴
-decision_flowchart:
-- question: Need >80GB VRAM?
-  answer: Datacenter GPU (H100, A100, MI300X)
-- question: Budget <$2K?
-  answer: RTX 4090 or RTX 5090
-- question: Mac user?
-  answer: M4 Max/Ultra with MLX
-- question: Just experimenting?
-  answer: Cloud (free tier first)
-- question: Production serving?
-  answer: Cloud serverless (Modal, Replicate)
+  recommendation: A consumer GPU with the most VRAM you can get, or a Mac with large unified memory and MLX.
+  section: model-memory
+- scenario: Fine-tuning 7B to 13B models
+  recommendation: A 24 GB consumer GPU with QLoRA, or a rented datacenter GPU for a full fine-tune.
+  section: model-memory
+- scenario: Needing more than 80 GB in one GPU
+  recommendation: A datacenter GPU (H100, A100, MI300X) or several GPUs.
+  section: by-use-case
+- scenario: Training from scratch under 70B parameters
+  recommendation: Rent an H100 or A100 cluster; do not buy.
+  section: buy-vs-rent
+- scenario: Production inference at low volume
+  recommendation: Serverless cloud (Modal, Replicate, Together), paying per token.
+- scenario: Production inference at high volume
+  recommendation: Dedicated cloud GPUs or co-located servers.
+  section: buy-vs-rent
+- scenario: Frontier training above 70B parameters
+  recommendation: A multi-node datacenter cluster, through cloud or partnership only.
 tags:
 - gpu-buying-guide
 - quick-decision-framework
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
-
-

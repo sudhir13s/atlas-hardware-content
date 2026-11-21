@@ -2,46 +2,29 @@
 id: guide/quantization
 type: guide
 slug: quantization
-schema_version: 1.1
-title: 'Quantization: Run Bigger Models on Smaller GPUs'
-order: 4
-quantization_methods:
-- method: FP16/BF16
-  bits: '16'
-  memory_savings: Baseline
-  quality: Full
-  best_for: Training, fine-tuning
-- method: INT8 (bitsandbytes)
-  bits: '8'
-  memory_savings: ~50%
-  quality: Near-lossless
-  best_for: Inference, QLoRA training
-- method: GPTQ
-  bits: '4'
-  memory_savings: ~75%
-  quality: Good (calibrated)
-  best_for: GPU inference (exl2, vLLM)
-- method: AWQ
-  bits: '4'
-  memory_savings: ~75%
-  quality: Good (activation-aware)
-  best_for: GPU inference (vLLM)
-- method: GGUF (llama.cpp)
-  bits: 2-8
-  memory_savings: 50-85%
-  quality: Varies by quant level
-  best_for: CPU/Metal/CUDA (flexible)
+schema_version: 1.2
+title: 'Quantization: run bigger models on smaller GPUs'
+page_section: background
+order: 6
+table:
+  columns: [Method, Bits, Memory savings, Quality, Best for]
+  rows:
+  - [FP16 and BF16, '16', Baseline, Full, 'Training, fine-tuning']
+  - [INT8 (bitsandbytes), '8', About 50%, Near-lossless, 'Inference, QLoRA training']
+  - [GPTQ, '4', About 75%, Good (calibrated), 'GPU inference (exl2, vLLM)']
+  - [AWQ, '4', About 75%, Good (activation-aware), GPU inference (vLLM)]
+  - [GGUF (llama.cpp), 2 to 8, 50% to 85%, Varies with the quant level, 'CPU, Metal and CUDA']
 tags:
 - gpu-buying-guide
 - quantization
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
 
 ## Overview
 
-Quantization reduces model precision from FP16 (16 bits) to INT8 (8 bits) or INT4 (4 bits), cutting memory by 2-4×. Quality loss is minimal for inference.
+Quantization lowers model precision from 16-bit to 8-bit or 4-bit, cutting memory by 2 to 4 times. For inference the quality loss is usually small.
 
 ## Takeaway
 
-Recommendation: for inference, start with Q4_K_M (GGUF) or AWQ — good quality at 4× memory savings. Use FP16 for training and fine-tuning.
+For inference, start with Q4_K_M (GGUF) or AWQ: good quality at about a quarter of the memory. Use 16-bit for training and fine-tuning.

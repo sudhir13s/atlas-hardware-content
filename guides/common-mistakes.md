@@ -2,27 +2,26 @@
 id: guide/common-mistakes
 type: guide
 slug: common-mistakes
-schema_version: 1.1
-title: Common Mistakes to Avoid
-order: 7
+schema_version: 1.2
+title: Mistakes to avoid
+page_section: background
+order: 8
 mistakes:
-- mistake: Buying based on TFLOPS alone
-  why: TFLOPS measures peak compute, but LLM inference is memory-bandwidth-bound. A GPU with lower TFLOPS but higher memory bandwidth can be faster for inference.
-- mistake: Getting 2× consumer GPUs instead of 1× larger GPU
-  why: PCIe bandwidth between consumer GPUs is 50-100× slower than NVLink. You get 2× VRAM but communication overhead kills performance for training. For inference with tensor parallelism, it can work but with significant overhead.
-- mistake: Ignoring quantization options
-  why: A $1,600 RTX 4090 running a 4-bit quantized 70B model often beats a $30,000 H100 running the same model at FP16 for single-user inference. Quantization changes the cost equation dramatically.
-- mistake: Buying a GPU for training when cloud is cheaper
-  why: If you train for <100 hours/month, cloud is almost always cheaper. You only break even on purchased hardware at high utilization (>50%).
-- mistake: Overlooking Apple Silicon for inference
-  why: M4 Max (128GB) costs $3,500 and runs 70B models at 4-bit with decent speed. Silent, low power, no driver issues. For personal inference, it's often the best value.
-- mistake: Not considering resale value
-  why: NVIDIA datacenter GPUs depreciate 30-50% per generation. A $10K A100 is worth ~$4K now that H100 exists. Consumer GPUs hold value better.
+- mistake: Buying on TFLOPS alone
+  why: TFLOPS is peak compute, but LLM inference is limited by memory bandwidth. A GPU with fewer TFLOPS and more bandwidth can be faster for inference.
+- mistake: Two consumer GPUs instead of one larger GPU
+  why: PCIe between consumer cards is an order of magnitude or more slower than NVLink. You get twice the VRAM, but communication overhead hurts training. For inference with tensor parallelism it can work, with real overhead.
+- mistake: Ignoring quantization
+  why: A 4-bit model needs a quarter of the 16-bit memory, so a smaller, cheaper card can often run it for one user.
+- mistake: Buying a GPU for training when renting is cheaper
+  why: If you train only a few hours a month, renting almost always costs less. Owning pays off only at high use; try your own hours in the buy-vs-rent table.
+- mistake: Overlooking Apple silicon for inference
+  why: Large unified memory runs big quantized models quietly, at low power and with no driver setup. For personal inference it is often the simplest option.
+- mistake: Ignoring resale value
+  why: Datacenter GPUs lose value when the next generation ships; consumer cards usually hold value better. Check recent sold listings, not list prices.
 tags:
 - gpu-buying-guide
 - common-mistakes
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
-
-

@@ -58,9 +58,11 @@ step lists) so it stays machine-parseable.
   several GPUs sold as one unit: its memory, compute units and TDP cover the whole module.
   `memory_kind: unified` marks memory shared with the CPU. `market` is agent-owned (prices change)
   and carries `observed_at` and `source`. Body: Overview.
-- **guide** — one file per advice section, `order` = position in the guide. Tables and lists are
-  frontmatter lists of string rows (see the schema for each list's keys); lead-in and closing text
-  are body sections. Wording is the guide's own and is changed only on purpose.
+- **guide** — one file per block of the Buying Guide page: `page_section` says which page section
+  shows it, `order` = position, `title` = the heading. Lists (`decisions`, `mistakes`, `points`) and
+  the one `table` are frontmatter rows of strings (see the schema); lead-in and closing text are the
+  body sections. A `further-reading` block keeps its links in `sources`. Wording is the guide's own
+  and is changed only on purpose.
 
 - **gpu-architecture** — one file per generation. Carries `vendor`, `year`, `process_node`,
   `segment`, `memory_tech`, `interconnect`, `key_innovation`, and the arrays `representative_gpus`,

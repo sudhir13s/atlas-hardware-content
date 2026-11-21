@@ -3,49 +3,42 @@
   "$id": "https://theaiatlas.dev/schema/hardware/guide.schema.json",
   "title": "guide",
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
-  "description": "One section of the GPU buying advice. Lead-in and closing text live in the body; tables and lists live here as rows of strings exactly as the page shows them.",
+  "description": "One block of the GPU Buying Guide page. `page_section` says where the page shows it. The title is the heading, the optional body sections Overview and Takeaway are the lead-in and the closing rule, and the lists and table below are rows of strings exactly as the page shows them. A `further-reading` block keeps its links in `sources`.",
   "properties": {
     "type": { "const": "guide" },
-    "order": { "type": "integer", "minimum": 1, "description": "position of the section in the buying guide" },
-    "vram_by_model_size": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["model_size", "fp16", "int8", "int4", "recommended_gpu"] }
+    "page_section": {
+      "enum": ["quick-decision", "background", "power", "further-reading"],
+      "description": "the page section that shows the block; blocks of one section follow `order`"
     },
-    "rules_of_thumb": { "type": "array", "items": { "type": "string", "minLength": 1 } },
-    "memory_technologies": {
+    "order": { "type": "integer", "minimum": 1, "description": "position of the block in the guide" },
+    "decisions": {
       "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["technology", "devices", "description"] }
-    },
-    "ecosystems": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["name", "description"] }
-    },
-    "quantization_methods": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["method", "bits", "memory_savings", "quality", "best_for"] }
-    },
-    "interconnects": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["name", "description"] }
-    },
-    "power_costs": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["gpu", "tdp", "electricity_per_year", "cooling", "psu_needed"] }
+      "description": "quick-decision rows; `section` is the id of the page section that explains the row",
+      "items": { "$ref": "#/$defs/row", "required": ["scenario", "recommendation"] }
     },
     "mistakes": {
       "type": "array",
       "items": { "$ref": "#/$defs/row", "required": ["mistake", "why"] }
     },
-    "decisions": {
+    "points": {
       "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["scenario", "recommendation", "icon"] }
+      "description": "named lines of a topic",
+      "items": { "$ref": "#/$defs/row", "required": ["name", "text"] }
     },
-    "decision_flowchart": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/row", "required": ["question", "answer"] }
+    "table": {
+      "type": "object",
+      "required": ["columns", "rows"],
+      "properties": {
+        "columns": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "rows": {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        }
+      },
+      "additionalProperties": false
     }
   },
-  "required": ["order"],
+  "required": ["page_section", "order"],
   "$defs": {
     "row": {
       "type": "object",

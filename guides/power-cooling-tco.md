@@ -2,41 +2,21 @@
 id: guide/power-cooling-tco
 type: guide
 slug: power-cooling-tco
-schema_version: 1.1
-title: Power, Cooling & Total Cost of Ownership
-order: 6
-power_costs:
-- gpu: RTX 4090
-  tdp: 450W
-  electricity_per_year: ~$475
-  cooling: Air (large case)
-  psu_needed: 850W+
-- gpu: RTX 5090
-  tdp: 575W
-  electricity_per_year: ~$605
-  cooling: Air (large case)
-  psu_needed: 1000W+
-- gpu: A100 80GB
-  tdp: 300W
-  electricity_per_year: ~$315
-  cooling: Server room
-  psu_needed: Server PSU
-- gpu: H100 SXM
-  tdp: 700W
-  electricity_per_year: ~$735
-  cooling: Liquid cooling
-  psu_needed: DGX/HGX system
+schema_version: 1.2
+title: Power and running cost
+page_section: power
+order: 2
 tags:
 - gpu-buying-guide
 - power-cooling-tco
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
 
 ## Overview
 
-The sticker price is not the total cost. Factor in power consumption, cooling requirements, and electricity costs.
+The list price is not the total cost. Power draw, cooling and electricity add to it.
 
 ## Takeaway
 
-*Assumes 24/7 usage at $0.12/kWh US average. Real costs vary by location and utilization rate.
+Rule of thumb: size a desktop power supply at roughly twice the card's rated power, and plan server-room cooling or liquid cooling for the highest-power datacenter cards.

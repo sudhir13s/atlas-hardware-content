@@ -2,18 +2,18 @@
 id: guide/<slug>
 type: guide
 slug: <slug>
-schema_version: 1.1
-title: "<Section title>"
+schema_version: 1.2
+title: "<Heading the page shows>"
+page_section: <quick-decision | background | power | further-reading>
 order: <position in the buying guide>
-# Tables and lists of this section, as rows of strings. Use only the lists the section has:
-# vram_by_model_size, rules_of_thumb, memory_technologies, ecosystems, quantization_methods,
-# interconnects, power_costs, mistakes, decisions, decision_flowchart (see schema/guide.schema.json).
-mistakes:
-  - { mistake: "<what people do wrong>", why: "<why it costs them>" }
+# Use only the lists the block has (see schema/guide.schema.json):
+# decisions (quick-decision rows), mistakes, points (named lines), table (columns and rows).
+points:
+  - { name: "<name>", text: "<what the page says about it>" }
 tags: [gpu-buying-guide, <slug>]
 updated: <YYYY-MM-DD>
 sources:
-  - { url: "<url>", title: "<title>", trust: 0.9 }
+  - { url: "<url>", title: "<title>" }
 ---
 
 ## Overview

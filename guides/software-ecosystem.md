@@ -2,21 +2,24 @@
 id: guide/software-ecosystem
 type: guide
 slug: software-ecosystem
-schema_version: 1.1
-title: 'Software Ecosystem: CUDA vs ROCm vs MLX'
-order: 3
-ecosystems:
+schema_version: 1.2
+title: 'Software ecosystem: CUDA, ROCm and MLX'
+page_section: background
+order: 5
+points:
 - name: NVIDIA CUDA
-  description: Most mature. Every ML framework, every library, every tutorial assumes CUDA. PyTorch, TensorFlow, JAX, TensorRT, vLLM, DeepSpeed — all CUDA-first. If you want zero friction, buy NVIDIA.
+  text: The most mature stack. PyTorch, TensorFlow, JAX, TensorRT, vLLM and DeepSpeed all assume CUDA first. For the least friction, choose NVIDIA.
 - name: AMD ROCm
-  description: Catching up fast. PyTorch works well. TensorFlow and JAX have gaps. vLLM and DeepSpeed support improving. MI300X is competitive on price/performance — if you can tolerate occasional compatibility issues.
+  text: Catching up fast. PyTorch works well; TensorFlow and JAX have gaps, and vLLM and DeepSpeed support keeps improving. Expect the occasional compatibility issue.
 - name: Apple MLX
-  description: 'Excellent for local inference on Mac. MLX is lightweight, fast, and Apple-optimized. But: no multi-GPU, limited training support, and many libraries are CUDA-only. Best for personal use, not production.'
+  text: 'Excellent for local inference on a Mac: light, fast and Apple-optimized. It has no multi-GPU support and limited training support, and many libraries are CUDA-only. Best for personal use.'
 tags:
 - gpu-buying-guide
 - software-ecosystem
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
 
+## Overview
 
+The software stack decides how much friction you meet before the first token.
