@@ -52,7 +52,6 @@ framework_support:
   vllm: false
   deepspeed: false
 market:
-  msrp_usd: 3199
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -75,7 +74,7 @@ tags:
 - apple
 - workstation
 - m4
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/
   title: Apple introduces M4 Pro and M4 Max (Apple Newsroom)

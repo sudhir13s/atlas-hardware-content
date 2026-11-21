@@ -55,7 +55,6 @@ framework_support:
   vllm: false
   deepspeed: false
 market:
-  msrp_usd: 3999
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -79,7 +78,7 @@ tags:
 - apple
 - workstation
 - m1
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
   title: Apple unveils M1 Ultra (Apple Newsroom)

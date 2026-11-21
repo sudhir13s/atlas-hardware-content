@@ -61,7 +61,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 30000
   cloud_hourly_usd: 3.5
   cloud_providers:
   - name: AWS
@@ -91,7 +90,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h100/
   title: NVIDIA H100 Tensor Core GPU (NVIDIA)

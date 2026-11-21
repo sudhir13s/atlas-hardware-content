@@ -16,6 +16,12 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
   maker claims that stay are attributed to the maker.
 - **Changed** the guide rules of thumb to shown arithmetic from sourced inputs, labelled as estimates.
 
+### Schema 1.3 (maker launch prices)
+
+- **Added** the optional `gpu` fields `market.msrp_source` (the maker page that states the price) and
+  `market.msrp_announced` (its date); `msrp_usd` now holds only a maker-published launch price, set
+  from the maker's page on 7 consumer records and removed from the 26 whose maker published none.
+
 ### Schema 1.2 (the Buying Guide page reads the guide records)
 
 - **Changed** the `guide` type to the blocks the page shows: required `page_section`
@@ -67,3 +73,4 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 - **1.0** — initial schema for all five hardware content types.
 - **1.1** — `gpu` and `guide` types, shared `locked`.
 - **1.2** — `guide` reshaped to the blocks of the Buying Guide page.
+- **1.3** — `gpu` `market.msrp_source` and `market.msrp_announced`.

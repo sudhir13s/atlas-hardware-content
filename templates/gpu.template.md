@@ -2,7 +2,7 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 1.1
+schema_version: 1.3
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
 segment: datacenter                # datacenter | workstation | consumer
@@ -69,7 +69,9 @@ framework_support:
   vllm: false
   deepspeed: false
 market:                            # agent-owned; unknown prices are absent
-  msrp_usd: <number>
+  msrp_usd: <number>               # optional; only the maker's own published launch price
+  msrp_source: "<maker page URL>"  # optional; the page that states msrp_usd
+  msrp_announced: "<YYYY-MM-DD>"   # optional; date of that announcement
   cloud_hourly_usd: <number>
   cloud_providers:
     - { name: "<provider>", instance_note: "<instance family>" }

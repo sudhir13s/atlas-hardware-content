@@ -56,7 +56,6 @@ framework_support:
   vllm: true
   deepspeed: false
 market:
-  msrp_usd: 1000.0
   cloud_hourly_usd: 0.25
   observed_at: '2026-11-20'
   source: Epoch AI machine learning hardware; GetDeploying GPU cloud prices
@@ -81,7 +80,7 @@ tags:
 - nvidia
 - workstation
 - ampere
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://epoch.ai/data/ml_hardware.csv
   title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.

@@ -62,7 +62,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 40000
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -88,7 +87,7 @@ tags:
 - nvidia
 - datacenter
 - blackwell
-updated: '2026-11-19'
+updated: '2026-11-21'
 sources: []
 ---
 

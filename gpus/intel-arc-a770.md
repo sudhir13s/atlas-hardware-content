@@ -2,7 +2,7 @@
 id: gpu/intel-arc-a770
 type: gpu
 slug: intel-arc-a770
-schema_version: 1.1
+schema_version: 1.3
 title: Arc A770
 vendor: Intel
 segment: consumer
@@ -54,6 +54,7 @@ framework_support:
   deepspeed: false
 market:
   msrp_usd: 349
+  msrp_source: https://game.intel.com/us/stories/intel-arc-graphics-a7series-perf-per-dollar
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -77,7 +78,7 @@ tags:
 - intel
 - consumer
 - alchemist
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html
   title: Intel Arc A770 Graphics 16GB specifications (Intel)

@@ -58,7 +58,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 10000
   cloud_hourly_usd: 1.8
   cloud_providers:
   - name: AWS
@@ -90,7 +89,7 @@ tags:
 - nvidia
 - datacenter
 - ada-lovelace
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.

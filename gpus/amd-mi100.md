@@ -58,7 +58,6 @@ framework_support:
   vllm: false
   deepspeed: true
 market:
-  msrp_usd: 5000
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -79,7 +78,7 @@ tags:
 - amd
 - datacenter
 - cdna-1
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi100.html
   title: AMD Instinct MI100 Accelerators (AMD)

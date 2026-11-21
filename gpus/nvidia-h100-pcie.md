@@ -62,7 +62,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 25000
   cloud_hourly_usd: 2.5
   cloud_providers:
   - name: Various CSPs
@@ -88,7 +87,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h100/
   title: NVIDIA H100 Tensor Core GPU (NVIDIA)

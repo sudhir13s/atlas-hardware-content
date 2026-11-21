@@ -53,7 +53,6 @@ framework_support:
   vllm: true
   deepspeed: false
 market:
-  msrp_usd: 2200
   cloud_hourly_usd: 0.752
   cloud_providers:
   - name: AWS
@@ -84,7 +83,7 @@ tags:
 - nvidia
 - datacenter
 - turing
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.

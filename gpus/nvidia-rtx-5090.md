@@ -2,7 +2,7 @@
 id: gpu/nvidia-rtx-5090
 type: gpu
 slug: nvidia-rtx-5090
-schema_version: 1.1
+schema_version: 1.3
 title: GeForce RTX 5090
 vendor: NVIDIA
 segment: consumer
@@ -59,6 +59,8 @@ framework_support:
   deepspeed: true
 market:
   msrp_usd: 1999
+  msrp_source: https://nvidianews.nvidia.com/news/nvidia-blackwell-geforce-rtx-50-series-opens-new-world-of-ai-computer-graphics
+  msrp_announced: '2025-01-06'
   cloud_hourly_usd: 0.72
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
@@ -86,7 +88,7 @@ tags:
 - nvidia
 - consumer
 - blackwell
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.

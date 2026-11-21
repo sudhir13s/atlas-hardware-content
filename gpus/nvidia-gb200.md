@@ -66,7 +66,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 70000
   cloud_hourly_usd: 10.5
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
@@ -94,7 +93,7 @@ tags:
 - nvidia
 - datacenter
 - blackwell
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://getdeploying.com/dataset/gpu-models/gpu-models.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.

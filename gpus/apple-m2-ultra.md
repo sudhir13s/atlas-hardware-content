@@ -55,7 +55,6 @@ framework_support:
   vllm: false
   deepspeed: false
 market:
-  msrp_usd: 4999
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -79,7 +78,7 @@ tags:
 - apple
 - workstation
 - m2
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.apple.com/newsroom/2023/06/apple-introduces-m2-ultra/
   title: Apple introduces M2 Ultra (Apple Newsroom)

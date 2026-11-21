@@ -62,7 +62,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 15000
   cloud_hourly_usd: 2.7156
   cloud_providers:
   - name: Microsoft Azure
@@ -91,7 +90,7 @@ tags:
 - amd
 - datacenter
 - cdna-3
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.

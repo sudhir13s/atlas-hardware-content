@@ -57,7 +57,10 @@ step lists) so it stays machine-parseable.
   publish is **absent**, never `0` or `"Unknown"`. `unit_kind: module` (with `gpus_per_module`) marks
   several GPUs sold as one unit: its memory, compute units and TDP cover the whole module.
   `memory_kind: unified` marks memory shared with the CPU. `market` is agent-owned (prices change)
-  and carries `observed_at` and `source`. Body: Overview.
+  and carries `observed_at` and `source`. `msrp_usd` is only the maker's own published launch price
+  (press release, newsroom post or product page), with that page in `msrp_source` and the
+  announcement date in `msrp_announced`; no reseller, news or analyst figure, and absent when the
+  maker published none (most datacenter parts; Apple chips, whose Macs carry the price). Body: Overview.
 - **guide** — one file per block of the Buying Guide page: `page_section` says which page section
   shows it, `order` = position, `title` = the heading. Lists (`decisions`, `mistakes`, `points`) and
   the one `table` are frontmatter rows of strings (see the schema); lead-in and closing text are the

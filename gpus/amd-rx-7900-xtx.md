@@ -2,7 +2,7 @@
 id: gpu/amd-rx-7900-xtx
 type: gpu
 slug: amd-rx-7900-xtx
-schema_version: 1.1
+schema_version: 1.3
 title: Radeon RX 7900 XTX
 vendor: AMD
 segment: consumer
@@ -56,6 +56,8 @@ framework_support:
   deepspeed: false
 market:
   msrp_usd: 999
+  msrp_source: https://www.amd.com/en/newsroom/press-releases/2022-11-3-amd-unveils-world-s-most-advanced-gaming-graphics-.html
+  msrp_announced: '2022-11-03'
   cloud_hourly_usd: 0.168
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
@@ -79,7 +81,7 @@ tags:
 - amd
 - consumer
 - rdna-3
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://epoch.ai/data/ml_hardware.csv
   title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.

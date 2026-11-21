@@ -59,7 +59,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 8000
   cloud_hourly_usd: 0.9
   cloud_providers:
   - name: AWS
@@ -88,7 +87,7 @@ tags:
 - nvidia
 - datacenter
 - volta
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf
   title: NVIDIA Tesla V100 GPU Accelerator data sheet (NVIDIA)

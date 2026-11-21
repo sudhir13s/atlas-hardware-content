@@ -59,7 +59,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 12000
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
@@ -83,7 +82,7 @@ tags:
 - amd
 - datacenter
 - cdna-2
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi200/mi250x.html
   title: AMD Instinct MI250X Accelerators (AMD)

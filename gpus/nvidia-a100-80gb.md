@@ -61,7 +61,6 @@ framework_support:
   vllm: true
   deepspeed: true
 market:
-  msrp_usd: 15000
   cloud_hourly_usd: 1.6
   cloud_providers:
   - name: AWS
@@ -91,7 +90,7 @@ tags:
 - nvidia
 - datacenter
 - ampere
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
   title: NVIDIA A100 Tensor Core GPU data sheet (NVIDIA)
