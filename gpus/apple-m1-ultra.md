@@ -2,7 +2,7 @@
 id: gpu/apple-m1-ultra
 type: gpu
 slug: apple-m1-ultra
-schema_version: 1.1
+schema_version: 1.4
 title: M1 Ultra
 vendor: Apple
 segment: workstation
@@ -10,36 +10,26 @@ series: Apple Silicon
 generation: M1
 release_date: '2022-03-08'
 signal_strength: low
-summary: Apple's first ultra-tier chip. 128GB unified memory lets it run large models locally despite lower raw compute.
+summary: Apple system on a chip that joins two M1 Max dies with UltraFusion, with up to 128GB of unified memory at 800GB/s and up to a 64-core GPU, used in Mac Studio (2022).
 aliases:
 - Apple M1 Ultra
 specifications:
   memory_gb: 128
-  memory_type: LPDDR5
   memory_kind: unified
   memory_bandwidth_gb_per_s: 800
   unit_kind: gpu
   compute_units: 64
   compute_unit_type: GPU Cores
-  tdp_watts: 60
+  compute_unit_note: 48-core or 64-core GPU
   form_factor:
-  - SoC (Mac Studio / Mac Pro)
+  - SoC (Mac Studio)
   interconnect:
     name: UltraFusion
     bandwidth_gb_per_s: 2500
-    note: 2.5 TB/s die-to-die
-  process_node:
-    nodes_nm:
-    - 5
-performance:
-  fp32_tflops: 21.2
-  fp16_tflops: 42.4
+    note: 2.5TB/s of low latency, inter-processor bandwidth
+performance: {}
 ml_capabilities:
   inference: true
-  training: false
-  fine_tuning: true
-  max_model_params_b_inference: 65
-  sparsity_support: false
   transformer_engine: false
 framework_support:
   pytorch: true
@@ -57,22 +47,11 @@ framework_support:
 market:
   observed_at: '2026-06-15'
   source: snapshot
-best_for:
-- Local LLM inference (large models fit in unified memory)
-- Mac-native ML development
-- Power-efficient AI
 key_features:
-- 128 GB unified memory (CPU + GPU shared)
-- UltraFusion die-to-die interconnect
-- Neural Engine (32 cores)
-- Extremely power efficient
-limitations:
-- Low raw compute vs NVIDIA
-- Limited training capability
-- Apple ecosystem lock-in
-notable_users:
-- Mac ML developers
-- Indie researchers
+- Up to 128GB unified memory, 800GB/s
+- 48-core or 64-core GPU
+- 32-core Neural Engine, up to 22 trillion operations per second
+- UltraFusion, 2.5TB/s inter-processor bandwidth
 image: /images/gpus/apple-m1-ultra.jpg
 tags:
 - apple
@@ -82,8 +61,12 @@ updated: '2026-11-21'
 sources:
 - url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
   title: Apple unveils M1 Ultra (Apple Newsroom)
+  trust: 0.95
+- url: https://support.apple.com/en-us/111900
+  title: Mac Studio (2022) - Tech Specs (Apple Support)
+  trust: 0.95
 ---
 
 ## Overview
 
-Apple's first ultra-tier chip. 128GB unified memory lets it run large models locally despite lower raw compute.
+Apple system on a chip that joins two M1 Max dies with UltraFusion, with up to 128GB of unified memory at 800GB/s and up to a 64-core GPU, used in Mac Studio (2022).

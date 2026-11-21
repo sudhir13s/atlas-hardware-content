@@ -32,7 +32,8 @@ step lists) so it stays machine-parseable.
 - `tags`: lowercase, hyphen-separated.
 - `updated`: ISO date (`YYYY-MM-DD`).
 - `sources[]`: `{ url, title, trust }` — `trust` in `[0,1]`. Open-source-first; cite, do not copy.
-- `schema_version`: the `major.minor` the file was authored against (currently `1.0`).
+- `schema_version`: the `major.minor` the file was authored against; the repo's current version is in
+  `meta.json` and `schema/registry.json`.
 
 ## Body sections
 
@@ -53,8 +54,11 @@ step lists) so it stays machine-parseable.
   that is a number or a unit is a field, never text: `specifications` (`memory_gb`,
   `memory_bandwidth_gb_per_s`, `tdp_watts`, `form_factor[]`, `pcie_gen`, `interconnect`
   `{name, bandwidth_gb_per_s?, note?}`, `process_node` `{nodes_nm[], note?}`), `performance`
-  (peak `*_tflops` / `int8_tops`), `ml_capabilities`, `framework_support`. A value the vendor does not
-  publish is **absent**, never `0` or `"Unknown"`. `unit_kind: module` (with `gpus_per_module`) marks
+  (peak `*_tflops` / `int8_tops`, with `basis` `dense` or `sparse` when the maker states it),
+  `ml_capabilities`, `framework_support`. A value the vendor does not publish is **absent**, never
+  `0` or `"Unknown"`; no field is kept only because it was once required. `release_date` is the
+  maker's announced availability or launch date, and the announcement date only when the maker gives
+  nothing more exact than a month or quarter. `unit_kind: module` (with `gpus_per_module`) marks
   several GPUs sold as one unit: its memory, compute units and TDP cover the whole module.
   `memory_kind: unified` marks memory shared with the CPU. `market` is agent-owned (prices change)
   and carries `observed_at` and `source`. `msrp_usd` is only the maker's own published launch price

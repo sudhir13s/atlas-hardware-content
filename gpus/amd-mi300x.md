@@ -2,7 +2,7 @@
 id: gpu/amd-mi300x
 type: gpu
 slug: amd-mi300x
-schema_version: 1.1
+schema_version: 1.4
 title: Instinct MI300X
 vendor: AMD
 segment: datacenter
@@ -10,7 +10,7 @@ series: Instinct
 generation: CDNA 3
 release_date: '2023-12-06'
 signal_strength: high
-summary: AMD's flagship AI GPU with industry-leading 192GB HBM3. The strongest NVIDIA alternative for datacenter AI.
+summary: AMD datacenter GPU on the CDNA 3 architecture with 192 GB of HBM3 at 5.3 TB/s in the OAM form factor.
 aliases:
 - AMD Instinct MI300X
 specifications:
@@ -27,23 +27,24 @@ specifications:
   interconnect:
     name: Infinity Fabric
     bandwidth_gb_per_s: 896
+    note: 7x 128 GB/s links per GPU; 128 GB/s bidirectional between each GPU
   process_node:
     nodes_nm:
     - 5
     - 6
-    note: 5nm + 6nm
+    note: TSMC 5nm | 6nm FinFET
 performance:
   fp32_tflops: 163.4
   fp16_tflops: 1307.4
   bf16_tflops: 1307.4
   fp8_tflops: 2614.9
   int8_tops: 2614.9
+  basis: dense
+  performance_basis_note: dense; with structured sparsity AMD lists twice these for FP16, BF16, FP8 and INT8
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 175
-  max_model_params_b_training: 70
   sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
@@ -69,22 +70,18 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- Large model inference (memory advantage)
-- Training with ROCm
-- Alternative to NVIDIA datacenter
+- Generative AI
+- HPC
 key_features:
-- 192 GB HBM3 (largest GPU memory)
+- 192 GB HBM3
 - 5.3 TB/s memory bandwidth
-- Chiplet design (XCD + IOD)
-- ROCm software ecosystem
-limitations:
-- ROCm ecosystem less mature than CUDA
-- Fewer framework optimizations
-- Higher TDP
+- 304 compute units
+- Eight XCDs per OAM module
+- PCIe 5.0 x16
 notable_users:
 - Microsoft Azure
 - Meta
-- Oracle Cloud
+- Oracle Cloud Infrastructure
 image: /images/gpus/amd-mi300x.png
 tags:
 - amd
@@ -92,10 +89,19 @@ tags:
 - cdna-3
 updated: '2026-11-21'
 sources:
+- url: https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html
+  title: AMD Instinct MI300X Accelerators (AMD)
+  trust: 0.95
+- url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/data-sheets/amd-instinct-mi300x-data-sheet.pdf
+  title: AMD Instinct MI300X Accelerator data sheet (AMD)
+  trust: 0.95
+- url: https://www.amd.com/en/newsroom/press-releases/2023-12-6-amd-showcases-growing-momentum-for-amd-powered-ai-.html
+  title: AMD Showcases Growing Momentum for AMD Powered AI Solutions from the Data Center to PCs (AMD)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-AMD's flagship AI GPU with industry-leading 192GB HBM3. The strongest NVIDIA alternative for datacenter AI.
+AMD datacenter GPU on the CDNA 3 architecture with 192 GB of HBM3 at 5.3 TB/s in the OAM form factor.

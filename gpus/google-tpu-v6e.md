@@ -2,48 +2,42 @@
 id: gpu/google-tpu-v6e
 type: gpu
 slug: google-tpu-v6e
-schema_version: 1.1
+schema_version: 1.4
 title: TPU v6e (Trillium)
 vendor: Google
 segment: datacenter
 series: Cloud TPU
 generation: v6e (Trillium)
-release_date: '2024-08-01'
+release_date: '2024-12-11'
 signal_strength: high
-summary: Google's latest cost-efficient TPU generation (Trillium). Nearly 5x compute improvement over v5e at similar cost.
+summary: Google Cloud TPU (Trillium) with one TensorCore and 32 GB of HBM at 1,638 GB/s per chip, scaling to 256 chips in a Pod.
 aliases:
 - Google TPU v6e (Trillium)
 specifications:
   memory_gb: 32
   memory_type: HBM
-  memory_bandwidth_gb_per_s: 1640
+  memory_bandwidth_gb_per_s: 1638
   unit_kind: gpu
-  compute_units: 2
-  compute_unit_type: Matrix Multiply Units (MXU)
-  tdp_watts: 150
-  form_factor:
-  - Custom (Google pod)
+  compute_units: 1
+  compute_unit_type: TensorCores
+  compute_unit_note: two 256x256 matrix-multiply units (MXUs) per TensorCore
   interconnect:
     name: ICI
-    note: Inter-Chip Interconnect
-  process_node:
-    nodes_nm:
-    - 5
+    bandwidth_gb_per_s: 800
+    note: bidirectional, per chip
 performance:
   bf16_tflops: 918.0
   int8_tops: 1836.0
+  performance_basis_note: peak compute per chip as Google lists it
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 15
-  max_model_params_b_training: 7
-  sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
     technology: ICI
     max_units: 256
-    note: up to 256 chips per pod
+    note: up to 256 chips per Pod
 framework_support:
   pytorch: true
   tensorflow: true
@@ -64,31 +58,37 @@ market:
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
-- Cost-effective inference at scale
-- Medium-scale training
-- Efficient serving
+- Transformer, text-to-image and CNN training, fine-tuning and serving
 key_features:
-- 4.7x improvement in peak compute per chip over v5e
-- Cost-optimized for inference
-- Improved energy efficiency
-- 5nm process node
-limitations:
-- Google Cloud only
-- 32GB per chip
-- Inference-optimized, not for frontier training
+- 32 GB HBM per chip, 1638 GBps
+- 918 TFLOPs bf16, 1836 TOPs int8 per chip
+- 800 GBps bidirectional ICI per chip
+- Third-generation SparseCore
 notable_users:
-- Google Cloud AI customers
+- Deep Genomics
+- HubX
+- Lightricks
 image: /images/gpus/google-tpu-v6e.png
 tags:
 - google
 - datacenter
 - v6e-trillium
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://docs.cloud.google.com/tpu/docs/v6e
   title: TPU v6e (Google Cloud documentation)
+  trust: 0.95
+- url: https://cloud.google.com/blog/products/compute/introducing-trillium-6th-gen-tpus
+  title: Introducing Trillium, sixth-generation TPUs (Google Cloud Blog)
+  trust: 0.95
+- url: https://cloud.google.com/blog/products/compute/trillium-sixth-generation-tpu-is-in-preview
+  title: Trillium sixth-generation TPU is in preview (Google Cloud Blog)
+  trust: 0.95
+- url: https://cloud.google.com/blog/products/compute/trillium-tpu-is-ga
+  title: Announcing the general availability of Trillium, our sixth-generation TPU (Google Cloud Blog)
+  trust: 0.95
 ---
 
 ## Overview
 
-Google's latest cost-efficient TPU generation (Trillium). Nearly 5x compute improvement over v5e at similar cost.
+Google Cloud TPU (Trillium) with one TensorCore and 32 GB of HBM at 1,638 GB/s per chip, scaling to 256 chips in a Pod.

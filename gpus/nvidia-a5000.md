@@ -2,7 +2,7 @@
 id: gpu/nvidia-a5000
 type: gpu
 slug: nvidia-a5000
-schema_version: 1.1
+schema_version: 1.4
 title: RTX A5000
 vendor: NVIDIA
 segment: workstation
@@ -10,7 +10,7 @@ series: Ampere
 generation: Ampere
 release_date: '2021-04-12'
 signal_strength: low
-summary: Mid-range professional GPU with 24GB VRAM for ML development workstations.
+summary: NVIDIA workstation GPU on the Ampere architecture with 24 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.
 aliases:
 - NVIDIA RTX A5000
 specifications:
@@ -29,26 +29,20 @@ specifications:
   interconnect:
     name: NVLink
     bandwidth_gb_per_s: 112.5
-  process_node:
-    nodes_nm:
-    - 8
+    note: bidirectional
 performance:
   fp32_tflops: 27.8
-  fp16_tflops: 55.6
-  bf16_tflops: 55.6
-  tf32_tflops: 55.6
-  int8_tops: 222.2
+  performance_basis_note: NVIDIA lists single-precision peak at GPU Boost Clock; its only Tensor figure (222.2 TFLOPS) is with sparsity and names no precision.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 13
-  max_model_params_b_training: 5
   sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
     technology: NVLink
     max_units: 2
+    note: low-profile bridges connect two RTX A5000 GPUs
 framework_support:
   pytorch: true
   tensorflow: true
@@ -67,20 +61,19 @@ market:
   observed_at: '2026-11-20'
   source: Epoch AI machine learning hardware; GetDeploying GPU cloud prices
 best_for:
-- Workstation ML development
-- Fine-tuning smaller models
-- Data science
+- Rendering
+- AI
+- Graphics
+- Compute
 key_features:
 - 24 GB GDDR6 with ECC
-- NVLink bridge support
-- Professional drivers
-- Good balance of price and VRAM
-limitations:
-- 24GB VRAM limits larger models
-- Lower compute than A6000
+- NVLink, 112.5 GB/s bidirectional, two GPUs
+- 230 W total board power
+- PCIe 4.0 x16
 notable_users:
-- Enterprise data science teams
-- Academic researchers
+- Woods Bagot
+- Polaris
+- Important Looking Pirates
 image: /images/gpus/nvidia-a5000.jpg
 tags:
 - nvidia
@@ -88,12 +81,16 @@ tags:
 - ampere
 updated: '2026-11-21'
 sources:
-- url: https://epoch.ai/data/ml_hardware.csv
-  title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/products/workstations/nvidia-rtx-a5000-datasheet.pdf
+  title: NVIDIA RTX A5000 Datasheet (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/new-nvidia-rtx-gpus-power-next-generation-of-workstations-and-pcs-for-millions-of-artists-designers-engineers-and-virtual-desktop-users
+  title: New NVIDIA RTX GPUs Power Next Generation of Workstations and PCs (NVIDIA Newsroom, April 12, 2021)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-Mid-range professional GPU with 24GB VRAM for ML development workstations.
+NVIDIA workstation GPU on the Ampere architecture with 24 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.

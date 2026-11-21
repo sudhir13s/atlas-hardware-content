@@ -2,7 +2,7 @@
 id: gpu/nvidia-h100-sxm
 type: gpu
 slug: nvidia-h100-sxm
-schema_version: 1.1
+schema_version: 1.4
 title: H100 SXM
 vendor: NVIDIA
 segment: datacenter
@@ -10,7 +10,7 @@ series: Hopper
 generation: Hopper
 release_date: '2022-09-20'
 signal_strength: high
-summary: NVIDIA's flagship AI datacenter GPU. The gold standard for LLM training and inference at scale.
+summary: NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM3 at 3.35 TB/s in the SXM5 form factor.
 aliases:
 - NVIDIA H100 SXM
 specifications:
@@ -25,28 +25,30 @@ specifications:
   form_factor:
   - SXM5
   interconnect:
-    name: NVLink 4.0
+    name: Fourth-generation NVLink
     bandwidth_gb_per_s: 900
+    note: bidirectional per GPU
   process_node:
     nodes_nm:
     - 4
+    note: TSMC 4N
 performance:
   fp32_tflops: 67.0
-  fp16_tflops: 989.0
-  bf16_tflops: 989.0
-  tf32_tflops: 495.0
-  fp8_tflops: 1979.0
-  int8_tops: 1979.0
+  fp16_tflops: 1979.0
+  bf16_tflops: 1979.0
+  tf32_tflops: 989.0
+  fp8_tflops: 3958.0
+  int8_tops: 3958.0
+  basis: sparse
+  performance_basis_note: NVIDIA lists the Tensor Core figures (TF32, BF16, FP16, FP8, INT8) with sparsity; FP32 is a non-Tensor Core figure.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 70
-  max_model_params_b_training: 30
   sparsity_support: true
   transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink + NVSwitch
+    technology: Fourth-generation NVLink and third-generation NVSwitch (HGX H100)
 framework_support:
   pytorch: true
   tensorflow: true
@@ -67,24 +69,16 @@ market:
     instance_note: p5 instances
   observed_at: '2026-06-15'
   source: snapshot
-best_for:
-- Large-scale training
-- LLM inference at scale
-- Multi-GPU training
 key_features:
+- 80 GB HBM3, 3.35 TB/s
 - Transformer Engine with FP8
-- 4th-gen NVLink (900 GB/s bidirectional)
-- HBM3 memory
-- Confidential Computing support
-limitations:
-- High power consumption (700W)
-- Requires liquid cooling (SXM)
-- Very expensive
+- Fourth-generation NVLink, 900 GB/s
+- Confidential Computing
 notable_users:
-- OpenAI
-- Google
-- Meta
+- Amazon Web Services
+- Google Cloud
 - Microsoft Azure
+- Oracle Cloud Infrastructure
 image: /images/gpus/nvidia-h100-sxm.jpg
 tags:
 - nvidia
@@ -93,11 +87,22 @@ tags:
 updated: '2026-11-21'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h100/
-  title: NVIDIA H100 Tensor Core GPU (NVIDIA)
-- url: https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing
-  title: NVIDIA Announces Hopper Architecture (NVIDIA Newsroom)
+  title: NVIDIA H100 GPU (NVIDIA)
+  trust: 0.95
+- url: https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/
+  title: NVIDIA Hopper Architecture In-Depth (NVIDIA Technical Blog)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-hopper-in-full-production
+  title: NVIDIA Hopper in Full Production (NVIDIA Newsroom)
+  trust: 0.95
+- url: https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory-h100-h200-b200/latest/components.html
+  title: NVIDIA HGX AI Factory (HGX H100, H200, B200) Components (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/data-center/technologies/hopper-architecture/
+  title: NVIDIA Hopper Architecture (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview
 
-NVIDIA's flagship AI datacenter GPU. The gold standard for LLM training and inference at scale.
+NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM3 at 3.35 TB/s in the SXM5 form factor.

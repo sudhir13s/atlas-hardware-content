@@ -9,7 +9,7 @@
     "segment": { "type": "string", "enum": ["datacenter", "workstation", "consumer"] },
     "series": { "type": "string", "description": "product family, e.g. 'Hopper', 'GeForce RTX 40', 'Instinct'" },
     "generation": { "type": "string", "description": "architecture generation as the vendor names it, e.g. 'Ada Lovelace', 'CDNA 3', 'M4'" },
-    "release_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "release_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "the maker's announced availability or launch date; the announcement date only when the maker gives nothing more exact than a month or quarter; absent when the maker states no date" },
     "signal_strength": { "type": "string", "enum": ["high", "medium", "low"], "description": "how much AI-practitioner attention the product draws" },
     "summary": { "type": "string", "minLength": 1, "description": "one-sentence description; the Overview section repeats it" },
     "aliases": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "other written names, e.g. 'H100 SXM5'" },
@@ -24,13 +24,14 @@
     "notable_users": { "$ref": "#/$defs/labels" },
     "image": { "type": "string", "description": "public path of the product photo, e.g. '/images/gpus/nvidia-h100-sxm.jpg'" }
   },
-  "required": ["vendor", "segment", "series", "generation", "release_date", "signal_strength", "specifications", "performance", "ml_capabilities", "framework_support", "market"],
+  "required": ["vendor", "segment", "series", "generation", "signal_strength", "specifications", "performance", "ml_capabilities", "framework_support", "market"],
   "$defs": {
     "labels": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "specifications": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["unit_kind", "memory_gb", "memory_type", "memory_bandwidth_gb_per_s", "compute_units", "compute_unit_type", "tdp_watts", "form_factor", "process_node"],
+      "description": "every field but unit_kind is absent when the maker does not publish it",
+      "required": ["unit_kind"],
       "properties": {
         "unit_kind": { "type": "string", "enum": ["gpu", "module"], "description": "'module' = several GPUs sold as one unit; memory, compute units and TDP then cover the whole module" },
         "gpus_per_module": { "type": "integer", "minimum": 2 },
@@ -73,7 +74,7 @@
     "performance": {
       "type": "object",
       "additionalProperties": false,
-      "description": "peak figures as the source gives them; whether they assume sparsity is not stated in the data",
+      "description": "peak figures as the maker gives them; `basis` says whether they assume sparsity",
       "properties": {
         "fp32_tflops": { "type": "number", "minimum": 0 },
         "fp16_tflops": { "type": "number", "minimum": 0 },
@@ -81,19 +82,19 @@
         "tf32_tflops": { "type": "number", "minimum": 0 },
         "fp8_tflops": { "type": "number", "minimum": 0 },
         "int8_tops": { "type": "number", "minimum": 0 },
+        "basis": { "type": "string", "enum": ["dense", "sparse"], "description": "whether the Tensor or matrix figures assume structured sparsity, when the maker states it; absent when the maker does not say" },
         "performance_basis_note": { "type": "string", "description": "what the figures assume (dense or sparse), when a source states it" }
       }
     },
     "ml_capabilities": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["inference", "training", "fine_tuning", "max_model_params_b_inference", "sparsity_support", "transformer_engine"],
+      "description": "every field but inference is absent when no maker page supports it",
+      "required": ["inference"],
       "properties": {
         "inference": { "type": "boolean" },
         "training": { "type": "boolean" },
         "fine_tuning": { "type": "boolean" },
-        "max_model_params_b_inference": { "type": "number", "minimum": 0 },
-        "max_model_params_b_training": { "type": "number", "minimum": 0 },
         "multi_gpu_scaling": { "$ref": "#/$defs/multi_gpu_scaling" },
         "sparsity_support": { "type": "boolean" },
         "transformer_engine": { "type": "boolean" }

@@ -2,7 +2,7 @@
 id: gpu/nvidia-rtx-5090
 type: gpu
 slug: nvidia-rtx-5090
-schema_version: 1.3
+schema_version: 1.4
 title: GeForce RTX 5090
 vendor: NVIDIA
 segment: consumer
@@ -10,7 +10,7 @@ series: GeForce RTX 50
 generation: Blackwell
 release_date: '2025-01-30'
 signal_strength: medium
-summary: NVIDIA's flagship consumer GPU with 32GB GDDR7. Best consumer GPU for local AI workloads.
+summary: NVIDIA consumer GPU on the Blackwell architecture with 32 GB of GDDR7 at 1792 GB/s.
 aliases:
 - NVIDIA GeForce RTX 5090
 specifications:
@@ -28,22 +28,23 @@ specifications:
   pcie_gen: 5.0
   process_node:
     nodes_nm:
-    - 5
+    - 4
+    note: TSMC 4nm 4N NVIDIA Custom Process
 performance:
   fp32_tflops: 104.8
-  fp16_tflops: 209.6
-  bf16_tflops: 209.6
-  tf32_tflops: 209.6
-  fp8_tflops: 838.0
-  int8_tops: 838.0
+  fp16_tflops: 209.5
+  bf16_tflops: 209.5
+  tf32_tflops: 104.8
+  fp8_tflops: 838
+  int8_tops: 838
+  basis: dense
+  performance_basis_note: Dense peaks at GPU Boost Clock from NVIDIA's RTX Blackwell whitepaper; fp16 and bf16 are Tensor TFLOPS with FP32 accumulate, fp8 with FP16 accumulate (FP32 accumulate 419); with sparsity NVIDIA lists twice the Tensor figures.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 20
-  max_model_params_b_training: 7
   sparsity_support: true
-  transformer_engine: false
+  transformer_engine: true
 framework_support:
   pytorch: true
   tensorflow: true
@@ -65,24 +66,17 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- Local LLM inference
-- Fine-tuning 7B models
-- ML prototyping
-- Gaming + AI
+- AI models
+- Creative workloads
+- Gaming
 key_features:
-- 32 GB GDDR7
-- Blackwell consumer architecture
-- FP8 support
+- 32 GB GDDR7, 512-bit
+- Fifth-generation Tensor Cores with FP4
+- 575 W total graphics power
+- PCIe Gen 5
 - DLSS 4 with Multi Frame Generation
 limitations:
-- Consumer drivers
 - No NVLink
-- High power draw for desktop
-- No ECC
-notable_users:
-- ML hobbyists
-- Independent researchers
-- AI enthusiasts
 image: /images/gpus/nvidia-rtx-5090.jpg
 tags:
 - nvidia
@@ -90,10 +84,19 @@ tags:
 - blackwell
 updated: '2026-11-21'
 sources:
+- url: https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf
+  title: NVIDIA RTX Blackwell GPU Architecture Whitepaper (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+  title: GeForce RTX 5090 (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-blackwell-geforce-rtx-50-series-opens-new-world-of-ai-computer-graphics
+  title: NVIDIA Blackwell GeForce RTX 50 Series Opens New World of AI Computer Graphics (NVIDIA Newsroom, January 6, 2025)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-NVIDIA's flagship consumer GPU with 32GB GDDR7. Best consumer GPU for local AI workloads.
+NVIDIA consumer GPU on the Blackwell architecture with 32 GB of GDDR7 at 1792 GB/s.

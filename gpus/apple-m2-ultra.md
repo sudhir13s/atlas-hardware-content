@@ -2,7 +2,7 @@
 id: gpu/apple-m2-ultra
 type: gpu
 slug: apple-m2-ultra
-schema_version: 1.1
+schema_version: 1.4
 title: M2 Ultra
 vendor: Apple
 segment: workstation
@@ -10,36 +10,32 @@ series: Apple Silicon
 generation: M2
 release_date: '2023-06-05'
 signal_strength: medium
-summary: 192GB unified memory makes it one of the best local platforms for running large LLMs via MLX.
+summary: Apple system on a chip built on a second-generation 5-nanometer process, with up to 192GB of unified memory at 800GB/s and a 60-core or 76-core GPU, used in Mac Studio and Mac Pro (2023).
 aliases:
 - Apple M2 Ultra
 specifications:
   memory_gb: 192
-  memory_type: LPDDR5
   memory_kind: unified
   memory_bandwidth_gb_per_s: 800
   unit_kind: gpu
   compute_units: 76
   compute_unit_type: GPU Cores
-  tdp_watts: 65
+  compute_unit_note: 60-core or 76-core GPU
   form_factor:
   - SoC (Mac Studio / Mac Pro)
   interconnect:
     name: UltraFusion
     bandwidth_gb_per_s: 2500
-    note: 2.5 TB/s die-to-die
+    note: over 2.5TB/s of low-latency interprocessor bandwidth
   process_node:
     nodes_nm:
     - 5
-performance:
-  fp32_tflops: 27.2
-  fp16_tflops: 54.4
+    note: second-generation 5-nanometer process
+performance: {}
 ml_capabilities:
   inference: true
-  training: false
+  training: true
   fine_tuning: true
-  max_model_params_b_inference: 100
-  sparsity_support: false
   transformer_engine: false
 framework_support:
   pytorch: true
@@ -58,21 +54,12 @@ market:
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
-- Running 70B+ models locally
-- Mac-native ML development
-- MLX inference
+- Machine learning training in a single system
 key_features:
-- 192 GB unified memory
-- 76 GPU cores
-- Neural Engine (32 cores)
-- MLX framework optimized
-limitations:
-- Low raw compute vs NVIDIA
-- Limited training capability
-- Premium Apple pricing
-notable_users:
-- Mac ML developers
-- Content creators with AI
+- Up to 192GB unified memory, 800GB/s
+- 60-core or 76-core GPU
+- 32-core Neural Engine, 31.6 trillion operations per second
+- UltraFusion, over 2.5TB/s interprocessor bandwidth
 image: /images/gpus/apple-m2-ultra.jpg
 tags:
 - apple
@@ -82,8 +69,12 @@ updated: '2026-11-21'
 sources:
 - url: https://www.apple.com/newsroom/2023/06/apple-introduces-m2-ultra/
   title: Apple introduces M2 Ultra (Apple Newsroom)
+  trust: 0.95
+- url: https://support.apple.com/en-us/111835
+  title: Mac Studio (2023) - Tech Specs (Apple Support)
+  trust: 0.95
 ---
 
 ## Overview
 
-192GB unified memory makes it one of the best local platforms for running large LLMs via MLX.
+Apple system on a chip built on a second-generation 5-nanometer process, with up to 192GB of unified memory at 800GB/s and a 60-core or 76-core GPU, used in Mac Studio and Mac Pro (2023).

@@ -2,7 +2,7 @@
 id: gpu/nvidia-a4000
 type: gpu
 slug: nvidia-a4000
-schema_version: 1.1
+schema_version: 1.4
 title: RTX A4000
 vendor: NVIDIA
 segment: workstation
@@ -10,7 +10,7 @@ series: Ampere
 generation: Ampere
 release_date: '2021-04-12'
 signal_strength: low
-summary: Budget-friendly professional GPU for entry-level ML development. Single-slot, low-power design.
+summary: NVIDIA workstation GPU on the Ampere architecture with 16 GB of GDDR6 with ECC at 448 GB/s in a single-slot PCIe card.
 aliases:
 - NVIDIA RTX A4000
 specifications:
@@ -26,20 +26,13 @@ specifications:
   form_factor:
   - PCIe (single-slot)
   pcie_gen: 4.0
-  process_node:
-    nodes_nm:
-    - 8
 performance:
   fp32_tflops: 19.2
-  fp16_tflops: 38.4
-  bf16_tflops: 38.4
-  tf32_tflops: 38.4
-  int8_tops: 153.4
+  performance_basis_note: NVIDIA lists single-precision peak at GPU Boost Clock; its only Tensor figure (153.4 TFLOPS) is with sparsity and names no precision.
 ml_capabilities:
   inference: true
   training: false
   fine_tuning: true
-  max_model_params_b_inference: 7
   sparsity_support: true
   transformer_engine: false
 framework_support:
@@ -60,21 +53,14 @@ market:
   observed_at: '2026-11-20'
   source: Epoch AI machine learning hardware; GetDeploying GPU cloud prices
 best_for:
-- Entry-level ML inference
-- Light fine-tuning
-- Compact workstations
+- Real-time ray tracing
+- AI-accelerated compute
+- Graphics
 key_features:
-- Single-slot design
-- 16 GB GDDR6
-- Low power (140W)
-- Affordable professional GPU
-limitations:
-- 16GB limits model size
-- No NVLink
-- Low memory bandwidth
-notable_users:
-- Small teams
-- Individual developers
+- 16 GB GDDR6 with ECC
+- Single-slot PCIe card
+- 140 W total board power
+- PCIe 4.0 x16
 image: /images/gpus/nvidia-a4000.jpg
 tags:
 - nvidia
@@ -82,12 +68,16 @@ tags:
 - ampere
 updated: '2026-11-21'
 sources:
-- url: https://epoch.ai/data/ml_hardware.csv
-  title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs21/rtx-a4000/nvidia-rtx-a4000-datasheet.pdf
+  title: NVIDIA RTX A4000 Datasheet (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/new-nvidia-rtx-gpus-power-next-generation-of-workstations-and-pcs-for-millions-of-artists-designers-engineers-and-virtual-desktop-users
+  title: New NVIDIA RTX GPUs Power Next Generation of Workstations and PCs (NVIDIA Newsroom, April 12, 2021)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-Budget-friendly professional GPU for entry-level ML development. Single-slot, low-power design.
+NVIDIA workstation GPU on the Ampere architecture with 16 GB of GDDR6 with ECC at 448 GB/s in a single-slot PCIe card.

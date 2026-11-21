@@ -2,7 +2,7 @@
 id: gpu/nvidia-rtx-4090
 type: gpu
 slug: nvidia-rtx-4090
-schema_version: 1.3
+schema_version: 1.4
 title: GeForce RTX 4090
 vendor: NVIDIA
 segment: consumer
@@ -10,7 +10,7 @@ series: GeForce RTX 40
 generation: Ada Lovelace
 release_date: '2022-10-12'
 signal_strength: medium
-summary: Previous-gen flagship consumer GPU. Excellent for local AI work with 24GB VRAM and strong FP8.
+summary: NVIDIA consumer GPU on the Ada Lovelace architecture with 24 GB of GDDR6X at 1008 GB/s.
 aliases:
 - NVIDIA GeForce RTX 4090
 specifications:
@@ -28,22 +28,23 @@ specifications:
   pcie_gen: 4.0
   process_node:
     nodes_nm:
-    - 5
+    - 4
+    note: TSMC 4N NVIDIA Custom Process
 performance:
   fp32_tflops: 82.6
   fp16_tflops: 165.2
   bf16_tflops: 165.2
-  tf32_tflops: 165.2
+  tf32_tflops: 82.6
   fp8_tflops: 660.6
   int8_tops: 660.6
+  basis: dense
+  performance_basis_note: Dense peaks at GPU Boost Clock from NVIDIA's Ada whitepaper; fp16 and bf16 are Tensor TFLOPS with FP32 accumulate, fp8 with FP16 accumulate (FP32 accumulate 330.3); with sparsity NVIDIA lists twice the Tensor figures.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 13
-  max_model_params_b_training: 5
   sparsity_support: true
-  transformer_engine: false
+  transformer_engine: true
 framework_support:
   pytorch: true
   tensorflow: true
@@ -65,24 +66,15 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- Local LLM inference
-- Fine-tuning 7B models
-- ML prototyping
-- Gaming + AI
+- Gaming
+- Content creation
 key_features:
-- 24 GB GDDR6X
-- Excellent FP8 performance
-- Best previous-gen consumer GPU for AI
+- 24 GB GDDR6X, 384-bit
+- Fourth-generation Tensor Cores with FP8
+- 450 W total graphics power
 - DLSS 3
 limitations:
-- 24GB limits model size
-- Consumer drivers
 - No NVLink
-- No ECC
-notable_users:
-- ML hobbyists
-- Independent researchers
-- Small startups
 image: /images/gpus/nvidia-rtx-4090.jpg
 tags:
 - nvidia
@@ -90,10 +82,19 @@ tags:
 - ada-lovelace
 updated: '2026-11-21'
 sources:
+- url: https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf
+  title: NVIDIA Ada GPU Architecture Whitepaper (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/
+  title: GeForce RTX 4090 (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-delivers-quantum-leap-in-performance-introduces-new-era-of-neural-rendering-with-geforce-rtx-40-series
+  title: NVIDIA Delivers Quantum Leap in Performance, Introduces New Era of Neural Rendering With GeForce RTX 40 Series (NVIDIA Newsroom, September 20, 2022)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-Previous-gen flagship consumer GPU. Excellent for local AI work with 24GB VRAM and strong FP8.
+NVIDIA consumer GPU on the Ada Lovelace architecture with 24 GB of GDDR6X at 1008 GB/s.

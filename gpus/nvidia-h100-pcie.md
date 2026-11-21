@@ -2,21 +2,21 @@
 id: gpu/nvidia-h100-pcie
 type: gpu
 slug: nvidia-h100-pcie
-schema_version: 1.1
+schema_version: 1.4
 title: H100 PCIe
 vendor: NVIDIA
 segment: datacenter
 series: Hopper
 generation: Hopper
-release_date: '2023-03-21'
+release_date: '2022-03-22'
 signal_strength: high
-summary: Air-cooled PCIe version of H100 with lower power draw, suitable for standard server racks.
+summary: NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM2e at 2,000 GB/s on a dual-slot, passively cooled PCIe Gen5 card.
 aliases:
 - NVIDIA H100 PCIe
 specifications:
   memory_gb: 80
-  memory_type: HBM3
-  memory_bandwidth_gb_per_s: 2039
+  memory_type: HBM2e
+  memory_bandwidth_gb_per_s: 2000
   unit_kind: gpu
   compute_units: 14592
   compute_unit_type: CUDA Cores
@@ -26,28 +26,22 @@ specifications:
   - PCIe
   pcie_gen: 5.0
   interconnect:
-    name: NVLink 4.0
+    name: NVLink bridge
     bandwidth_gb_per_s: 600
+    note: total, between two bridged H100 PCIe cards
   process_node:
     nodes_nm:
     - 4
-performance:
-  fp32_tflops: 51.2
-  fp16_tflops: 756.0
-  bf16_tflops: 756.0
-  tf32_tflops: 378.0
-  fp8_tflops: 1513.0
-  int8_tops: 1513.0
+    note: TSMC 4N
+performance: {}
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 70
-  max_model_params_b_training: 25
   sparsity_support: true
   transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink
+    technology: NVLink bridge (one adjacent H100 PCIe card)
 framework_support:
   pytorch: true
   tensorflow: true
@@ -68,20 +62,15 @@ market:
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
-- Inference workloads
-- Training in air-cooled environments
-- Enterprise AI
+- AI
+- Data analytics
+- High-performance computing
 key_features:
-- Transformer Engine with FP8
-- PCIe form factor for standard servers
-- HBM3 memory
-- Lower TDP than SXM variant
-limitations:
-- Lower bandwidth than SXM variant
-- Reduced NVLink bandwidth
-notable_users:
-- Enterprise customers
-- Cloud providers
+- 80 GB HBM2e, 2,000 GB/s
+- PCI Express Gen5 x16
+- 350 W maximum board power
+- Passive heat sink, dual-slot full-height full-length card
+- Multi-Instance GPU (up to seven instances)
 image: /images/gpus/nvidia-h100-pcie.jpg
 tags:
 - nvidia
@@ -89,12 +78,17 @@ tags:
 - hopper
 updated: '2026-11-21'
 sources:
-- url: https://www.nvidia.com/en-us/data-center/h100/
-  title: NVIDIA H100 Tensor Core GPU (NVIDIA)
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs22/data-center/h100/PB-11133-001_v01.pdf
   title: NVIDIA H100 PCIe GPU Product Brief (NVIDIA)
+  trust: 0.95
+- url: https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/
+  title: NVIDIA Hopper Architecture In-Depth (NVIDIA Technical Blog)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing
+  title: NVIDIA Announces Hopper Architecture, the Next Generation of Accelerated Computing (NVIDIA Newsroom, March 22, 2022)
+  trust: 0.95
 ---
 
 ## Overview
 
-Air-cooled PCIe version of H100 with lower power draw, suitable for standard server racks.
+NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM2e at 2,000 GB/s on a dual-slot, passively cooled PCIe Gen5 card.

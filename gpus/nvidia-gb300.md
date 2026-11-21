@@ -2,56 +2,41 @@
 id: gpu/nvidia-gb300
 type: gpu
 slug: nvidia-gb300
-schema_version: 1.1
+schema_version: 1.4
 title: GB300 Grace Blackwell Ultra Superchip
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell Ultra
 generation: Blackwell Ultra
-release_date: '2025-06-01'
+release_date: '2025-03-18'
 signal_strength: high
-summary: NVIDIA's top-tier superchip with Blackwell Ultra GPUs and significantly expanded memory, for the largest AI workloads.
+summary: NVIDIA superchip that joins two Blackwell Ultra GPUs, each with 288 GB of HBM3e at 8 TB/s, to one Grace CPU.
 aliases:
 - NVIDIA GB300 Grace Blackwell Ultra Superchip
 specifications:
-  memory_gb: 576
-  memory_type: HBM3e + LPDDR5X
-  memory_note: 288GB per GPU
-  memory_bandwidth_gb_per_s: 24000
+  memory_type: HBM3e
+  memory_note: 288 GB HBM3e at 8 TB/s per Blackwell Ultra GPU
   unit_kind: module
   gpus_per_module: 2
-  compute_units: 40960
-  compute_unit_type: CUDA Cores
-  compute_unit_note: 2x Blackwell Ultra GPUs
-  tensor_cores: 1280
-  tdp_watts: 2900
   form_factor:
   - Superchip Module
-  pcie_gen: 6.0
   interconnect:
-    name: NVLink 5.0 + Grace CPU coherent link
+    name: Fifth-generation NVLink
     bandwidth_gb_per_s: 1800
-    note: 1800 GB/s per GPU
+    note: bidirectional per GPU
   process_node:
     nodes_nm:
     - 4
-performance:
-  fp32_tflops: 200.0
-  fp16_tflops: 5000.0
-  bf16_tflops: 5000.0
-  tf32_tflops: 2500.0
-  fp8_tflops: 10000.0
-  int8_tops: 10000.0
+    note: TSMC 4NP (Blackwell Ultra GPUs)
+performance: {}
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 600
-  max_model_params_b_training: 250
   sparsity_support: true
   transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink 5.0 + NVSwitch
+    technology: Fifth-generation NVLink (GB300 NVL72, 72 GPUs)
 framework_support:
   pytorch: true
   tensorflow: true
@@ -69,34 +54,31 @@ market:
   cloud_hourly_usd: 18.0
   observed_at: '2026-11-20'
   source: GetDeploying GPU cloud prices
-best_for:
-- Next-generation frontier models
-- Massive-scale training clusters
-- Ultra-large context inference
 key_features:
-- Blackwell Ultra GPUs with 288GB HBM3e each
-- 576 GB total memory per superchip
-- Enhanced NVLink bandwidth
-- FP4 inference acceleration
-limitations:
-- Extreme power requirements
-- Not yet widely available
-- Highest cost tier
-notable_users:
-- AI hyperscalers
+- 1 Grace CPU and 2 Blackwell Ultra GPUs
+- 900 GB/s NVLink-C2C link between CPU and GPUs
+- 288 GB HBM3e per GPU
+- Building block of the GB300 NVL72 rack (72 GPUs, 36 Grace CPUs)
 image: /images/gpus/nvidia-gb300.jpg
 tags:
 - nvidia
 - datacenter
 - blackwell-ultra
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
-- url: https://getdeploying.com/dataset/gpu-models/gpu-models.csv
-  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://www.nvidia.com/en-us/data-center/gb300-nvl72/
+  title: NVIDIA GB300 NVL72 (NVIDIA)
+  trust: 0.95
+- url: https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/
+  title: 'Inside NVIDIA Blackwell Ultra: The Chip Powering the AI Factory Era (NVIDIA Technical Blog)'
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning
+  title: NVIDIA Blackwell Ultra AI Factory Platform Paves Way for Age of AI Reasoning (NVIDIA Newsroom)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-NVIDIA's top-tier superchip with Blackwell Ultra GPUs and significantly expanded memory, for the largest AI workloads.
+NVIDIA superchip that joins two Blackwell Ultra GPUs, each with 288 GB of HBM3e at 8 TB/s, to one Grace CPU.

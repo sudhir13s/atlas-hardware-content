@@ -2,15 +2,14 @@
 id: gpu/nvidia-a6000
 type: gpu
 slug: nvidia-a6000
-schema_version: 1.1
+schema_version: 1.4
 title: RTX A6000
 vendor: NVIDIA
 segment: workstation
 series: Ampere
 generation: Ampere
-release_date: '2020-12-03'
 signal_strength: medium
-summary: NVIDIA's professional workstation GPU with 48GB, popular for local ML development and fine-tuning.
+summary: NVIDIA workstation GPU on the Ampere architecture with 48 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.
 aliases:
 - NVIDIA RTX A6000
 specifications:
@@ -29,26 +28,29 @@ specifications:
   interconnect:
     name: NVLink
     bandwidth_gb_per_s: 112.5
+    note: bidirectional
   process_node:
     nodes_nm:
     - 8
+    note: Samsung 8 nm 8N NVIDIA Custom Process
 performance:
   fp32_tflops: 38.7
-  fp16_tflops: 77.4
-  bf16_tflops: 77.4
+  fp16_tflops: 154.8
+  bf16_tflops: 154.8
   tf32_tflops: 77.4
   int8_tops: 309.7
+  basis: dense
+  performance_basis_note: Dense peaks at GPU Boost Clock from NVIDIA's GA102 whitepaper; fp16 and bf16 are Tensor TFLOPS with FP32 accumulate; with sparsity NVIDIA lists twice the Tensor figures (the datasheet's 'Tensor performance 309.7 TFLOPS' is with sparsity).
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 25
-  max_model_params_b_training: 10
   sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
     technology: NVLink
     max_units: 2
+    note: combined graphics memory of up to 96 GB
 framework_support:
   pytorch: true
   tensorflow: true
@@ -67,23 +69,17 @@ market:
   observed_at: '2026-11-20'
   source: Epoch AI machine learning hardware; GetDeploying GPU cloud prices
 best_for:
-- Workstation ML development
-- Local fine-tuning
-- Data science
-- 3D + AI workflows
+- Rendering
+- AI
+- Graphics
+- Compute
 key_features:
-- 48 GB GDDR6
-- NVLink bridge for 2-GPU
-- ECC memory
-- Professional driver support
-limitations:
-- GDDR6 has lower bandwidth than HBM
-- Workstation pricing
-- Single slot requires good airflow
+- 48 GB GDDR6 with ECC
+- NVLink, 112.5 GB/s bidirectional, two GPUs
+- 300 W total board power
+- Dual-slot PCIe 4.0 x16 card
 notable_users:
-- ML engineers
-- Data science teams
-- VFX studios
+- South Park (studio)
 image: /images/gpus/nvidia-a6000.jpg
 tags:
 - nvidia
@@ -91,12 +87,19 @@ tags:
 - ampere
 updated: '2026-11-21'
 sources:
-- url: https://epoch.ai/data/ml_hardware.csv
-  title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/proviz-print-nvidia-rtx-a6000-datasheet-us-nvidia-1454980-r9-web%20(1).pdf
+  title: NVIDIA RTX A6000 Datasheet (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf
+  title: NVIDIA Ampere GA102 GPU Architecture Whitepaper (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-brings-millions-more-into-the-metaverse-with-expanded-omniverse-platform
+  title: NVIDIA Brings Millions More Into the Metaverse With Expanded Omniverse Platform (NVIDIA Newsroom, August 10, 2021)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-NVIDIA's professional workstation GPU with 48GB, popular for local ML development and fine-tuning.
+NVIDIA workstation GPU on the Ampere architecture with 48 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.

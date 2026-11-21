@@ -2,52 +2,43 @@
 id: gpu/nvidia-b200
 type: gpu
 slug: nvidia-b200
-schema_version: 1.1
+schema_version: 1.4
 title: B200
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell
 generation: Blackwell
-release_date: '2025-01-01'
+release_date: '2024-03-18'
 signal_strength: high
-summary: NVIDIA's highest-performance Blackwell GPU with dual-die design, targeting frontier AI workloads.
+summary: NVIDIA datacenter GPU on the Blackwell architecture with 180 GB of HBM3e at up to 8 TB/s in the SXM form factor.
 aliases:
 - NVIDIA B200
 specifications:
-  memory_gb: 192
+  memory_gb: 180
   memory_type: HBM3e
   memory_bandwidth_gb_per_s: 8000
   unit_kind: gpu
-  compute_units: 18432
-  compute_unit_type: CUDA Cores
-  tensor_cores: 576
   tdp_watts: 1000
   form_factor:
   - SXM
   pcie_gen: 5.0
   interconnect:
-    name: NVLink 5.0
+    name: Fifth-generation NVLink
     bandwidth_gb_per_s: 1800
+    note: bidirectional per GPU
   process_node:
     nodes_nm:
     - 4
-performance:
-  fp32_tflops: 90.0
-  fp16_tflops: 2250.0
-  bf16_tflops: 2250.0
-  tf32_tflops: 1125.0
-  fp8_tflops: 4500.0
-  int8_tops: 4500.0
+    note: TSMC 4NP
+performance: {}
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 175
-  max_model_params_b_training: 80
   sparsity_support: true
   transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink 5.0 + NVSwitch
+    technology: Fifth-generation NVLink and fourth-generation NVSwitch (HGX B200)
 framework_support:
   pytorch: true
   tensorflow: true
@@ -65,22 +56,11 @@ market:
   cloud_hourly_usd: 8.12
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
-best_for:
-- Frontier model training
-- Multi-trillion parameter models
-- Massive-scale inference
 key_features:
-- Dual-die Blackwell GPU
-- 4.5 PetaFLOPS FP8 performance
-- 192 GB HBM3e
-- NVLink 5.0 (1.8 TB/s)
-limitations:
-- 1000W TDP
-- Requires advanced cooling
-- Extremely expensive
-notable_users:
-- Hyperscalers
-- AI research labs
+- Two dies joined by a 10 TB/s chip-to-chip link into one GPU
+- 180 GB HBM3e, up to 8 TB/s
+- Fifth-generation NVLink, 1.8 TB/s
+- Configurable up to 1 kW per GPU
 image: /images/gpus/nvidia-b200.jpg
 tags:
 - nvidia
@@ -88,10 +68,19 @@ tags:
 - blackwell
 updated: '2026-11-21'
 sources:
+- url: https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory-h100-h200-b200/latest/components.html
+  title: NVIDIA HGX AI Factory (HGX H100, H200, B200) Components (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing
+  title: NVIDIA Blackwell Platform Arrives to Power a New Era of Computing (NVIDIA Newsroom)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/data-center/hgx/
+  title: NVIDIA HGX Platform (NVIDIA)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-NVIDIA's highest-performance Blackwell GPU with dual-die design, targeting frontier AI workloads.
+NVIDIA datacenter GPU on the Blackwell architecture with 180 GB of HBM3e at up to 8 TB/s in the SXM form factor.

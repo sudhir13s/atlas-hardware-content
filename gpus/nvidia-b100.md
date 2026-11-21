@@ -2,52 +2,27 @@
 id: gpu/nvidia-b100
 type: gpu
 slug: nvidia-b100
-schema_version: 1.1
+schema_version: 1.4
 title: B100
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell
 generation: Blackwell
-release_date: '2024-11-01'
+release_date: '2024-03-18'
 signal_strength: high
-summary: NVIDIA Blackwell GPU with massive memory and bandwidth upgrades over Hopper, targeting frontier model training.
+summary: NVIDIA named the B100 Tensor Core GPU as part of its Blackwell platform on March 18, 2024, and documents an HGX B100 8-GPU baseboard with fourth-generation NVSwitches. NVIDIA publishes no specification page for the B100.
 aliases:
 - NVIDIA B100
 specifications:
-  memory_gb: 192
-  memory_type: HBM3e
-  memory_bandwidth_gb_per_s: 8000
   unit_kind: gpu
-  compute_units: 18432
-  compute_unit_type: CUDA Cores
-  tensor_cores: 576
-  tdp_watts: 700
-  form_factor:
-  - SXM
-  pcie_gen: 5.0
-  interconnect:
-    name: NVLink 5.0
-    bandwidth_gb_per_s: 1800
-  process_node:
-    nodes_nm:
-    - 4
-performance:
-  fp32_tflops: 80.0
-  fp16_tflops: 1800.0
-  bf16_tflops: 1800.0
-  tf32_tflops: 900.0
-  fp8_tflops: 3500.0
-  int8_tops: 3500.0
+performance: {}
 ml_capabilities:
   inference: true
   training: true
-  fine_tuning: true
-  max_model_params_b_inference: 175
-  max_model_params_b_training: 70
-  sparsity_support: true
-  transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink 5.0 + NVSwitch
+    technology: NVLink with fourth-generation NVSwitch (HGX B100 8-GPU baseboard)
+    max_units: 8
+    note: two NVSwitch ASICs; nine NVLinks from each GPU, each connected to an NVSwitch
 framework_support:
   pytorch: true
   tensorflow: true
@@ -64,33 +39,24 @@ framework_support:
 market:
   observed_at: '2026-06-15'
   source: snapshot
-best_for:
-- Next-gen LLM training
-- Large-scale inference
-- Frontier model development
 key_features:
-- 2nd-gen Transformer Engine
-- 192 GB HBM3e
-- NVLink 5.0 (1.8 TB/s)
-- FP4 support for inference
-limitations:
-- Very expensive
-- High power draw
-- Limited initial availability
-notable_users:
-- OpenAI
-- Meta
-- Google
-- xAI
+- HGX B100 8-GPU baseboard with two fourth-generation NVSwitch ASICs
+- Nine NVLinks from each GPU to the NVSwitches
 image: /images/gpus/nvidia-b100.jpg
 tags:
 - nvidia
 - datacenter
 - blackwell
 updated: '2026-11-21'
-sources: []
+sources:
+- url: https://nvidianews.nvidia.com/news/aws-nvidia-generative-ai-innovation
+  title: AWS and NVIDIA Extend Collaboration to Advance Generative AI Innovation (NVIDIA Newsroom, March 18, 2024)
+  trust: 0.95
+- url: https://docs.nvidia.com/hgx-platforms/fabric-manager-user-guide/index.html
+  title: NVIDIA Fabric Manager User Guide (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview
 
-NVIDIA Blackwell GPU with massive memory and bandwidth upgrades over Hopper, targeting frontier model training.
+NVIDIA named the B100 Tensor Core GPU as part of its Blackwell platform on March 18, 2024, and documents an HGX B100 8-GPU baseboard with fourth-generation NVSwitches. NVIDIA publishes no specification page for the B100.

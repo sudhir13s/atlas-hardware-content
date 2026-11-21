@@ -2,15 +2,15 @@
 id: gpu/nvidia-l40s
 type: gpu
 slug: nvidia-l40s
-schema_version: 1.1
+schema_version: 1.4
 title: L40S
 vendor: NVIDIA
 segment: datacenter
 series: Ada Lovelace
 generation: Ada Lovelace
-release_date: '2023-10-17'
+release_date: '2023-08-08'
 signal_strength: medium
-summary: Versatile datacenter GPU bridging AI inference and graphics workloads with 48GB and FP8 support.
+summary: NVIDIA datacenter GPU on the Ada Lovelace architecture with 48 GB of GDDR6 with ECC at 864 GB/s in a 350 W dual-slot PCIe card.
 aliases:
 - NVIDIA L40S
 specifications:
@@ -28,20 +28,21 @@ specifications:
   pcie_gen: 4.0
   process_node:
     nodes_nm:
-    - 5
+    - 4
+    note: TSMC 4N
 performance:
   fp32_tflops: 91.6
-  fp16_tflops: 183.0
-  bf16_tflops: 183.0
+  fp16_tflops: 362.05
+  bf16_tflops: 362.05
   tf32_tflops: 183.0
   fp8_tflops: 733.0
   int8_tops: 733.0
+  basis: dense
+  performance_basis_note: dense; with sparsity NVIDIA lists TF32 366, FP16/BF16 733, FP8 1,466 TFLOPS and INT8 1,466 TOPS
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 25
-  max_model_params_b_training: 10
   sparsity_support: true
   transformer_engine: true
 framework_support:
@@ -67,23 +68,21 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- Inference at scale
-- Fine-tuning medium models
-- AI + video processing
-- Generative AI inference
+- Generative AI
+- LLM training and inference
+- Rendering and 3D graphics
+- Video processing
+- NVIDIA Omniverse
 key_features:
-- 48 GB GDDR6 with ECC
-- FP8 Transformer Engine
-- Combined AI + Graphics/Video
-- Ada Lovelace architecture
+- 48 GB GDDR6 with ECC, 864 GB/s
+- Fourth-generation Tensor Cores with FP8 Transformer Engine
+- 142 third-generation RT Cores
+- 3 NVENC and 3 NVDEC engines with AV1 encode and decode
 limitations:
-- GDDR6 bandwidth lower than HBM
-- No NVLink
-- Not ideal for large-scale training
+- No NVLink support
+- No MIG support
 notable_users:
-- Cloud providers
-- Media companies
-- Inference services
+- CoreWeave
 image: /images/gpus/nvidia-l40s.jpg
 tags:
 - nvidia
@@ -91,10 +90,19 @@ tags:
 - ada-lovelace
 updated: '2026-11-21'
 sources:
+- url: https://www.nvidia.com/en-us/data-center/l40s/
+  title: NVIDIA L40S GPU (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-global-data-center-system-manufacturers-to-supercharge-generative-ai-and-industrial-digitalization
+  title: NVIDIA, Global Data Center System Manufacturers to Supercharge Generative AI and Industrial Digitalization (L40S announcement, NVIDIA Newsroom)
+  trust: 0.95
+- url: https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf
+  title: NVIDIA Ada GPU Architecture whitepaper (NVIDIA)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-Versatile datacenter GPU bridging AI inference and graphics workloads with 48GB and FP8 support.
+NVIDIA datacenter GPU on the Ada Lovelace architecture with 48 GB of GDDR6 with ECC at 864 GB/s in a 350 W dual-slot PCIe card.

@@ -2,7 +2,7 @@
 id: gpu/nvidia-rtx-3090
 type: gpu
 slug: nvidia-rtx-3090
-schema_version: 1.3
+schema_version: 1.4
 title: GeForce RTX 3090
 vendor: NVIDIA
 segment: consumer
@@ -10,7 +10,7 @@ series: GeForce RTX 30
 generation: Ampere
 release_date: '2020-09-24'
 signal_strength: low
-summary: Previous-gen 24GB consumer GPU. Strong used market presence for budget AI enthusiasts.
+summary: NVIDIA consumer GPU on the Ampere architecture with 24 GB of GDDR6X at 936 GB/s, and NVLink (SLI-Ready) for two cards.
 aliases:
 - NVIDIA GeForce RTX 3090
 specifications:
@@ -28,27 +28,29 @@ specifications:
   pcie_gen: 4.0
   interconnect:
     name: NVLink
-    note: SLI
+    note: SLI-Ready
   process_node:
     nodes_nm:
     - 8
+    note: Samsung 8 nm 8N NVIDIA Custom Process
 performance:
   fp32_tflops: 35.6
-  fp16_tflops: 71.0
-  bf16_tflops: 71.0
-  tf32_tflops: 71.0
-  int8_tops: 284.0
+  fp16_tflops: 71
+  bf16_tflops: 71
+  tf32_tflops: 35.6
+  int8_tops: 284
+  basis: dense
+  performance_basis_note: Dense peaks at GPU Boost Clock for the RTX 3090 Founders Edition from NVIDIA's GA102 whitepaper; fp16 and bf16 are Tensor TFLOPS with FP32 accumulate (FP16 accumulate 142); with sparsity NVIDIA lists twice the Tensor figures.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 13
-  max_model_params_b_training: 3
   sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
     technology: NVLink
     max_units: 2
+    note: two RTX 3090 GPUs connect for SLI; 3-way and 4-way SLI not supported
 framework_support:
   pytorch: true
   tensorflow: true
@@ -70,21 +72,16 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- Budget local AI
-- Used market value
-- Hobbyist training
+- 8K gaming
+- AI
+- Content creation
 key_features:
-- 24 GB GDDR6X
-- NVLink for 2-GPU SLI
-- Good used market availability
-- Ampere architecture
+- 24 GB GDDR6X, 384-bit
+- NVLink (SLI-Ready) for two GPUs
+- 350 W graphics card power
+- PCIe Gen 4
 limitations:
-- No FP8
-- Older generation
-- High power draw for performance
-notable_users:
-- ML hobbyists
-- Used GPU market
+- No FP8 Tensor Core support
 image: /images/gpus/nvidia-rtx-3090.jpg
 tags:
 - nvidia
@@ -92,10 +89,19 @@ tags:
 - ampere
 updated: '2026-11-21'
 sources:
+- url: https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf
+  title: NVIDIA Ampere GA102 GPU Architecture Whitepaper (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/
+  title: GeForce RTX 3090 Family (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-delivers-greatest-ever-generational-leap-in-performance-with-geforce-rtx-30-series-gpus
+  title: NVIDIA Delivers Greatest-Ever Generational Leap in Performance with GeForce RTX 30 Series GPUs (NVIDIA Newsroom, September 1, 2020)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
 ## Overview
 
-Previous-gen 24GB consumer GPU. Strong used market presence for budget AI enthusiasts.
+NVIDIA consumer GPU on the Ampere architecture with 24 GB of GDDR6X at 936 GB/s, and NVLink (SLI-Ready) for two cards.

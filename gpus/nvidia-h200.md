@@ -2,15 +2,15 @@
 id: gpu/nvidia-h200
 type: gpu
 slug: nvidia-h200
-schema_version: 1.1
+schema_version: 1.4
 title: H200
 vendor: NVIDIA
 segment: datacenter
 series: Hopper
 generation: Hopper
-release_date: '2024-04-01'
+release_date: '2023-11-13'
 signal_strength: high
-summary: Memory-upgraded H100 with 141GB HBM3e. Ideal for LLM inference where memory capacity is the bottleneck.
+summary: NVIDIA datacenter GPU on the Hopper architecture with 141 GB of HBM3e at 4.8 TB/s in the SXM form factor.
 aliases:
 - NVIDIA H200
 specifications:
@@ -18,36 +18,34 @@ specifications:
   memory_type: HBM3e
   memory_bandwidth_gb_per_s: 4800
   unit_kind: gpu
-  compute_units: 16896
-  compute_unit_type: CUDA Cores
-  tensor_cores: 528
   tdp_watts: 700
   form_factor:
-  - SXM5
+  - SXM
   pcie_gen: 5.0
   interconnect:
-    name: NVLink 4.0
+    name: Fourth-generation NVLink
     bandwidth_gb_per_s: 900
   process_node:
     nodes_nm:
     - 4
+    note: TSMC 4N
 performance:
   fp32_tflops: 67.0
-  fp16_tflops: 989.0
-  bf16_tflops: 989.0
-  tf32_tflops: 495.0
-  fp8_tflops: 1979.0
-  int8_tops: 1979.0
+  fp16_tflops: 1979.0
+  bf16_tflops: 1979.0
+  tf32_tflops: 989.0
+  fp8_tflops: 3958.0
+  int8_tops: 3958.0
+  basis: sparse
+  performance_basis_note: NVIDIA lists the Tensor Core figures (TF32, BF16, FP16, FP8, INT8) with sparsity; FP32 is a non-Tensor Core figure. NVIDIA marks the H200 specifications preliminary.
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 140
-  max_model_params_b_training: 50
   sparsity_support: true
   transformer_engine: true
   multi_gpu_scaling:
-    technology: NVLink + NVSwitch
+    technology: Fourth-generation NVLink and third-generation NVSwitch (HGX H200)
 framework_support:
   pytorch: true
   tensorflow: true
@@ -70,23 +68,14 @@ market:
   observed_at: '2026-11-20'
   source: snapshot; GetDeploying GPU cloud prices
 best_for:
-- LLM inference with long contexts
-- Large model training
-- Serving 70B+ models on single GPU
+- Generative AI and large language models
+- High-performance computing
 key_features:
-- 141 GB HBM3e (76% more than H100)
-- 4.8 TB/s memory bandwidth
-- Same compute as H100 SXM
-- Ideal for large-context LLM inference
-limitations:
-- High power consumption (700W)
-- Requires liquid cooling
-- Premium pricing
-notable_users:
-- OpenAI
-- Google Cloud
-- Meta
-- Microsoft Azure
+- 141 GB HBM3e, 4.8 TB/s
+- NVLink 900 GB/s, PCIe Gen5 128 GB/s
+- Up to 700 W TDP (configurable)
+- Up to 7 MIG instances at 18 GB each
+- Confidential Computing
 image: /images/gpus/nvidia-h200.jpg
 tags:
 - nvidia
@@ -94,12 +83,22 @@ tags:
 - hopper
 updated: '2026-11-21'
 sources:
-- url: https://getdeploying.com/dataset/gpu-models/gpu-models.csv
-  title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://www.nvidia.com/en-us/data-center/h200/
+  title: NVIDIA H200 GPU (NVIDIA)
+  trust: 0.95
+- url: https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory-h100-h200-b200/latest/components.html
+  title: NVIDIA HGX AI Factory (HGX H100, H200, B200) Components (NVIDIA)
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/data-center/technologies/hopper-architecture/
+  title: NVIDIA Hopper Architecture (NVIDIA)
+  trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://nvidianews.nvidia.com/news/nvidia-supercharges-hopper-the-worlds-leading-ai-computing-platform
+  title: NVIDIA Supercharges Hopper, the World's Leading AI Computing Platform (NVIDIA Newsroom, November 13, 2023)
+  trust: 0.95
 ---
 
 ## Overview
 
-Memory-upgraded H100 with 141GB HBM3e. Ideal for LLM inference where memory capacity is the bottleneck.
+NVIDIA datacenter GPU on the Hopper architecture with 141 GB of HBM3e at 4.8 TB/s in the SXM form factor.

@@ -2,7 +2,7 @@
 id: gpu/google-tpu-v5e
 type: gpu
 slug: google-tpu-v5e
-schema_version: 1.1
+schema_version: 1.4
 title: TPU v5e
 vendor: Google
 segment: datacenter
@@ -10,41 +10,34 @@ series: Cloud TPU
 generation: v5e
 release_date: '2023-08-29'
 signal_strength: medium
-summary: Cost-optimized TPU for inference and medium-scale training. Half the cost per chip of TPU v4.
+summary: Google Cloud TPU with one TensorCore and 16 GiB of HBM at 819 GB/s per chip, offered for both training and inference.
 aliases:
 - Google TPU v5e
 specifications:
   memory_gb: 16
-  memory_type: HBM2e
+  memory_type: HBM
   memory_bandwidth_gb_per_s: 819
   unit_kind: gpu
   compute_units: 1
-  compute_unit_type: Matrix Multiply Units (MXU)
-  tensor_cores: 1
-  tdp_watts: 100
-  form_factor:
-  - Custom (Google pod)
+  compute_unit_type: TensorCores
+  compute_unit_note: four matrix-multiply units (MXUs) per TensorCore
   interconnect:
     name: ICI
-    note: Inter-Chip Interconnect
-  process_node:
-    nodes_nm:
-    - 7
+    bandwidth_gb_per_s: 400
+    note: bidirectional, per chip
 performance:
   bf16_tflops: 197.0
-  int8_tops: 394.0
+  int8_tops: 393.0
+  performance_basis_note: peak compute per chip as Google lists it
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 7
-  max_model_params_b_training: 3
-  sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
     technology: ICI
     max_units: 256
-    note: up to 256 chips per pod
+    note: up to 256 chips per Pod
 framework_support:
   pytorch: true
   tensorflow: true
@@ -65,34 +58,34 @@ market:
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
-- Cost-effective inference
-- Medium-scale training
-- Fine-tuning on Google Cloud
+- Training and inference (serving)
 key_features:
-- Cost-optimized TPU
-- Half the price per chip of v4
-- Up to 256 chips per pod
-- Best for inference and medium training
-limitations:
-- 16GB per chip is limiting
-- Google Cloud only
-- Less compute than v5p
+- 16 GiB HBM per chip, 819 GBps
+- 197 TFLOPs bf16, 393 TOPs int8 per chip
+- 400 GBps bidirectional ICI per chip
+- Up to 256 chips per Pod
 notable_users:
-- Google Cloud customers
-- Startups on GCP
+- Anthropic
+- Hugging Face
+- AssemblyAI
 image: /images/gpus/google-tpu-v5e.png
 tags:
 - google
 - datacenter
 - v5e
-updated: '2026-11-20'
+updated: '2026-11-21'
 sources:
 - url: https://docs.cloud.google.com/tpu/docs/v5e
   title: TPU v5e (Google Cloud documentation)
-- url: https://epoch.ai/data/ml_hardware.csv
-  title: Epoch AI, "Data on Machine Learning Hardware" (epoch.ai/data/machine-learning-hardware), CC BY; credit Epoch AI as the source.
+  trust: 0.95
+- url: https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next-23
+  title: Welcome to Google Cloud Next '23 (Google Cloud Blog)
+  trust: 0.95
+- url: https://cloud.google.com/blog/products/compute/announcing-cloud-tpu-v5e-in-ga
+  title: Announcing Cloud TPU v5e GA for cost-efficient AI model training and inference (Google Cloud Blog)
+  trust: 0.95
 ---
 
 ## Overview
 
-Cost-optimized TPU for inference and medium-scale training. Half the cost per chip of TPU v4.
+Google Cloud TPU with one TensorCore and 16 GiB of HBM at 819 GB/s per chip, offered for both training and inference.

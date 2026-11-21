@@ -15,6 +15,24 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 - **Removed** superlatives, unattributed "first" claims and folklore name-decoder meanings;
   maker claims that stay are attributed to the maker.
 - **Changed** the guide rules of thumb to shown arithmetic from sourced inputs, labelled as estimates.
+- **Changed** all `gpu` records against maker pages, datasheets and whitepapers: corrected
+  specifications and dates, removed performance figures the maker does not publish, added
+  `performance_basis_note`, and cut summaries, features, limitations, best-for and notable-user lists
+  to statements a cited maker page supports.
+- **Removed** the `gpu` record `nvidia-a10g`: no maker page states its specifications.
+- **Changed** `nvidia-b100` to only what NVIDIA has stated (named on March 18, 2024; HGX B100 8-GPU
+  baseboard); its specification values were removed because NVIDIA publishes no specification page.
+
+### Schema 1.4 (only maker-published GPU values)
+
+- **Removed** the `gpu` fields `ml_capabilities.max_model_params_b_inference` and
+  `max_model_params_b_training`: hand-entered estimates with no stated arithmetic.
+- **Changed** to optional, absent when no maker page states them: `release_date`; every
+  `specifications` field except `unit_kind`; every `ml_capabilities` field except `inference`.
+  Unverified values that were kept only because the schema required them were removed.
+- **Added** the optional `performance.basis` (`dense` | `sparse`), set where the maker states it.
+- **Changed** `release_date` to mean the maker's announced availability or launch date, with the
+  announcement date only when the maker gives nothing more exact than a month or quarter.
 
 ### Schema 1.3 (maker launch prices)
 
@@ -74,3 +92,4 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 - **1.1** — `gpu` and `guide` types, shared `locked`.
 - **1.2** — `guide` reshaped to the blocks of the Buying Guide page.
 - **1.3** — `gpu` `market.msrp_source` and `market.msrp_announced`.
+- **1.4** — `gpu` without `max_model_params_*`; unpublished values optional; `performance.basis`.

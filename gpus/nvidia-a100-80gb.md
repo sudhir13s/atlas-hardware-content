@@ -2,15 +2,15 @@
 id: gpu/nvidia-a100-80gb
 type: gpu
 slug: nvidia-a100-80gb
-schema_version: 1.1
+schema_version: 1.4
 title: A100 80GB
 vendor: NVIDIA
 segment: datacenter
 series: Ampere
 generation: Ampere
-release_date: '2021-06-28'
+release_date: '2020-11-16'
 signal_strength: medium
-summary: The workhorse of the AI revolution. Most widely deployed datacenter GPU for ML training and inference.
+summary: NVIDIA datacenter GPU on the Ampere architecture with 80 GB of HBM2e at 2,039 GB/s in the SXM form factor.
 aliases:
 - NVIDIA A100 80GB
 specifications:
@@ -26,27 +26,30 @@ specifications:
   - SXM4
   pcie_gen: 4.0
   interconnect:
-    name: NVLink 3.0
+    name: Third-generation NVLink
     bandwidth_gb_per_s: 600
   process_node:
     nodes_nm:
     - 7
+    note: TSMC 7nm N7
 performance:
   fp32_tflops: 19.5
   fp16_tflops: 312.0
   bf16_tflops: 312.0
   tf32_tflops: 156.0
   int8_tops: 624.0
+  basis: dense
+  performance_basis_note: dense; with sparsity NVIDIA lists twice these Tensor Core figures (TF32 312, FP16/BF16 624 TFLOPS, INT8 1,248 TOPS)
 ml_capabilities:
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: 40
-  max_model_params_b_training: 15
   sparsity_support: true
   transformer_engine: false
   multi_gpu_scaling:
-    technology: NVLink + NVSwitch
+    technology: NVLink and NVSwitch
+    max_units: 16
+    note: up to 16 A100 GPUs at up to 600 GB/s
 framework_support:
   pytorch: true
   tensorflow: true
@@ -68,23 +71,16 @@ market:
   observed_at: '2026-06-15'
   source: snapshot
 best_for:
-- Training medium models
-- Multi-tenant inference (MIG)
-- Fine-tuning LLMs
+- AI training
+- AI inference
+- Data analytics
+- High-performance computing (HPC)
 key_features:
-- 80 GB HBM2e
-- Multi-Instance GPU (MIG) for 7 GPU partitions
-- 3rd-gen NVLink
-- Structural sparsity (2:4)
-limitations:
-- No FP8 support
-- Lower bandwidth than H100
-- Previous generation
-notable_users:
-- Almost every AI lab (legacy fleet)
-- AWS
-- GCP
-- Azure
+- 80 GB HBM2e, 2,039 GB/s
+- Multi-Instance GPU (MIG), up to 7 instances of 10 GB
+- Third-generation Tensor Cores
+- Structural sparsity
+- Third-generation NVLink, 600 GB/s
 image: /images/gpus/nvidia-a100-80gb.jpg
 tags:
 - nvidia
@@ -94,10 +90,18 @@ updated: '2026-11-21'
 sources:
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
   title: NVIDIA A100 Tensor Core GPU data sheet (NVIDIA)
+  trust: 0.95
 - url: https://www.nvidia.com/en-us/data-center/a100/
   title: NVIDIA A100 Tensor Core GPU (NVIDIA)
+  trust: 0.95
+- url: https://nvidianews.nvidia.com/news/nvidia-doubles-down-announces-a100-80gb-gpu-supercharging-worlds-most-powerful-gpu-for-ai-supercomputing
+  title: NVIDIA Doubles Down - Announces A100 80GB GPU (NVIDIA Newsroom)
+  trust: 0.95
+- url: https://developer.nvidia.com/blog/nvidia-ampere-architecture-in-depth/
+  title: NVIDIA Ampere Architecture In-Depth (NVIDIA Technical Blog)
+  trust: 0.95
 ---
 
 ## Overview
 
-The workhorse of the AI revolution. Most widely deployed datacenter GPU for ML training and inference.
+NVIDIA datacenter GPU on the Ampere architecture with 80 GB of HBM2e at 2,039 GB/s in the SXM form factor.

@@ -2,7 +2,7 @@
 id: gpu/intel-arc-a770
 type: gpu
 slug: intel-arc-a770
-schema_version: 1.3
+schema_version: 1.4
 title: Arc A770
 vendor: Intel
 segment: consumer
@@ -10,7 +10,7 @@ series: Arc
 generation: Alchemist
 release_date: '2022-10-12'
 signal_strength: low
-summary: Intel's consumer GPU with 16GB VRAM. Cheap entry point but limited ML framework support.
+summary: Intel Arc A-series desktop graphics card on the Xe-HPG microarchitecture with 16 GB of GDDR6 at 560 GB/s and 32 Xe-cores.
 aliases:
 - Intel Arc A770
 specifications:
@@ -19,7 +19,7 @@ specifications:
   memory_bandwidth_gb_per_s: 560
   unit_kind: gpu
   compute_units: 32
-  compute_unit_type: Xe Cores
+  compute_unit_type: Xe-cores
   rt_cores: 32
   tdp_watts: 225
   form_factor:
@@ -28,16 +28,14 @@ specifications:
   process_node:
     nodes_nm:
     - 6
+    note: TSMC N6
 performance:
-  fp32_tflops: 19.7
-  fp16_tflops: 39.3
-  int8_tops: 157.0
+  int8_tops: 262.0
+  performance_basis_note: Intel lists GPU peak TOPS (INT8); Intel publishes no TFLOPS figures for this card.
 ml_capabilities:
   inference: true
   training: false
   fine_tuning: false
-  max_model_params_b_inference: 7
-  sparsity_support: false
   transformer_engine: false
 framework_support:
   pytorch: true
@@ -57,22 +55,12 @@ market:
   msrp_source: https://game.intel.com/us/stories/intel-arc-graphics-a7series-perf-per-dollar
   observed_at: '2026-06-15'
   source: snapshot
-best_for:
-- Budget AI experimentation
-- oneAPI development
-- Small model inference
 key_features:
-- 16 GB GDDR6
-- XMX (Xe Matrix Extensions) for AI
-- Affordable entry point
-- oneAPI support
-limitations:
-- Very limited ML ecosystem
-- Driver maturity issues
-- Low performance for serious ML
-notable_users:
-- Hobbyists
-- oneAPI developers
+- 16 GB GDDR6, 560 GB/s
+- 32 Xe-cores with 512 Intel XMX engines
+- 32 ray tracing units
+- 225 W total board power
+- Intel Extension for PyTorch (IPEX), oneAPI and OpenVINO support
 image: /images/gpus/intel-arc-a770.jpg
 tags:
 - intel
@@ -81,9 +69,13 @@ tags:
 updated: '2026-11-21'
 sources:
 - url: https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html
-  title: Intel Arc A770 Graphics 16GB specifications (Intel)
+  title: Intel Arc A770 Graphics (16GB) specifications (Intel)
+  trust: 0.95
+- url: https://game.intel.com/us/stories/intel-arc-graphics-a7series-perf-per-dollar
+  title: 'Bringing Balance Back: Intel Arc A750 & A770 Performance per Dollar Details, available Oct 12th (Intel)'
+  trust: 0.95
 ---
 
 ## Overview
 
-Intel's consumer GPU with 16GB VRAM. Cheap entry point but limited ML framework support.
+Intel Arc A-series desktop graphics card on the Xe-HPG microarchitecture with 16 GB of GDDR6 at 560 GB/s and 32 Xe-cores.

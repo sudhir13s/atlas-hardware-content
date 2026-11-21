@@ -2,17 +2,17 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 1.3
+schema_version: 1.4
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
 segment: datacenter                # datacenter | workstation | consumer
 series: "<product family>"
 generation: "<architecture generation>"
-release_date: "<YYYY-MM-DD>"
+release_date: "<YYYY-MM-DD>"       # optional; maker's availability or launch date (see CONVENTIONS.md)
 signal_strength: high              # high | medium | low
 summary: "<one sentence>"          # optional; the Overview section repeats it
 aliases: ["<other written name>"]  # optional
-specifications:
+specifications:                    # every field but unit_kind is absent when the maker does not publish it
   unit_kind: gpu                   # gpu | module (module: several GPUs sold as one unit)
   gpus_per_module: 2               # only when unit_kind is module
   memory_gb: <number>
@@ -42,13 +42,12 @@ performance:                       # peak figures as the vendor gives them; abse
   tf32_tflops: <number>
   fp8_tflops: <number>
   int8_tops: <number>
-  performance_basis_note: "<dense or sparse, when stated>"   # optional
-ml_capabilities:
+  basis: dense                     # optional; dense | sparse, when the maker states it
+  performance_basis_note: "<what the maker says about the basis>"   # optional
+ml_capabilities:                   # every field but inference is absent when no maker page supports it
   inference: true
   training: true
   fine_tuning: true
-  max_model_params_b_inference: <number>
-  max_model_params_b_training: <number>   # optional
   multi_gpu_scaling:                      # optional
     technology: "<e.g. NVLink + NVSwitch>"
     max_units: <integer>                  # optional
