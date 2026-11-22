@@ -2,8 +2,8 @@
   "name": "atlas-hardware-content",
   "domain": "hardware",
   "title": "AI Hardware — reference knowledge",
-  "schema_version": "1.4",
-  "description": "Portable, reusable reference knowledge for AI accelerators: a catalog of GPUs and accelerators with structured specifications, GPU architecture generations (NVIDIA, AMD, Intel) with lineage, a release/milestone timeline, a plain-English glossary of hardware terms, vendor upgrade paths, product-name decoders, and the GPU buying guide. Content only — Markdown + JSON Schema + docs, zero code.",
+  "schema_version": "2.0",
+  "description": "Portable, reusable reference knowledge for AI accelerators: a catalog of GPUs and accelerators with structured specifications, GPU architecture generations (NVIDIA, AMD, Intel) with lineage, a release/milestone timeline, a plain-English glossary of hardware terms, vendor upgrade paths, product-name decoders, the GPU buying guide, and which compute platforms each machine-learning framework officially supports. Content only — Markdown + JSON Schema + docs, zero code.",
   "entrypoints": {
     "human": "README.md",
     "agent": "AGENTS.md",
@@ -17,7 +17,8 @@
     "upgrade-path",
     "name-decoder",
     "gpu",
-    "guide"
+    "guide",
+    "framework-support"
   ],
   "license": "CC-BY-4.0",
   "standard": "https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/content-repo-standard.md"

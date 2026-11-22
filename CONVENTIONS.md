@@ -19,6 +19,7 @@ this file is the `hardware`-domain instance.
   - `predecessor`, `successor` → `gpu-architecture/<slug>`
   - `architecture_id` (timeline events), `steps[].architecture_id` (upgrade paths) → `gpu-architecture/<slug>`
   - `related` (glossary) → `glossary-term/<slug>`
+  - `platforms[].gpus` (framework support) → `gpu/<slug>`
 - `gpu_id` and `steps[].gpu_id` are **free-form product strings** (e.g. `"H100 SXM"`), not IDs.
 - Every referenced ID must resolve to an existing file. Dangling references fail validation.
 
@@ -55,7 +56,9 @@ step lists) so it stays machine-parseable.
   `memory_bandwidth_gb_per_s`, `tdp_watts`, `form_factor[]`, `pcie_gen`, `interconnect`
   `{name, bandwidth_gb_per_s?, note?}`, `process_node` `{nodes_nm[], note?}`), `performance`
   (peak `*_tflops` / `int8_tops`, with `basis` `dense` or `sparse` when the maker states it),
-  `ml_capabilities`, `framework_support`. A value the vendor does not publish is **absent**, never
+  `ml_capabilities`. `compute_platform` names the acceleration platform frameworks target (`cuda`,
+  `rocm`, `apple-silicon`, `intel-gpu`, `intel-gaudi`, `google-tpu`); `compute_capability` is
+  NVIDIA's own figure (CUDA GPUs page or the architecture whitepaper). A value the vendor does not publish is **absent**, never
   `0` or `"Unknown"`; no field is kept only because it was once required. `release_date` is the
   maker's announced availability or launch date, and the announcement date only when the maker gives
   nothing more exact than a month or quarter. `unit_kind: module` (with `gpus_per_module`) marks
@@ -70,6 +73,13 @@ step lists) so it stays machine-parseable.
   the one `table` are frontmatter rows of strings (see the schema); lead-in and closing text are the
   body sections. A `further-reading` block keeps its links in `sources`. Wording is the guide's own
   and is changed only on purpose.
+- **framework-support** — one file per framework (slug = the framework, e.g. `onnx-runtime`), no
+  body. `platforms[]` lists each compute platform the framework's own page (or the platform maker's)
+  states: `supported` (false only when the page says so), `source` (that page, also in `sources`),
+  and when the page narrows it, `min_compute_capability` (cuda) or `gpus[]` (the listed products, as
+  `gpu/<slug>` IDs) and a short `note`. `checked` is the day the pages were read. A GPU's support is
+  derived from its `compute_platform`; a platform, product or compute capability the page does not
+  name is unknown, never unsupported.
 
 - **gpu-architecture** — one file per generation. Carries `vendor`, `year`, `process_node`,
   `segment`, `memory_tech`, `interconnect`, `key_innovation`, and the arrays `representative_gpus`,

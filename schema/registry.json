@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "2.0",
   "shared": "schema/_shared.schema.json",
   "types": {
     "gpu-architecture": {
@@ -45,6 +45,12 @@
       "id_prefix": "guide/",
       "sections": [],
       "optional_sections": ["Overview", "Takeaway"]
+    },
+    "framework-support": {
+      "folder": "framework-support",
+      "schema": "schema/framework-support.schema.json",
+      "id_prefix": "framework-support/",
+      "sections": []
     }
   }
 }

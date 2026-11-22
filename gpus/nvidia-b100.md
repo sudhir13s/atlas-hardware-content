@@ -2,12 +2,13 @@
 id: gpu/nvidia-b100
 type: gpu
 slug: nvidia-b100
-schema_version: 1.4
+schema_version: 2.0
 title: B100
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell
 generation: Blackwell
+compute_platform: cuda
 release_date: '2024-03-18'
 signal_strength: high
 summary: NVIDIA named the B100 Tensor Core GPU as part of its Blackwell platform on March 18, 2024, and documents an HGX B100 8-GPU baseboard with fourth-generation NVSwitches. NVIDIA publishes no specification page for the B100.
@@ -23,19 +24,6 @@ ml_capabilities:
     technology: NVLink with fourth-generation NVSwitch (HGX B100 8-GPU baseboard)
     max_units: 8
     note: two NVSwitch ASICs; nine NVLinks from each GPU, each connected to an NVSwitch
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -47,7 +35,7 @@ tags:
 - nvidia
 - datacenter
 - blackwell
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://nvidianews.nvidia.com/news/aws-nvidia-generative-ai-innovation
   title: AWS and NVIDIA Extend Collaboration to Advance Generative AI Innovation (NVIDIA Newsroom, March 18, 2024)

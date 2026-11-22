@@ -2,12 +2,13 @@
 id: gpu/google-tpu-v6e
 type: gpu
 slug: google-tpu-v6e
-schema_version: 1.4
+schema_version: 2.0
 title: TPU v6e (Trillium)
 vendor: Google
 segment: datacenter
 series: Cloud TPU
 generation: v6e (Trillium)
+compute_platform: google-tpu
 release_date: '2024-12-11'
 signal_strength: high
 summary: Google Cloud TPU (Trillium) with one TensorCore and 32 GB of HBM at 1,638 GB/s per chip, scaling to 256 chips in a Pod.
@@ -38,19 +39,6 @@ ml_capabilities:
     technology: ICI
     max_units: 256
     note: up to 256 chips per Pod
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: false
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   cloud_hourly_usd: 1.5
   cloud_providers:
@@ -73,7 +61,7 @@ tags:
 - google
 - datacenter
 - v6e-trillium
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://docs.cloud.google.com/tpu/docs/v6e
   title: TPU v6e (Google Cloud documentation)

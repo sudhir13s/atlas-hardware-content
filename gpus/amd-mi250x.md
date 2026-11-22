@@ -2,12 +2,13 @@
 id: gpu/amd-mi250x
 type: gpu
 slug: amd-mi250x
-schema_version: 1.4
+schema_version: 2.0
 title: Instinct MI250X
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 2
+compute_platform: rocm
 release_date: '2021-11-08'
 signal_strength: medium
 summary: AMD datacenter GPU on the CDNA 2 architecture with two graphics compute dies and 128 GB of HBM2e at 3.2 TB/s in the OAM form factor.
@@ -47,19 +48,6 @@ ml_capabilities:
   transformer_engine: false
   multi_gpu_scaling:
     technology: Infinity Fabric
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: true
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -80,7 +68,7 @@ tags:
 - amd
 - datacenter
 - cdna-2
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi200/mi250x.html
   title: AMD Instinct MI250X Accelerators (AMD)

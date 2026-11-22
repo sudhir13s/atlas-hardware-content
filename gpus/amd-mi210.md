@@ -2,12 +2,13 @@
 id: gpu/amd-mi210
 type: gpu
 slug: amd-mi210
-schema_version: 1.4
+schema_version: 2.0
 title: Instinct MI210
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 2
+compute_platform: rocm
 release_date: '2022-03-22'
 signal_strength: low
 summary: AMD datacenter GPU on the CDNA 2 architecture with 64 GB of HBM2e at 1.6 TB/s on a PCIe add-in card.
@@ -47,19 +48,6 @@ ml_capabilities:
   transformer_engine: false
   multi_gpu_scaling:
     technology: Infinity Fabric
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: true
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -78,7 +66,7 @@ tags:
 - amd
 - datacenter
 - cdna-2
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html
   title: AMD Instinct MI210 Accelerators (AMD)

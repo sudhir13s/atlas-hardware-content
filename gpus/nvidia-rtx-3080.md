@@ -2,12 +2,14 @@
 id: gpu/nvidia-rtx-3080
 type: gpu
 slug: nvidia-rtx-3080
-schema_version: 1.4
+schema_version: 2.0
 title: GeForce RTX 3080
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 30
 generation: Ampere
+compute_platform: cuda
+compute_capability: 8.6
 release_date: '2020-09-17'
 signal_strength: low
 summary: NVIDIA consumer GPU on the Ampere architecture with 10 GB of GDDR6X at 760 GB/s.
@@ -44,19 +46,6 @@ ml_capabilities:
   fine_tuning: false
   sparsity_support: true
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: true
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: false
-  deepspeed: false
 market:
   msrp_usd: 699
   msrp_source: https://nvidianews.nvidia.com/news/nvidia-delivers-greatest-ever-generational-leap-in-performance-with-geforce-rtx-30-series-gpus
@@ -78,7 +67,7 @@ tags:
 - nvidia
 - consumer
 - ampere
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf
   title: NVIDIA Ampere GA102 GPU Architecture Whitepaper (NVIDIA)
@@ -91,6 +80,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

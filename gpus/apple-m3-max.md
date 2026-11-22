@@ -2,12 +2,13 @@
 id: gpu/apple-m3-max
 type: gpu
 slug: apple-m3-max
-schema_version: 1.4
+schema_version: 2.0
 title: M3 Max
 vendor: Apple
 segment: workstation
 series: Apple Silicon
 generation: M3
+compute_platform: apple-silicon
 release_date: '2023-10-30'
 signal_strength: medium
 summary: Apple system on a chip built on a 3-nanometer process, with up to 128GB of unified memory at up to 400GB/s and a 30-core or 40-core GPU, used in MacBook Pro (Nov 2023).
@@ -32,19 +33,6 @@ performance: {}
 ml_capabilities:
   inference: true
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: true
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -60,7 +48,7 @@ tags:
 - apple
 - workstation
 - m3
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.apple.com/newsroom/2023/10/apple-unveils-m3-m3-pro-and-m3-max-the-most-advanced-chips-for-a-personal-computer/
   title: Apple unveils M3, M3 Pro, and M3 Max (Apple Newsroom)

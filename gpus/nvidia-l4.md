@@ -2,12 +2,14 @@
 id: gpu/nvidia-l4
 type: gpu
 slug: nvidia-l4
-schema_version: 1.4
+schema_version: 2.0
 title: L4
 vendor: NVIDIA
 segment: datacenter
 series: Ada Lovelace
 generation: Ada Lovelace
+compute_platform: cuda
+compute_capability: 8.9
 release_date: '2023-03-21'
 signal_strength: medium
 summary: NVIDIA datacenter GPU on the Ada Lovelace architecture with 24 GB of GDDR6 at 300 GB/s in a 72 W single-slot low-profile PCIe card.
@@ -43,19 +45,6 @@ ml_capabilities:
   inference: true
   sparsity_support: true
   transformer_engine: true
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: false
 market:
   cloud_hourly_usd: 0.7946
   cloud_providers:
@@ -80,7 +69,7 @@ tags:
 - nvidia
 - datacenter
 - ada-lovelace
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/l4/
   title: NVIDIA L4 Tensor Core GPU (NVIDIA)
@@ -93,6 +82,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

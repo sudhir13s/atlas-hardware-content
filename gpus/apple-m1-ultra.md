@@ -2,12 +2,13 @@
 id: gpu/apple-m1-ultra
 type: gpu
 slug: apple-m1-ultra
-schema_version: 1.4
+schema_version: 2.0
 title: M1 Ultra
 vendor: Apple
 segment: workstation
 series: Apple Silicon
 generation: M1
+compute_platform: apple-silicon
 release_date: '2022-03-08'
 signal_strength: low
 summary: Apple system on a chip that joins two M1 Max dies with UltraFusion, with up to 128GB of unified memory at 800GB/s and up to a 64-core GPU, used in Mac Studio (2022).
@@ -31,19 +32,6 @@ performance: {}
 ml_capabilities:
   inference: true
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: true
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -57,7 +45,7 @@ tags:
 - apple
 - workstation
 - m1
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
   title: Apple unveils M1 Ultra (Apple Newsroom)

@@ -2,12 +2,14 @@
 id: gpu/nvidia-h100-pcie
 type: gpu
 slug: nvidia-h100-pcie
-schema_version: 1.4
+schema_version: 2.0
 title: H100 PCIe
 vendor: NVIDIA
 segment: datacenter
 series: Hopper
 generation: Hopper
+compute_platform: cuda
+compute_capability: 9.0
 release_date: '2022-03-22'
 signal_strength: high
 summary: NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM2e at 2,000 GB/s on a dual-slot, passively cooled PCIe Gen5 card.
@@ -42,19 +44,6 @@ ml_capabilities:
   transformer_engine: true
   multi_gpu_scaling:
     technology: NVLink bridge (one adjacent H100 PCIe card)
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 2.5
   cloud_providers:
@@ -76,7 +65,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs22/data-center/h100/PB-11133-001_v01.pdf
   title: NVIDIA H100 PCIe GPU Product Brief (NVIDIA)
@@ -86,6 +75,9 @@ sources:
   trust: 0.95
 - url: https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing
   title: NVIDIA Announces Hopper Architecture, the Next Generation of Accelerated Computing (NVIDIA Newsroom, March 22, 2022)
+  trust: 0.95
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
   trust: 0.95
 ---
 

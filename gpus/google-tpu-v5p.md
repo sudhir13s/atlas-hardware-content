@@ -2,12 +2,13 @@
 id: gpu/google-tpu-v5p
 type: gpu
 slug: google-tpu-v5p
-schema_version: 1.4
+schema_version: 2.0
 title: TPU v5p
 vendor: Google
 segment: datacenter
 series: Cloud TPU
 generation: v5p
+compute_platform: google-tpu
 release_date: '2023-12-06'
 signal_strength: high
 summary: Google Cloud TPU with two TensorCores and 95 GiB of HBM at 2,765 GB/s per chip, scaling to 8,960 chips in a Pod.
@@ -38,19 +39,6 @@ ml_capabilities:
     technology: ICI
     max_units: 8960
     note: up to 8960 chips per Pod
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: false
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   cloud_hourly_usd: 4.2
   cloud_providers:
@@ -74,7 +62,7 @@ tags:
 - google
 - datacenter
 - v5p
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://docs.cloud.google.com/tpu/docs/v5p
   title: TPU v5p (Google Cloud documentation)

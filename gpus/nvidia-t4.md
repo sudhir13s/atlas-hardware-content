@@ -2,12 +2,14 @@
 id: gpu/nvidia-t4
 type: gpu
 slug: nvidia-t4
-schema_version: 1.4
+schema_version: 2.0
 title: T4
 vendor: NVIDIA
 segment: datacenter
 series: Turing
 generation: Turing
+compute_platform: cuda
+compute_capability: 7.5
 release_date: '2018-09-12'
 signal_strength: low
 summary: NVIDIA datacenter GPU on the Turing architecture with 16 GB of GDDR6 at 320 GB/s in a 70 W low-profile PCIe card.
@@ -39,19 +41,6 @@ ml_capabilities:
   training: true
   sparsity_support: false
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: false
 market:
   cloud_hourly_usd: 0.752
   cloud_providers:
@@ -80,7 +69,7 @@ tags:
 - nvidia
 - datacenter
 - turing
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/tesla-t4/
   title: NVIDIA T4 Tensor Core GPU (NVIDIA)
@@ -99,6 +88,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

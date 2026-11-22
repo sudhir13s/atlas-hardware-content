@@ -2,12 +2,14 @@
 id: gpu/nvidia-rtx-5090
 type: gpu
 slug: nvidia-rtx-5090
-schema_version: 1.4
+schema_version: 2.0
 title: GeForce RTX 5090
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 50
 generation: Blackwell
+compute_platform: cuda
+compute_capability: 12.0
 release_date: '2025-01-30'
 signal_strength: medium
 summary: NVIDIA consumer GPU on the Blackwell architecture with 32 GB of GDDR7 at 1792 GB/s.
@@ -45,19 +47,6 @@ ml_capabilities:
   fine_tuning: true
   sparsity_support: true
   transformer_engine: true
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: true
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   msrp_usd: 1999
   msrp_source: https://nvidianews.nvidia.com/news/nvidia-blackwell-geforce-rtx-50-series-opens-new-world-of-ai-computer-graphics
@@ -82,7 +71,7 @@ tags:
 - nvidia
 - consumer
 - blackwell
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf
   title: NVIDIA RTX Blackwell GPU Architecture Whitepaper (NVIDIA)
@@ -95,6 +84,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

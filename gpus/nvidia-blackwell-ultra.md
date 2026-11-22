@@ -2,12 +2,14 @@
 id: gpu/nvidia-blackwell-ultra
 type: gpu
 slug: nvidia-blackwell-ultra
-schema_version: 1.4
+schema_version: 2.0
 title: Blackwell Ultra B300
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell Ultra
 generation: Blackwell Ultra
+compute_platform: cuda
+compute_capability: 10.3
 release_date: '2025-03-18'
 signal_strength: high
 summary: NVIDIA datacenter GPU on the Blackwell Ultra architecture with 288 GB of HBM3e at 8 TB/s in the SXM form factor.
@@ -43,19 +45,6 @@ ml_capabilities:
   transformer_engine: true
   multi_gpu_scaling:
     technology: Fifth-generation NVLink and NVLink 5 Switch (HGX B300)
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -71,7 +60,7 @@ tags:
 - nvidia
 - datacenter
 - blackwell-ultra
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/
   title: 'Inside NVIDIA Blackwell Ultra: The Chip Powering the AI Factory Era (NVIDIA Technical Blog)'
@@ -81,6 +70,9 @@ sources:
   trust: 0.95
 - url: https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning
   title: NVIDIA Blackwell Ultra AI Factory Platform Paves Way for Age of AI Reasoning (NVIDIA Newsroom)
+  trust: 0.95
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
   trust: 0.95
 ---
 

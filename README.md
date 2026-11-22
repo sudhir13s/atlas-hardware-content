@@ -16,8 +16,9 @@ It is the `hardware` domain of a multi-repo reference library
 
 | Type | Folder | What it captures |
 |------|--------|------------------|
-| `gpu` | `gpus/` | One GPU or accelerator (44 of them, NVIDIA, AMD, Intel, Apple, Google): structured specifications (memory, compute units, interconnect, process node, form factor), peak performance, ML capabilities, framework support, and an agent-owned `market` block (price, cloud rental) |
+| `gpu` | `gpus/` | One GPU or accelerator (42 of them, NVIDIA, AMD, Intel, Apple, Google): structured specifications (memory, compute units, interconnect, process node, form factor), peak performance, ML capabilities, compute platform, and an agent-owned `market` block (price, cloud rental) |
 | `guide` | `guides/` | One block of the GPU Buying Guide page (quick decisions, memory bandwidth, quantization, power and cost, mistakes, reading links, …) with its lists and table as rows |
+| `framework-support` | `framework-support/` | One framework (PyTorch, TensorFlow, JAX, …): the compute platforms its own documentation states it supports, each with its source page; a GPU's support follows from its compute platform |
 | `gpu-architecture` | `architectures/` | A GPU/accelerator generation: process node, memory, interconnect, key innovation, precision support, and predecessor/successor lineage |
 | `timeline-event` | `timeline/` | A dated release or milestone (H100, MI300X, Blackwell, first Tensor Cores, …), linked to its architecture |
 | `glossary-term` | `glossary/` | A plain-English definition of a hardware term (Tensor Core, HBM, NVLink, FP8, TDP, MIG, …) with "why you care" |
@@ -44,7 +45,7 @@ meta.json                 # repo descriptor (machine entrypoint 1)
 schema/registry.json      # type → folder/schema/sections map (machine entrypoint 2)
 schema/*.schema.json      # JSON Schema per content type
 templates/*.template.md   # copy these to author new content
-gpus/ guides/ architectures/ timeline/ glossary/ upgrade-paths/ name-decoders/
+gpus/ guides/ framework-support/ architectures/ timeline/ glossary/ upgrade-paths/ name-decoders/
 assets/                   # SVG diagrams
 ```
 

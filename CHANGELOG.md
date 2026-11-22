@@ -5,6 +5,20 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 2.0 (framework support from sourced platform rules)
+
+- **Removed** the `gpu` field `framework_support`: its flags were inferred per GPU, not taken from
+  any framework's page.
+- **Added** the required `gpu` field `compute_platform` (`cuda`, `rocm`, `apple-silicon`,
+  `intel-gpu`, `intel-gaudi`, `google-tpu`) and the optional `compute_capability` (NVIDIA's own
+  figure), set on all 42 records; NVIDIA records cite the CUDA GPUs page, the V100 records the Volta
+  whitepaper.
+- **Added** the `framework-support` type (`framework-support/`, `framework-support/<slug>`): per
+  framework, the platforms its own documentation (or the platform maker's) states, each with its
+  source, optional `min_compute_capability`, `gpus` and `note`, and the `checked` date. 12 records:
+  PyTorch, TensorFlow, JAX, ONNX Runtime, TensorRT, DirectML, MLX, ROCm, oneAPI, Triton, vLLM,
+  DeepSpeed. A consumer derives each GPU's support from them; what no page states is unknown.
+
 ### Accuracy pass (2026-11-21)
 
 - **Changed** every architecture, timeline, glossary, name-decoder, upgrade-path and guide record so
@@ -93,3 +107,5 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 - **1.2** — `guide` reshaped to the blocks of the Buying Guide page.
 - **1.3** — `gpu` `market.msrp_source` and `market.msrp_announced`.
 - **1.4** — `gpu` without `max_model_params_*`; unpublished values optional; `performance.basis`.
+- **2.0** — `gpu` without `framework_support`, with `compute_platform` and `compute_capability`;
+  `framework-support` type.

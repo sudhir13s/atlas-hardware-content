@@ -2,12 +2,13 @@
 id: gpu/intel-dc-gpu-max-1550
 type: gpu
 slug: intel-dc-gpu-max-1550
-schema_version: 1.4
+schema_version: 2.0
 title: Data Center GPU Max 1550
 vendor: Intel
 segment: datacenter
 series: Ponte Vecchio
 generation: Xe-HPC
+compute_platform: intel-gpu
 release_date: '2023-01-10'
 signal_strength: low
 summary: Intel Data Center GPU Max Series GPU on the Xe-HPC microarchitecture with 128 GB of HBM2e at 3,276.8 GB/s and 128 Xe-cores in a 600 W OAM module.
@@ -40,19 +41,6 @@ ml_capabilities:
   transformer_engine: false
   multi_gpu_scaling:
     technology: Intel Xe Link
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: true
-  triton: false
-  vllm: false
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -73,7 +61,7 @@ tags:
 - intel
 - datacenter
 - xe-hpc
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.intel.com/content/www/us/en/products/sku/232873/intel-data-center-gpu-max-1550/specifications.html
   title: Intel Data Center GPU Max 1550 specifications (Intel)

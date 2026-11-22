@@ -2,12 +2,14 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 1.4
+schema_version: 2.0
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
 segment: datacenter                # datacenter | workstation | consumer
 series: "<product family>"
 generation: "<architecture generation>"
+compute_platform: cuda              # cuda | rocm | apple-silicon | intel-gpu | intel-gaudi | google-tpu
+compute_capability: <number>       # NVIDIA only, as NVIDIA lists it; absent when NVIDIA lists none
 release_date: "<YYYY-MM-DD>"       # optional; maker's availability or launch date (see CONVENTIONS.md)
 signal_strength: high              # high | medium | low
 summary: "<one sentence>"          # optional; the Overview section repeats it
@@ -54,19 +56,6 @@ ml_capabilities:                   # every field but inference is absent when no
     note: "<remark>"                      # optional
   sparsity_support: true
   transformer_engine: true
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: false
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:                            # agent-owned; unknown prices are absent
   msrp_usd: <number>               # optional; only the maker's own published launch price
   msrp_source: "<maker page URL>"  # optional; the page that states msrp_usd

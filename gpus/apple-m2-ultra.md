@@ -2,12 +2,13 @@
 id: gpu/apple-m2-ultra
 type: gpu
 slug: apple-m2-ultra
-schema_version: 1.4
+schema_version: 2.0
 title: M2 Ultra
 vendor: Apple
 segment: workstation
 series: Apple Silicon
 generation: M2
+compute_platform: apple-silicon
 release_date: '2023-06-05'
 signal_strength: medium
 summary: Apple system on a chip built on a second-generation 5-nanometer process, with up to 192GB of unified memory at 800GB/s and a 60-core or 76-core GPU, used in Mac Studio and Mac Pro (2023).
@@ -37,19 +38,6 @@ ml_capabilities:
   training: true
   fine_tuning: true
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: true
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -65,7 +53,7 @@ tags:
 - apple
 - workstation
 - m2
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.apple.com/newsroom/2023/06/apple-introduces-m2-ultra/
   title: Apple introduces M2 Ultra (Apple Newsroom)

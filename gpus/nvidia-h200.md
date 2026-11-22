@@ -2,12 +2,14 @@
 id: gpu/nvidia-h200
 type: gpu
 slug: nvidia-h200
-schema_version: 1.4
+schema_version: 2.0
 title: H200
 vendor: NVIDIA
 segment: datacenter
 series: Hopper
 generation: Hopper
+compute_platform: cuda
+compute_capability: 9.0
 release_date: '2023-11-13'
 signal_strength: high
 summary: NVIDIA datacenter GPU on the Hopper architecture with 141 GB of HBM3e at 4.8 TB/s in the SXM form factor.
@@ -46,19 +48,6 @@ ml_capabilities:
   transformer_engine: true
   multi_gpu_scaling:
     technology: Fourth-generation NVLink and third-generation NVSwitch (HGX H200)
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 4.75
   cloud_providers:
@@ -81,7 +70,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h200/
   title: NVIDIA H200 GPU (NVIDIA)
@@ -96,6 +85,9 @@ sources:
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 - url: https://nvidianews.nvidia.com/news/nvidia-supercharges-hopper-the-worlds-leading-ai-computing-platform
   title: NVIDIA Supercharges Hopper, the World's Leading AI Computing Platform (NVIDIA Newsroom, November 13, 2023)
+  trust: 0.95
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
   trust: 0.95
 ---
 

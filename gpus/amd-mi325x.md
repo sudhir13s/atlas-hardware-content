@@ -2,12 +2,13 @@
 id: gpu/amd-mi325x
 type: gpu
 slug: amd-mi325x
-schema_version: 1.4
+schema_version: 2.0
 title: Instinct MI325X
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 3
+compute_platform: rocm
 release_date: '2024-10-10'
 signal_strength: high
 summary: AMD datacenter GPU on the CDNA 3 architecture with 256 GB of HBM3E at 6 TB/s in the OAM form factor.
@@ -49,19 +50,6 @@ ml_capabilities:
   transformer_engine: false
   multi_gpu_scaling:
     technology: Infinity Fabric
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: true
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 3.155
   observed_at: '2026-11-20'
@@ -79,7 +67,7 @@ tags:
 - amd
 - datacenter
 - cdna-3
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi300/mi325x.html
   title: AMD Instinct MI325X Accelerators (AMD)

@@ -2,12 +2,13 @@
 id: gpu/intel-gaudi-3
 type: gpu
 slug: intel-gaudi-3
-schema_version: 1.4
+schema_version: 2.0
 title: Gaudi 3
 vendor: Intel
 segment: datacenter
 series: Gaudi
 generation: Gaudi 3
+compute_platform: intel-gaudi
 release_date: '2024-09-24'
 signal_strength: medium
 summary: Intel AI accelerator with 128 GB of HBM2e at 3.7 TB/s, 64 Tensor Processor Cores, 8 matrix engines and 24 integrated 200 GbE ports, in a 900 W OAM module.
@@ -44,19 +45,6 @@ ml_capabilities:
   multi_gpu_scaling:
     technology: Ethernet-based
     note: RoCE; 21 ports connect the 8 OAMs of a baseboard all-to-all, 3 ports scale out
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: false
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: true
-  triton: false
-  vllm: true
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -76,7 +64,7 @@ tags:
 - intel
 - datacenter
 - gaudi-3
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://cdrdv2-public.intel.com/817486/gaudi-3-ai-accelerator-white-paper.pdf
   title: Intel Gaudi 3 AI Accelerator White Paper (Intel)

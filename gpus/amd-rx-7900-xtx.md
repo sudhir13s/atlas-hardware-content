@@ -2,12 +2,13 @@
 id: gpu/amd-rx-7900-xtx
 type: gpu
 slug: amd-rx-7900-xtx
-schema_version: 1.4
+schema_version: 2.0
 title: Radeon RX 7900 XTX
 vendor: AMD
 segment: consumer
 series: Radeon RX 7000
 generation: RDNA 3
+compute_platform: rocm
 release_date: '2022-12-13'
 signal_strength: low
 summary: AMD consumer graphics card on the RDNA 3 architecture with 24 GB of GDDR6 at 960 GB/s and 96 compute units.
@@ -39,19 +40,6 @@ ml_capabilities:
   training: false
   fine_tuning: false
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: true
-  tensorrt: false
-  directml: true
-  mlx: false
-  rocm: true
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   msrp_usd: 999
   msrp_source: https://www.amd.com/en/newsroom/press-releases/2022-11-3-amd-unveils-world-s-most-advanced-gaming-graphics-.html
@@ -69,7 +57,7 @@ tags:
 - amd
 - consumer
 - rdna-3
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html
   title: Radeon RX 7900 XTX (AMD)

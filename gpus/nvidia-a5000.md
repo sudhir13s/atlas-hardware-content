@@ -2,12 +2,14 @@
 id: gpu/nvidia-a5000
 type: gpu
 slug: nvidia-a5000
-schema_version: 1.4
+schema_version: 2.0
 title: RTX A5000
 vendor: NVIDIA
 segment: workstation
 series: Ampere
 generation: Ampere
+compute_platform: cuda
+compute_capability: 8.6
 release_date: '2021-04-12'
 signal_strength: low
 summary: NVIDIA workstation GPU on the Ampere architecture with 24 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.
@@ -43,19 +45,6 @@ ml_capabilities:
     technology: NVLink
     max_units: 2
     note: low-profile bridges connect two RTX A5000 GPUs
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: true
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 1.3403
   observed_at: '2026-11-20'
@@ -79,7 +68,7 @@ tags:
 - nvidia
 - workstation
 - ampere
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/products/workstations/nvidia-rtx-a5000-datasheet.pdf
   title: NVIDIA RTX A5000 Datasheet (NVIDIA)
@@ -89,6 +78,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

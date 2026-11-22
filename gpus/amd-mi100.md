@@ -2,12 +2,13 @@
 id: gpu/amd-mi100
 type: gpu
 slug: amd-mi100
-schema_version: 1.4
+schema_version: 2.0
 title: Instinct MI100
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA
+compute_platform: rocm
 release_date: '2020-11-16'
 signal_strength: low
 summary: AMD datacenter GPU on the CDNA architecture with 32 GB of HBM2 at 1.2 TB/s on a PCIe add-in card.
@@ -45,19 +46,6 @@ ml_capabilities:
   transformer_engine: false
   multi_gpu_scaling:
     technology: Infinity Fabric
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: true
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: true
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -73,7 +61,7 @@ tags:
 - amd
 - datacenter
 - cdna-1
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.amd.com/en/products/accelerators/instinct/mi100.html
   title: AMD Instinct MI100 Accelerators (AMD)

@@ -2,12 +2,14 @@
 id: gpu/nvidia-a100-80gb
 type: gpu
 slug: nvidia-a100-80gb
-schema_version: 1.4
+schema_version: 2.0
 title: A100 80GB
 vendor: NVIDIA
 segment: datacenter
 series: Ampere
 generation: Ampere
+compute_platform: cuda
+compute_capability: 8.0
 release_date: '2020-11-16'
 signal_strength: medium
 summary: NVIDIA datacenter GPU on the Ampere architecture with 80 GB of HBM2e at 2,039 GB/s in the SXM form factor.
@@ -50,19 +52,6 @@ ml_capabilities:
     technology: NVLink and NVSwitch
     max_units: 16
     note: up to 16 A100 GPUs at up to 600 GB/s
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 1.6
   cloud_providers:
@@ -86,7 +75,7 @@ tags:
 - nvidia
 - datacenter
 - ampere
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
   title: NVIDIA A100 Tensor Core GPU data sheet (NVIDIA)
@@ -99,6 +88,9 @@ sources:
   trust: 0.95
 - url: https://developer.nvidia.com/blog/nvidia-ampere-architecture-in-depth/
   title: NVIDIA Ampere Architecture In-Depth (NVIDIA Technical Blog)
+  trust: 0.95
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
   trust: 0.95
 ---
 

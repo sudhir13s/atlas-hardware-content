@@ -2,12 +2,14 @@
 id: gpu/nvidia-v100-32gb
 type: gpu
 slug: nvidia-v100-32gb
-schema_version: 1.4
+schema_version: 2.0
 title: V100 32GB
 vendor: NVIDIA
 segment: datacenter
 series: Volta
 generation: Volta
+compute_platform: cuda
+compute_capability: 7.0
 release_date: '2018-03-27'
 signal_strength: low
 summary: NVIDIA datacenter GPU on the Volta architecture with 32 GB of HBM2 at 900 GB/s in SXM2 and PCIe form factors.
@@ -47,19 +49,6 @@ ml_capabilities:
     technology: NVLink
     max_units: 8
     note: up to eight V100 GPUs at up to 300 GB/s
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 0.9
   cloud_providers:
@@ -82,7 +71,7 @@ tags:
 - nvidia
 - datacenter
 - volta
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf
   title: NVIDIA Tesla V100 GPU Accelerator data sheet (NVIDIA)

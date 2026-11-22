@@ -2,12 +2,14 @@
 id: gpu/nvidia-h100-sxm
 type: gpu
 slug: nvidia-h100-sxm
-schema_version: 1.4
+schema_version: 2.0
 title: H100 SXM
 vendor: NVIDIA
 segment: datacenter
 series: Hopper
 generation: Hopper
+compute_platform: cuda
+compute_capability: 9.0
 release_date: '2022-09-20'
 signal_strength: high
 summary: NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM3 at 3.35 TB/s in the SXM5 form factor.
@@ -49,19 +51,6 @@ ml_capabilities:
   transformer_engine: true
   multi_gpu_scaling:
     technology: Fourth-generation NVLink and third-generation NVSwitch (HGX H100)
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 3.5
   cloud_providers:
@@ -84,7 +73,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h100/
   title: NVIDIA H100 GPU (NVIDIA)
@@ -100,6 +89,9 @@ sources:
   trust: 0.95
 - url: https://www.nvidia.com/en-us/data-center/technologies/hopper-architecture/
   title: NVIDIA Hopper Architecture (NVIDIA)
+  trust: 0.95
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
   trust: 0.95
 ---
 

@@ -33,7 +33,8 @@ so no separate index is needed and none can fall out of sync.
 - **Links** are **IDs** of the form `<type>/<slug>`. Resolve them to files by matching `id`.
   Cross-reference fields in this domain: `predecessor`, `successor` (both →
   `gpu-architecture/<slug>`), `architecture_id` (→ `gpu-architecture/<slug>`),
-  `steps[].architecture_id` (→ `gpu-architecture/<slug>`), and `related` (→ `glossary-term/<slug>`).
+  `steps[].architecture_id` (→ `gpu-architecture/<slug>`), `related` (→ `glossary-term/<slug>`), and
+  `platforms[].gpus` in `framework-support` records (→ `gpu/<slug>`).
   `gpu_id` and `steps[].gpu_id` are **free-form product identifiers, not cross-references**.
 
 ## 4. Validate

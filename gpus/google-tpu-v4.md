@@ -2,12 +2,13 @@
 id: gpu/google-tpu-v4
 type: gpu
 slug: google-tpu-v4
-schema_version: 1.4
+schema_version: 2.0
 title: TPU v4
 vendor: Google
 segment: datacenter
 series: Cloud TPU
 generation: v4
+compute_platform: google-tpu
 release_date: '2022-05-11'
 signal_strength: high
 summary: Google Cloud TPU with two TensorCores and 32 GiB of HBM2 at 1,200 GB/s per chip, scaling to 4,096 chips in a Pod.
@@ -38,19 +39,6 @@ ml_capabilities:
     technology: ICI
     max_units: 4096
     note: up to 4096 chips in a Pod
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: false
-  tensorrt: false
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   cloud_hourly_usd: 3.22
   cloud_providers:
@@ -73,7 +61,7 @@ tags:
 - google
 - datacenter
 - v4
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://docs.cloud.google.com/tpu/docs/v4
   title: TPU v4 (Google Cloud documentation)

@@ -2,12 +2,14 @@
 id: gpu/nvidia-l40s
 type: gpu
 slug: nvidia-l40s
-schema_version: 1.4
+schema_version: 2.0
 title: L40S
 vendor: NVIDIA
 segment: datacenter
 series: Ada Lovelace
 generation: Ada Lovelace
+compute_platform: cuda
+compute_capability: 8.9
 release_date: '2023-08-08'
 signal_strength: medium
 summary: NVIDIA datacenter GPU on the Ada Lovelace architecture with 48 GB of GDDR6 with ECC at 864 GB/s in a 350 W dual-slot PCIe card.
@@ -45,19 +47,6 @@ ml_capabilities:
   fine_tuning: true
   sparsity_support: true
   transformer_engine: true
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 1.8
   cloud_providers:
@@ -88,7 +77,7 @@ tags:
 - nvidia
 - datacenter
 - ada-lovelace
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/l40s/
   title: NVIDIA L40S GPU (NVIDIA)
@@ -101,6 +90,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

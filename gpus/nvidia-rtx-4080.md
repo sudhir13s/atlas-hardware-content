@@ -2,12 +2,14 @@
 id: gpu/nvidia-rtx-4080
 type: gpu
 slug: nvidia-rtx-4080
-schema_version: 1.4
+schema_version: 2.0
 title: GeForce RTX 4080
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 40
 generation: Ada Lovelace
+compute_platform: cuda
+compute_capability: 8.9
 release_date: '2022-11-16'
 signal_strength: low
 summary: NVIDIA consumer GPU on the Ada Lovelace architecture with 16 GB of GDDR6X at 716.8 GB/s.
@@ -45,19 +47,6 @@ ml_capabilities:
   fine_tuning: true
   sparsity_support: true
   transformer_engine: true
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: true
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: false
 market:
   msrp_usd: 1199
   msrp_source: https://nvidianews.nvidia.com/news/nvidia-delivers-quantum-leap-in-performance-introduces-new-era-of-neural-rendering-with-geforce-rtx-40-series
@@ -80,7 +69,7 @@ tags:
 - nvidia
 - consumer
 - ada-lovelace
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf
   title: NVIDIA Ada GPU Architecture Whitepaper (NVIDIA)
@@ -93,6 +82,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

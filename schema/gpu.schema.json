@@ -9,6 +9,8 @@
     "segment": { "type": "string", "enum": ["datacenter", "workstation", "consumer"] },
     "series": { "type": "string", "description": "product family, e.g. 'Hopper', 'GeForce RTX 40', 'Instinct'" },
     "generation": { "type": "string", "description": "architecture generation as the vendor names it, e.g. 'Ada Lovelace', 'CDNA 3', 'M4'" },
+    "compute_platform": { "$ref": "#/$defs/compute_platform" },
+    "compute_capability": { "type": "number", "exclusiveMinimum": 0, "description": "NVIDIA only: the CUDA compute capability as NVIDIA lists it (CUDA GPUs page or the architecture whitepaper); absent when NVIDIA lists none" },
     "release_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "the maker's announced availability or launch date; the announcement date only when the maker gives nothing more exact than a month or quarter; absent when the maker states no date" },
     "signal_strength": { "type": "string", "enum": ["high", "medium", "low"], "description": "how much AI-practitioner attention the product draws" },
     "summary": { "type": "string", "minLength": 1, "description": "one-sentence description; the Overview section repeats it" },
@@ -16,7 +18,6 @@
     "specifications": { "$ref": "#/$defs/specifications" },
     "performance": { "$ref": "#/$defs/performance" },
     "ml_capabilities": { "$ref": "#/$defs/ml_capabilities" },
-    "framework_support": { "$ref": "#/$defs/framework_support" },
     "market": { "$ref": "#/$defs/market" },
     "best_for": { "$ref": "#/$defs/labels" },
     "key_features": { "$ref": "#/$defs/labels" },
@@ -24,9 +25,14 @@
     "notable_users": { "$ref": "#/$defs/labels" },
     "image": { "type": "string", "description": "public path of the product photo, e.g. '/images/gpus/nvidia-h100-sxm.jpg'" }
   },
-  "required": ["vendor", "segment", "series", "generation", "signal_strength", "specifications", "performance", "ml_capabilities", "framework_support", "market"],
+  "required": ["vendor", "segment", "series", "generation", "signal_strength", "specifications", "performance", "ml_capabilities", "market", "compute_platform"],
   "$defs": {
     "labels": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "compute_platform": {
+      "type": "string",
+      "enum": ["cuda", "rocm", "apple-silicon", "intel-gpu", "intel-gaudi", "google-tpu"],
+      "description": "the acceleration platform frameworks target on this product; framework-support records are keyed by it"
+    },
     "specifications": {
       "type": "object",
       "additionalProperties": false,
@@ -108,25 +114,6 @@
         "technology": { "type": "string", "minLength": 1 },
         "max_units": { "type": "integer", "minimum": 2, "description": "most GPUs or chips the technology joins, when the source states a count" },
         "note": { "type": "string" }
-      }
-    },
-    "framework_support": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["pytorch", "tensorflow", "jax", "onnx_runtime", "tensorrt", "directml", "mlx", "rocm", "oneapi", "triton", "vllm", "deepspeed"],
-      "properties": {
-        "pytorch": { "type": "boolean" },
-        "tensorflow": { "type": "boolean" },
-        "jax": { "type": "boolean" },
-        "onnx_runtime": { "type": "boolean" },
-        "tensorrt": { "type": "boolean" },
-        "directml": { "type": "boolean" },
-        "mlx": { "type": "boolean" },
-        "rocm": { "type": "boolean" },
-        "oneapi": { "type": "boolean" },
-        "triton": { "type": "boolean" },
-        "vllm": { "type": "boolean" },
-        "deepspeed": { "type": "boolean" }
       }
     },
     "market": {

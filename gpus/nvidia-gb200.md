@@ -2,12 +2,14 @@
 id: gpu/nvidia-gb200
 type: gpu
 slug: nvidia-gb200
-schema_version: 1.4
+schema_version: 2.0
 title: GB200 Grace Blackwell Superchip
 vendor: NVIDIA
 segment: datacenter
 series: Blackwell
 generation: Blackwell
+compute_platform: cuda
+compute_capability: 10.0
 release_date: '2024-03-18'
 signal_strength: high
 summary: NVIDIA superchip that joins two Blackwell GPUs with 372 GB of HBM3e at 16 TB/s to one 72-core Grace CPU.
@@ -47,19 +49,6 @@ ml_capabilities:
   transformer_engine: true
   multi_gpu_scaling:
     technology: Fifth-generation NVLink (GB200 NVL72, 72 GPUs)
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: true
-  directml: false
-  mlx: false
-  rocm: false
-  oneapi: false
-  triton: true
-  vllm: true
-  deepspeed: true
 market:
   cloud_hourly_usd: 10.5
   observed_at: '2026-11-20'
@@ -75,7 +64,7 @@ tags:
 - nvidia
 - datacenter
 - blackwell
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/gb200-nvl72/
   title: NVIDIA GB200 NVL72 (NVIDIA)
@@ -85,6 +74,9 @@ sources:
   trust: 0.95
 - url: https://getdeploying.com/dataset/gpu-prices/weekly.csv
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
+- url: https://developer.nvidia.com/cuda-gpus
+  title: CUDA GPU Compute Capability (NVIDIA)
+  trust: 0.95
 ---
 
 ## Overview

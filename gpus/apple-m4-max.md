@@ -2,12 +2,13 @@
 id: gpu/apple-m4-max
 type: gpu
 slug: apple-m4-max
-schema_version: 1.4
+schema_version: 2.0
 title: M4 Max
 vendor: Apple
 segment: workstation
 series: Apple Silicon
 generation: M4
+compute_platform: apple-silicon
 release_date: '2024-10-30'
 signal_strength: medium
 summary: Apple system on a chip built on second-generation 3-nanometer technology, with up to 128GB of unified memory at up to 546GB/s and a 32-core or 40-core GPU, used in MacBook Pro (2024) and Mac Studio (2025).
@@ -32,19 +33,6 @@ performance: {}
 ml_capabilities:
   inference: true
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: true
-  onnx_runtime: true
-  tensorrt: false
-  directml: false
-  mlx: true
-  rocm: false
-  oneapi: false
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   observed_at: '2026-06-15'
   source: snapshot
@@ -60,7 +48,7 @@ tags:
 - apple
 - workstation
 - m4
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/
   title: Apple introduces M4 Pro and M4 Max (Apple Newsroom)

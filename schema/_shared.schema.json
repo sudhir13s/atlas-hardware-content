@@ -29,7 +29,7 @@
         "id": { "$ref": "#/$defs/id" },
         "type": {
           "type": "string",
-          "enum": ["gpu-architecture", "timeline-event", "glossary-term", "upgrade-path", "name-decoder", "gpu", "guide"]
+          "enum": ["gpu-architecture", "timeline-event", "glossary-term", "upgrade-path", "name-decoder", "gpu", "guide", "framework-support"]
         },
         "slug": { "$ref": "#/$defs/slug" },
         "schema_version": { "type": ["string", "number"] },

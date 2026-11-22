@@ -2,12 +2,13 @@
 id: gpu/intel-arc-a770
 type: gpu
 slug: intel-arc-a770
-schema_version: 1.4
+schema_version: 2.0
 title: Arc A770
 vendor: Intel
 segment: consumer
 series: Arc
 generation: Alchemist
+compute_platform: intel-gpu
 release_date: '2022-10-12'
 signal_strength: low
 summary: Intel Arc A-series desktop graphics card on the Xe-HPG microarchitecture with 16 GB of GDDR6 at 560 GB/s and 32 Xe-cores.
@@ -37,19 +38,6 @@ ml_capabilities:
   training: false
   fine_tuning: false
   transformer_engine: false
-framework_support:
-  pytorch: true
-  tensorflow: true
-  jax: false
-  onnx_runtime: true
-  tensorrt: false
-  directml: true
-  mlx: false
-  rocm: false
-  oneapi: true
-  triton: false
-  vllm: false
-  deepspeed: false
 market:
   msrp_usd: 349
   msrp_source: https://game.intel.com/us/stories/intel-arc-graphics-a7series-perf-per-dollar
@@ -66,7 +54,7 @@ tags:
 - intel
 - consumer
 - alchemist
-updated: '2026-11-21'
+updated: '2026-11-22'
 sources:
 - url: https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html
   title: Intel Arc A770 Graphics (16GB) specifications (Intel)
