@@ -20,6 +20,7 @@ this file is the `hardware`-domain instance.
   - `architecture_id` (timeline events), `steps[].architecture_id` (upgrade paths) → `gpu-architecture/<slug>`
   - `related` (glossary) → `glossary-term/<slug>`
   - `platforms[].gpus` (framework support) → `gpu/<slug>`
+  - `framework` (framework support) → `framework/<slug>`, a record of the frameworks content repo
 - `gpu_id` and `steps[].gpu_id` are **free-form product strings** (e.g. `"H100 SXM"`), not IDs.
 - Every referenced ID must resolve to an existing file. Dangling references fail validation.
 
@@ -79,7 +80,9 @@ step lists) so it stays machine-parseable.
   and when the page narrows it, `min_compute_capability` (cuda) or `gpus[]` (the listed products, as
   `gpu/<slug>` IDs) and a short `note`. `checked` is the day the pages were read. A GPU's support is
   derived from its `compute_platform`; a platform, product or compute capability the page does not
-  name is unknown, never unsupported.
+  name is unknown, never unsupported. `framework` names the `framework/<slug>` record of the same
+  project when the frameworks content repo has one; that record's page shows these platforms, so
+  the framework record stores no GPU support of its own.
 
 - **gpu-architecture** — one file per generation. Carries `vendor`, `year`, `process_node`,
   `segment`, `memory_tech`, `interconnect`, `key_innovation`, and the arrays `representative_gpus`,

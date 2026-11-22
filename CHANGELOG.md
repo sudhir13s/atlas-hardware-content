@@ -5,6 +5,14 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 2.1 (framework support names its framework record)
+
+- **Added** the optional `framework-support` field `framework`: the `framework/<slug>` ID of the
+  record in the frameworks content repo that the statement is about. The loader resolves it like
+  any other reference. Set on the 6 records whose framework has a record (PyTorch, TensorFlow, JAX,
+  ONNX Runtime, vLLM, DeepSpeed), which now carry `schema_version: 2.1`; records authored against
+  2.0 stay valid.
+
 ### Schema 2.0 (framework support from sourced platform rules)
 
 - **Removed** the `gpu` field `framework_support`: its flags were inferred per GPU, not taken from
@@ -109,3 +117,4 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 - **1.4** — `gpu` without `max_model_params_*`; unpublished values optional; `performance.basis`.
 - **2.0** — `gpu` without `framework_support`, with `compute_platform` and `compute_capability`;
   `framework-support` type.
+- **2.1** — optional `framework` (a `framework/<slug>` ID) on `framework-support`.

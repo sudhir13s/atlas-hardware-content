@@ -2,8 +2,9 @@
 id: framework-support/pytorch
 type: framework-support
 slug: pytorch
-schema_version: 2.0
+schema_version: 2.1
 title: PyTorch
+framework: framework/pytorch
 checked: '2026-11-22'
 platforms:
 - platform: cuda

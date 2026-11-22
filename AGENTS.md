@@ -34,7 +34,9 @@ so no separate index is needed and none can fall out of sync.
   Cross-reference fields in this domain: `predecessor`, `successor` (both →
   `gpu-architecture/<slug>`), `architecture_id` (→ `gpu-architecture/<slug>`),
   `steps[].architecture_id` (→ `gpu-architecture/<slug>`), `related` (→ `glossary-term/<slug>`), and
-  `platforms[].gpus` in `framework-support` records (→ `gpu/<slug>`).
+  `platforms[].gpus` in `framework-support` records (→ `gpu/<slug>`). `framework` in a
+  `framework-support` record points outside this repo, at a `framework/<slug>` record of the
+  frameworks content repo.
   `gpu_id` and `steps[].gpu_id` are **free-form product identifiers, not cross-references**.
 
 ## 4. Validate

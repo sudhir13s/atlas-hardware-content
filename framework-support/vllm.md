@@ -2,8 +2,9 @@
 id: framework-support/vllm
 type: framework-support
 slug: vllm
-schema_version: 2.0
+schema_version: 2.1
 title: vLLM
+framework: framework/vllm
 checked: '2026-11-22'
 platforms:
 - platform: cuda

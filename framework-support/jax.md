@@ -2,8 +2,9 @@
 id: framework-support/jax
 type: framework-support
 slug: jax
-schema_version: 2.0
+schema_version: 2.1
 title: JAX
+framework: framework/jax
 checked: '2026-11-22'
 platforms:
 - platform: cuda

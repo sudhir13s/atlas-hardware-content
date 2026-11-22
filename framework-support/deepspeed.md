@@ -2,8 +2,9 @@
 id: framework-support/deepspeed
 type: framework-support
 slug: deepspeed
-schema_version: 2.0
+schema_version: 2.1
 title: DeepSpeed
+framework: framework/deepspeed
 checked: '2026-11-22'
 platforms:
 - platform: cuda

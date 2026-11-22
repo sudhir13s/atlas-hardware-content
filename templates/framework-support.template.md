@@ -2,8 +2,9 @@
 id: framework-support/<slug>
 type: framework-support
 slug: <slug>                       # the framework, e.g. pytorch, onnx-runtime
-schema_version: 2.0
+schema_version: 2.1
 title: "<Framework name>"
+framework: framework/<slug>        # optional: the framework record this is about, when the Atlas has one
 checked: <YYYY-MM-DD>              # the day every platform source was last read
 platforms:                         # only what the framework's (or the platform maker's) own page states
   - platform: cuda                 # cuda | rocm | apple-silicon | intel-gpu | intel-gaudi | google-tpu

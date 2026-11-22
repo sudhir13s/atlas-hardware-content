@@ -2,8 +2,9 @@
 id: framework-support/tensorflow
 type: framework-support
 slug: tensorflow
-schema_version: 2.0
+schema_version: 2.1
 title: TensorFlow
+framework: framework/tensorflow
 checked: '2026-11-22'
 platforms:
 - platform: cuda
