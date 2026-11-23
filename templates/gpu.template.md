@@ -2,7 +2,7 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 2.0
+schema_version: 2.2
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
 segment: datacenter                # datacenter | workstation | consumer
@@ -21,6 +21,7 @@ specifications:                    # every field but unit_kind is absent when th
   memory_type: "<e.g. HBM3e>"
   memory_note: "<remark>"          # optional
   memory_kind: unified             # only when CPU and GPU share the memory
+  memory_options_gb: [<number>]    # unified memory only: every size of the computers sold with the chip, smallest first
   memory_bandwidth_gb_per_s: <number>
   compute_units: <integer>
   compute_unit_type: "<e.g. CUDA Cores>"

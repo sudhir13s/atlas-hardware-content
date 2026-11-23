@@ -2,7 +2,7 @@
 id: gpu/apple-m4-max
 type: gpu
 slug: apple-m4-max
-schema_version: 2.0
+schema_version: 2.2
 title: M4 Max
 vendor: Apple
 segment: workstation
@@ -18,6 +18,11 @@ specifications:
   memory_gb: 128
   memory_note: 128GB with the 16-core CPU; 546GB/s with the 40-core GPU, 410GB/s with the 32-core GPU
   memory_kind: unified
+  memory_options_gb:
+  - 36
+  - 48
+  - 64
+  - 128
   memory_bandwidth_gb_per_s: 546
   unit_kind: gpu
   compute_units: 40
@@ -48,7 +53,7 @@ tags:
 - apple
 - workstation
 - m4
-updated: '2026-11-22'
+updated: '2026-11-23'
 sources:
 - url: https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/
   title: Apple introduces M4 Pro and M4 Max (Apple Newsroom)

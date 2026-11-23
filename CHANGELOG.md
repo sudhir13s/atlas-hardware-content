@@ -5,6 +5,16 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 2.2 (unified-memory sizes of Apple chips)
+
+- **Added** the optional `gpu` field `specifications.memory_options_gb`: for a chip with unified
+  memory, every memory size of the computers sold with it (Macs), smallest first, read from Apple's
+  tech-spec pages. Set on the 4 existing Apple records (M1 Ultra, M2 Ultra, M3 Max, M4 Max), which now carry
+  `schema_version: 2.2`; records authored against 2.0 and 2.1 stay valid.
+- **Added** 6 `gpu` records for the Apple chips in recent laptops and desktops: M1, M4, M4 Pro, M5,
+  M5 Pro and M6 (48 `gpu` records in all). Each holds only what Apple's newsroom and tech-spec pages
+  state; none has a price, because Apple prices Macs, not chips.
+
 ### Schema 2.1 (framework support names its framework record)
 
 - **Added** the optional `framework-support` field `framework`: the `framework/<slug>` ID of the

@@ -45,6 +45,7 @@
         "memory_type": { "type": "string" },
         "memory_note": { "type": "string", "description": "remark the source put beside the memory type" },
         "memory_kind": { "type": "string", "enum": ["unified"], "description": "set only when CPU and GPU share the memory" },
+        "memory_options_gb": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "number", "exclusiveMinimum": 0 }, "description": "unified memory only: every memory size of the computers the maker sells with the chip (for Apple: Macs), smallest first, from their tech-spec pages; memory_gb is the largest" },
         "memory_bandwidth_gb_per_s": { "type": "number", "exclusiveMinimum": 0 },
         "compute_units": { "type": "integer", "minimum": 1 },
         "compute_unit_type": { "type": "string" },

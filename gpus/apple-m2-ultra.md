@@ -2,7 +2,7 @@
 id: gpu/apple-m2-ultra
 type: gpu
 slug: apple-m2-ultra
-schema_version: 2.0
+schema_version: 2.2
 title: M2 Ultra
 vendor: Apple
 segment: workstation
@@ -17,6 +17,10 @@ aliases:
 specifications:
   memory_gb: 192
   memory_kind: unified
+  memory_options_gb:
+  - 64
+  - 128
+  - 192
   memory_bandwidth_gb_per_s: 800
   unit_kind: gpu
   compute_units: 76
@@ -53,7 +57,7 @@ tags:
 - apple
 - workstation
 - m2
-updated: '2026-11-22'
+updated: '2026-11-23'
 sources:
 - url: https://www.apple.com/newsroom/2023/06/apple-introduces-m2-ultra/
   title: Apple introduces M2 Ultra (Apple Newsroom)

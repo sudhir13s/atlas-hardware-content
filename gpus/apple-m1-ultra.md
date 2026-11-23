@@ -2,7 +2,7 @@
 id: gpu/apple-m1-ultra
 type: gpu
 slug: apple-m1-ultra
-schema_version: 2.0
+schema_version: 2.2
 title: M1 Ultra
 vendor: Apple
 segment: workstation
@@ -17,6 +17,9 @@ aliases:
 specifications:
   memory_gb: 128
   memory_kind: unified
+  memory_options_gb:
+  - 64
+  - 128
   memory_bandwidth_gb_per_s: 800
   unit_kind: gpu
   compute_units: 64
@@ -45,7 +48,7 @@ tags:
 - apple
 - workstation
 - m1
-updated: '2026-11-22'
+updated: '2026-11-23'
 sources:
 - url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
   title: Apple unveils M1 Ultra (Apple Newsroom)

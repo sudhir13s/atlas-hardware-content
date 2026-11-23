@@ -64,7 +64,10 @@ step lists) so it stays machine-parseable.
   maker's announced availability or launch date, and the announcement date only when the maker gives
   nothing more exact than a month or quarter. `unit_kind: module` (with `gpus_per_module`) marks
   several GPUs sold as one unit: its memory, compute units and TDP cover the whole module.
-  `memory_kind: unified` marks memory shared with the CPU. `market` is agent-owned (prices change)
+  `memory_kind: unified` marks memory shared with the CPU; such a record lists in
+  `memory_options_gb` every memory size of the computers the maker sells with the chip (for Apple:
+  Macs, not iPads; smallest first, read from their tech-spec pages, each cited in `sources`), and
+  `memory_gb` is the largest of them. `market` is agent-owned (prices change)
   and carries `observed_at` and `source`. `msrp_usd` is only the maker's own published launch price
   (press release, newsroom post or product page), with that page in `msrp_source` and the
   announcement date in `msrp_announced`; no reseller, news or analyst figure, and absent when the

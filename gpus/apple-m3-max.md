@@ -2,7 +2,7 @@
 id: gpu/apple-m3-max
 type: gpu
 slug: apple-m3-max
-schema_version: 2.0
+schema_version: 2.2
 title: M3 Max
 vendor: Apple
 segment: workstation
@@ -18,6 +18,12 @@ specifications:
   memory_gb: 128
   memory_note: 128GB with the 16-core CPU; 400GB/s with the 40-core GPU, 300GB/s with the 30-core GPU
   memory_kind: unified
+  memory_options_gb:
+  - 36
+  - 48
+  - 64
+  - 96
+  - 128
   memory_bandwidth_gb_per_s: 400
   unit_kind: gpu
   compute_units: 40
@@ -48,7 +54,7 @@ tags:
 - apple
 - workstation
 - m3
-updated: '2026-11-22'
+updated: '2026-11-23'
 sources:
 - url: https://www.apple.com/newsroom/2023/10/apple-unveils-m3-m3-pro-and-m3-max-the-most-advanced-chips-for-a-personal-computer/
   title: Apple unveils M3, M3 Pro, and M3 Max (Apple Newsroom)
