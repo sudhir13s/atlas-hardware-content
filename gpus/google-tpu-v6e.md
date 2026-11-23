@@ -2,7 +2,7 @@
 id: gpu/google-tpu-v6e
 type: gpu
 slug: google-tpu-v6e
-schema_version: 2.0
+schema_version: 3.0
 title: TPU v6e (Trillium)
 vendor: Google
 segment: datacenter
@@ -77,6 +77,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Google Cloud TPU (Trillium) with one TensorCore and 32 GB of HBM at 1,638 GB/s per chip, scaling to 256 chips in a Pod.

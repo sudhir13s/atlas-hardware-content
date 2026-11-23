@@ -2,7 +2,7 @@
 id: gpu/apple-m3-max
 type: gpu
 slug: apple-m3-max
-schema_version: 2.2
+schema_version: 3.0
 title: M3 Max
 vendor: Apple
 segment: workstation
@@ -64,6 +64,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on a 3-nanometer process, with up to 128GB of unified memory at up to 400GB/s and a 30-core or 40-core GPU, used in MacBook Pro (Nov 2023).

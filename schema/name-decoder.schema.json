@@ -2,14 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/name-decoder.schema.json",
   "title": "name-decoder",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "name-decoder" },
+    "schema_version": { "const": 3.0 },
     "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
     "prefixes": {
       "type": "array",
       "items": {
-        "type": "object",
+        "type": "object", "unevaluatedProperties": false,
         "required": ["symbol", "meaning"],
         "properties": {
           "symbol": { "type": "string" },
@@ -21,7 +23,7 @@
     "suffixes": {
       "type": "array",
       "items": {
-        "type": "object",
+        "type": "object", "unevaluatedProperties": false,
         "required": ["symbol", "meaning"],
         "properties": {
           "symbol": { "type": "string" },
@@ -32,14 +34,14 @@
     "examples": {
       "type": "array",
       "items": {
-        "type": "object",
+        "type": "object", "unevaluatedProperties": false,
         "required": ["name", "parts"],
         "properties": {
           "name": { "type": "string" },
           "parts": {
             "type": "array",
             "items": {
-              "type": "object",
+              "type": "object", "unevaluatedProperties": false,
               "required": ["token", "explains"],
               "properties": {
                 "token": { "type": "string" },

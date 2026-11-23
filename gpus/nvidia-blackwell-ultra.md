@@ -2,11 +2,10 @@
 id: gpu/nvidia-blackwell-ultra
 type: gpu
 slug: nvidia-blackwell-ultra
-schema_version: 2.0
+schema_version: 3.0
 title: Blackwell Ultra B300
 vendor: NVIDIA
 segment: datacenter
-series: Blackwell Ultra
 generation: Blackwell Ultra
 compute_platform: cuda
 compute_capability: 10.3
@@ -76,6 +75,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Blackwell Ultra architecture with 288 GB of HBM3e at 8 TB/s in the SXM form factor.

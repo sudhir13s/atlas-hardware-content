@@ -2,12 +2,13 @@
 id: gpu/amd-mi300x
 type: gpu
 slug: amd-mi300x
-schema_version: 2.0
+schema_version: 3.0
 title: Instinct MI300X
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 3
+architecture: gpu-architecture/cdna-3
 compute_platform: rocm
 release_date: '2023-12-06'
 signal_strength: high
@@ -90,6 +91,4 @@ sources:
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
-## Overview
 
-AMD datacenter GPU on the CDNA 3 architecture with 192 GB of HBM3 at 5.3 TB/s in the OAM form factor.

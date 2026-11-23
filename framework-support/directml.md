@@ -2,7 +2,7 @@
 id: framework-support/directml
 type: framework-support
 slug: directml
-schema_version: 2.0
+schema_version: 3.0
 title: DirectML
 checked: '2026-11-22'
 platforms:
@@ -34,3 +34,5 @@ sources:
   title: Introduction to DirectML (Microsoft Learn)
   trust: 0.95
 ---
+
+

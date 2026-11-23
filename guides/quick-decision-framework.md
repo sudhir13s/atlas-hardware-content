@@ -2,7 +2,7 @@
 id: guide/quick-decision-framework
 type: guide
 slug: quick-decision-framework
-schema_version: 1.2
+schema_version: 3.0
 title: Quick decision
 page_section: quick-decision
 order: 1
@@ -33,14 +33,36 @@ tags:
 - quick-decision-framework
 updated: '2026-11-21'
 sources:
-- {url: "https://research.google.com/colaboratory/faq.html", title: "Google Colab FAQ", trust: 0.95}
-- {url: "https://www.kaggle.com/docs/efficient-gpu-usage", title: "Efficient GPU Usage Tips (Kaggle documentation)", trust: 0.95}
-- {url: "https://github.com/ml-explore/mlx", title: "MLX: an array framework for Apple silicon", trust: 0.95}
-- {url: "https://arxiv.org/abs/2305.14314", title: "QLoRA: Efficient Finetuning of Quantized LLMs", trust: 0.95}
-- {url: "https://www.nvidia.com/en-us/data-center/h200/", title: "NVIDIA H200 Tensor Core GPU", trust: 0.95}
-- {url: "https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html", title: "AMD Instinct MI300X Accelerators", trust: 0.95}
-- {url: "https://www.amd.com/en/products/accelerators/instinct/mi300/mi325x.html", title: "AMD Instinct MI325X Accelerators", trust: 0.95}
-- {url: "https://modal.com/pricing", title: "Modal pricing", trust: 0.9}
-- {url: "https://replicate.com/pricing", title: "Replicate pricing", trust: 0.9}
-- {url: "https://www.together.ai/pricing", title: "Together AI pricing", trust: 0.9}
+- url: https://research.google.com/colaboratory/faq.html
+  title: Google Colab FAQ
+  trust: 0.95
+- url: https://www.kaggle.com/docs/efficient-gpu-usage
+  title: Efficient GPU Usage Tips (Kaggle documentation)
+  trust: 0.95
+- url: https://github.com/ml-explore/mlx
+  title: 'MLX: an array framework for Apple silicon'
+  trust: 0.95
+- url: https://arxiv.org/abs/2305.14314
+  title: 'QLoRA: Efficient Finetuning of Quantized LLMs'
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/data-center/h200/
+  title: NVIDIA H200 Tensor Core GPU
+  trust: 0.95
+- url: https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html
+  title: AMD Instinct MI300X Accelerators
+  trust: 0.95
+- url: https://www.amd.com/en/products/accelerators/instinct/mi300/mi325x.html
+  title: AMD Instinct MI325X Accelerators
+  trust: 0.95
+- url: https://modal.com/pricing
+  title: Modal pricing
+  trust: 0.9
+- url: https://replicate.com/pricing
+  title: Replicate pricing
+  trust: 0.9
+- url: https://www.together.ai/pricing
+  title: Together AI pricing
+  trust: 0.9
 ---
+
+

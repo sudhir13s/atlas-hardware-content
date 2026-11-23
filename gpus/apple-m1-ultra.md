@@ -2,7 +2,7 @@
 id: gpu/apple-m1-ultra
 type: gpu
 slug: apple-m1-ultra
-schema_version: 2.2
+schema_version: 3.0
 title: M1 Ultra
 vendor: Apple
 segment: workstation
@@ -58,6 +58,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip that joins two M1 Max dies with UltraFusion, with up to 128GB of unified memory at 800GB/s and up to a 64-core GPU, used in Mac Studio (2022).

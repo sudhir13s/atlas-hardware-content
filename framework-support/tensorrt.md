@@ -2,7 +2,7 @@
 id: framework-support/tensorrt
 type: framework-support
 slug: tensorrt
-schema_version: 2.0
+schema_version: 3.0
 title: TensorRT
 checked: '2026-11-22'
 platforms:
@@ -20,3 +20,5 @@ sources:
   title: TensorRT Support Matrix (NVIDIA)
   trust: 0.95
 ---
+
+

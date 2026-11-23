@@ -2,7 +2,7 @@
 id: gpu/intel-arc-a770
 type: gpu
 slug: intel-arc-a770
-schema_version: 2.0
+schema_version: 3.0
 title: Arc A770
 vendor: Intel
 segment: consumer
@@ -64,6 +64,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Intel Arc A-series desktop graphics card on the Xe-HPG microarchitecture with 16 GB of GDDR6 at 560 GB/s and 32 Xe-cores.

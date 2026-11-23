@@ -2,7 +2,7 @@
 id: name-decoder/<slug>
 type: name-decoder
 slug: <slug>
-schema_version: 1.0
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Vendor> product-name decoder"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel
 prefixes:

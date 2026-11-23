@@ -2,12 +2,12 @@
 id: gpu/nvidia-b100
 type: gpu
 slug: nvidia-b100
-schema_version: 2.0
+schema_version: 3.0
 title: B100
 vendor: NVIDIA
 segment: datacenter
-series: Blackwell
 generation: Blackwell
+architecture: gpu-architecture/blackwell
 compute_platform: cuda
 release_date: '2024-03-18'
 signal_strength: high
@@ -45,6 +45,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA named the B100 Tensor Core GPU as part of its Blackwell platform on March 18, 2024, and documents an HGX B100 8-GPU baseboard with fourth-generation NVSwitches. NVIDIA publishes no specification page for the B100.

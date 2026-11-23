@@ -2,12 +2,12 @@
 id: gpu/nvidia-a4000
 type: gpu
 slug: nvidia-a4000
-schema_version: 2.0
+schema_version: 3.0
 title: RTX A4000
 vendor: NVIDIA
 segment: workstation
-series: Ampere
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.6
 release_date: '2021-04-12'
@@ -70,6 +70,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA workstation GPU on the Ampere architecture with 16 GB of GDDR6 with ECC at 448 GB/s in a single-slot PCIe card.

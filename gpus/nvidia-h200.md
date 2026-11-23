@@ -2,12 +2,12 @@
 id: gpu/nvidia-h200
 type: gpu
 slug: nvidia-h200
-schema_version: 2.0
+schema_version: 3.0
 title: H200
 vendor: NVIDIA
 segment: datacenter
-series: Hopper
 generation: Hopper
+architecture: gpu-architecture/hopper
 compute_platform: cuda
 compute_capability: 9.0
 release_date: '2023-11-13'
@@ -91,6 +91,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Hopper architecture with 141 GB of HBM3e at 4.8 TB/s in the SXM form factor.

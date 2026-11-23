@@ -2,7 +2,7 @@
 id: gpu/apple-m5-pro
 type: gpu
 slug: apple-m5-pro
-schema_version: 2.2
+schema_version: 3.0
 title: M5 Pro
 vendor: Apple
 segment: workstation
@@ -61,6 +61,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on third-generation 3-nanometer technology, with 24GB, 48GB or 64GB of unified memory at 307GB/s and a 16-core or 20-core GPU, used in MacBook Pro (M5 Pro) and Mac mini (M5 Pro).

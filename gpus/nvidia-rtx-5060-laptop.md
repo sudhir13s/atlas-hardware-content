@@ -2,12 +2,13 @@
 id: gpu/nvidia-rtx-5060-laptop
 type: gpu
 slug: nvidia-rtx-5060-laptop
-schema_version: 2.3
+schema_version: 3.0
 title: GeForce RTX 5060 Laptop GPU
 vendor: NVIDIA
 segment: laptop
 series: GeForce RTX 50 Laptop
 generation: Blackwell
+architecture: gpu-architecture/blackwell
 compute_platform: cuda
 release_date: '2025-05-19'
 signal_strength: medium
@@ -56,6 +57,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA laptop GPU on the Blackwell architecture with 8 GB of GDDR7 at 384 GB/s and a GPU subsystem power of 45 to 100 W.

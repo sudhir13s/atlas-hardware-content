@@ -2,7 +2,7 @@
 id: gpu/apple-m2-ultra
 type: gpu
 slug: apple-m2-ultra
-schema_version: 2.2
+schema_version: 3.0
 title: M2 Ultra
 vendor: Apple
 segment: workstation
@@ -67,6 +67,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on a second-generation 5-nanometer process, with up to 192GB of unified memory at 800GB/s and a 60-core or 76-core GPU, used in Mac Studio and Mac Pro (2023).

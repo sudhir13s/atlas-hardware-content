@@ -2,7 +2,7 @@
 id: framework-support/pytorch
 type: framework-support
 slug: pytorch
-schema_version: 2.1
+schema_version: 3.0
 title: PyTorch
 framework: framework/pytorch
 checked: '2026-11-22'
@@ -50,3 +50,5 @@ sources:
   title: PyTorch (Intel Gaudi documentation)
   trust: 0.9
 ---
+
+

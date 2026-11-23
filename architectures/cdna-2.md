@@ -2,31 +2,58 @@
 id: gpu-architecture/cdna-2
 type: gpu-architecture
 slug: cdna-2
-schema_version: 1.0
-title: "AMD CDNA 2"
-name: "CDNA 2"
+schema_version: 3.0
+title: AMD CDNA 2
+name: CDNA 2
 vendor: AMD
 year: 2021
-predecessor: gpu-architecture/cdna
-successor: gpu-architecture/cdna-3
-process_node: "TSMC 6nm"
-segment: "datacenter"
-representative_gpus: ["amd-mi250x", "amd-mi210"]
-key_innovation: "Two Graphics Compute Dies in one package joined by in-package Infinity Fabric, with FP64 matrix instructions and a coherent link to optimized AMD EPYC CPUs."
-innovations: ["Two Graphics Compute Dies (GCDs) per package on MI250 and MI250X", "FP64 matrix instructions (twice the throughput of FP64 vector instructions)", "Packed FP32 instructions", "Coherent Infinity Fabric link to optimized 3rd Gen AMD EPYC processors (MI250X)", "3rd Gen AMD Infinity Architecture"]
-precision_support: ["FP64", "FP32", "FP16", "BF16", "INT8", "INT4"]
-memory_tech: "HBM2e"
-interconnect: "Infinity Fabric, PCIe 4.0"
-tags: [amd, cdna-2, mi250x, fp64, exascale]
+predecessors:
+- gpu-architecture/cdna
+process_node: TSMC 6nm
+segment: datacenter
+representative_gpus:
+- gpu/amd-mi250x
+- gpu/amd-mi210
+key_innovation: Two Graphics Compute Dies in one package joined by in-package Infinity Fabric, with FP64 matrix instructions and a coherent link to optimized AMD EPYC CPUs.
+innovations:
+- Two Graphics Compute Dies (GCDs) per package on MI250 and MI250X
+- FP64 matrix instructions (twice the throughput of FP64 vector instructions)
+- Packed FP32 instructions
+- Coherent Infinity Fabric link to optimized 3rd Gen AMD EPYC processors (MI250X)
+- 3rd Gen AMD Infinity Architecture
+precision_support:
+- FP64
+- FP32
+- FP16
+- BF16
+- INT8
+- INT4
+memory_tech: HBM2e
+interconnect: Infinity Fabric, PCIe 4.0
+tags:
+- amd
+- cdna-2
+- mi250x
+- fp64
+- exascale
 updated: '2026-11-21'
 sources:
-  - { url: "https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna2-white-paper.pdf", title: "AMD CDNA 2 Architecture white paper", trust: 0.95 }
-  - { url: "https://www.amd.com/en/products/accelerators/instinct/mi200/mi250x.html", title: "AMD Instinct MI250X specifications", trust: 0.95 }
-  - { url: "https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html", title: "AMD Instinct MI210 specifications", trust: 0.95 }
-  - { url: "https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf", title: "AMD CDNA 3 Architecture white paper (CDNA 2 background)", trust: 0.95 }
+- url: https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna2-white-paper.pdf
+  title: AMD CDNA 2 Architecture white paper
+  trust: 0.95
+- url: https://www.amd.com/en/products/accelerators/instinct/mi200/mi250x.html
+  title: AMD Instinct MI250X specifications
+  trust: 0.95
+- url: https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html
+  title: AMD Instinct MI210 specifications
+  trust: 0.95
+- url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf
+  title: AMD CDNA 3 Architecture white paper (CDNA 2 background)
+  trust: 0.95
 ---
 
 ## What Changed
+
 CDNA 2 powers the **Instinct MI200 Series**. The MI250X launched on 8 November 2021 on TSMC 6nm; the
 single-die MI210 PCIe card followed on 22 March 2022.
 

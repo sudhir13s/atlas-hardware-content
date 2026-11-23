@@ -2,12 +2,12 @@
 id: gpu/nvidia-v100-32gb
 type: gpu
 slug: nvidia-v100-32gb
-schema_version: 2.0
+schema_version: 3.0
 title: V100 32GB
 vendor: NVIDIA
 segment: datacenter
-series: Volta
 generation: Volta
+architecture: gpu-architecture/volta
 compute_platform: cuda
 compute_capability: 7.0
 release_date: '2018-03-27'
@@ -84,6 +84,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Volta architecture with 32 GB of HBM2 at 900 GB/s in SXM2 and PCIe form factors.

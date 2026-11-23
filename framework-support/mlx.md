@@ -2,7 +2,7 @@
 id: framework-support/mlx
 type: framework-support
 slug: mlx
-schema_version: 2.0
+schema_version: 3.0
 title: MLX
 checked: '2026-11-22'
 platforms:
@@ -27,3 +27,5 @@ sources:
   title: MLX repository README (Apple machine learning research)
   trust: 0.9
 ---
+
+

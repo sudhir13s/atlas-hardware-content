@@ -2,7 +2,7 @@
 id: guide/power-cooling-tco
 type: guide
 slug: power-cooling-tco
-schema_version: 1.2
+schema_version: 3.0
 title: Power and running cost
 page_section: power
 order: 2
@@ -11,8 +11,12 @@ tags:
 - power-cooling-tco
 updated: '2026-11-21'
 sources:
-- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/", title: "NVIDIA GeForce RTX 4090", trust: 0.95}
-- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/", title: "NVIDIA GeForce RTX 5090", trust: 0.95}
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/
+  title: NVIDIA GeForce RTX 4090
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+  title: NVIDIA GeForce RTX 5090
+  trust: 0.95
 ---
 
 ## Overview

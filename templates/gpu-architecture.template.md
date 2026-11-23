@@ -2,17 +2,16 @@
 id: gpu-architecture/<slug>
 type: gpu-architecture
 slug: <slug>
-schema_version: 1.0
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Human Readable Name>"
 name: "<Architecture Name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel
 codename: "<internal codename>"    # optional
 year: <YYYY>
-predecessor: gpu-architecture/<slug>   # optional; FK
-successor: gpu-architecture/<slug>     # optional; FK
+predecessors: [gpu-architecture/<slug>]   # optional; FKs, the direct line first. What follows is never stored here
 process_node: "<e.g. TSMC 4N>"
 segment: "<consumer | datacenter | consumer + datacenter>"
-representative_gpus: ["<GPU (year)>", "<GPU>"]
+representative_gpus: [gpu/<slug>]         # FKs
 key_innovation: "<the one thing this generation introduced>"
 innovations: ["<innovation>", "<innovation>"]
 precision_support: ["FP32", "FP16", "..."]

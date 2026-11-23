@@ -2,7 +2,7 @@
 id: gpu/intel-gaudi-3
 type: gpu
 slug: intel-gaudi-3
-schema_version: 2.0
+schema_version: 3.0
 title: Gaudi 3
 vendor: Intel
 segment: datacenter
@@ -86,6 +86,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Intel AI accelerator with 128 GB of HBM2e at 3.7 TB/s, 64 Tensor Processor Cores, 8 matrix engines and 24 integrated 200 GbE ports, in a 900 W OAM module.

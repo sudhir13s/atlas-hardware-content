@@ -2,12 +2,13 @@
 id: gpu/amd-mi325x
 type: gpu
 slug: amd-mi325x
-schema_version: 2.0
+schema_version: 3.0
 title: Instinct MI325X
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 3
+architecture: gpu-architecture/cdna-3
 compute_platform: rocm
 release_date: '2024-10-10'
 signal_strength: high
@@ -82,6 +83,4 @@ sources:
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
-## Overview
 
-AMD datacenter GPU on the CDNA 3 architecture with 256 GB of HBM3E at 6 TB/s in the OAM form factor.

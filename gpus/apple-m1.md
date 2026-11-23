@@ -2,7 +2,7 @@
 id: gpu/apple-m1
 type: gpu
 slug: apple-m1
-schema_version: 2.2
+schema_version: 3.0
 title: M1
 vendor: Apple
 segment: consumer
@@ -55,6 +55,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on a 5-nanometer process, with 8GB or 16GB of unified memory and a 7-core or 8-core GPU, introduced in MacBook Air, 13-inch MacBook Pro and Mac mini (2020).

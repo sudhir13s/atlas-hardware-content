@@ -2,7 +2,7 @@
 id: framework-support/jax
 type: framework-support
 slug: jax
-schema_version: 2.1
+schema_version: 3.0
 title: JAX
 framework: framework/jax
 checked: '2026-11-22'
@@ -32,3 +32,5 @@ sources:
   title: Installation (JAX documentation)
   trust: 0.95
 ---
+
+

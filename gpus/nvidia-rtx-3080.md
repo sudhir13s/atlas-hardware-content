@@ -2,12 +2,13 @@
 id: gpu/nvidia-rtx-3080
 type: gpu
 slug: nvidia-rtx-3080
-schema_version: 2.0
+schema_version: 3.0
 title: GeForce RTX 3080
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 30
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.6
 release_date: '2020-09-17'
@@ -85,6 +86,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA consumer GPU on the Ampere architecture with 10 GB of GDDR6X at 760 GB/s.

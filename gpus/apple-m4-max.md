@@ -2,7 +2,7 @@
 id: gpu/apple-m4-max
 type: gpu
 slug: apple-m4-max
-schema_version: 2.2
+schema_version: 3.0
 title: M4 Max
 vendor: Apple
 segment: workstation
@@ -66,6 +66,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on second-generation 3-nanometer technology, with up to 128GB of unified memory at up to 546GB/s and a 32-core or 40-core GPU, used in MacBook Pro (2024) and Mac Studio (2025).

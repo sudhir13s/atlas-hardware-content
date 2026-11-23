@@ -2,12 +2,12 @@
 id: gpu/nvidia-l4
 type: gpu
 slug: nvidia-l4
-schema_version: 2.0
+schema_version: 3.0
 title: L4
 vendor: NVIDIA
 segment: datacenter
-series: Ada Lovelace
 generation: Ada Lovelace
+architecture: gpu-architecture/ada-lovelace
 compute_platform: cuda
 compute_capability: 8.9
 release_date: '2023-03-21'
@@ -87,6 +87,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Ada Lovelace architecture with 24 GB of GDDR6 at 300 GB/s in a 72 W single-slot low-profile PCIe card.

@@ -2,12 +2,12 @@
 id: gpu/nvidia-gb200
 type: gpu
 slug: nvidia-gb200
-schema_version: 2.0
+schema_version: 3.0
 title: GB200 Grace Blackwell Superchip
 vendor: NVIDIA
 segment: datacenter
-series: Blackwell
 generation: Blackwell
+architecture: gpu-architecture/blackwell
 compute_platform: cuda
 compute_capability: 10.0
 release_date: '2024-03-18'
@@ -79,6 +79,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA superchip that joins two Blackwell GPUs with 372 GB of HBM3e at 16 TB/s to one 72-core Grace CPU.

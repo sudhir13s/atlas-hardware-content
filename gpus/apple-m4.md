@@ -2,7 +2,7 @@
 id: gpu/apple-m4
 type: gpu
 slug: apple-m4
-schema_version: 2.2
+schema_version: 3.0
 title: M4
 vendor: Apple
 segment: consumer
@@ -66,6 +66,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on second-generation 3-nanometer technology, with 16GB, 24GB or 32GB of unified memory at 120GB/s in Macs and an 8-core or 10-core GPU, used in MacBook Air (2025), MacBook Pro (2024) and Mac mini (2024).

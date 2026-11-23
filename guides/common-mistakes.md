@@ -2,7 +2,7 @@
 id: guide/common-mistakes
 type: guide
 slug: common-mistakes
-schema_version: 1.2
+schema_version: 3.0
 title: Mistakes to avoid
 page_section: background
 order: 8
@@ -22,9 +22,21 @@ tags:
 - common-mistakes
 updated: '2026-11-21'
 sources:
-- {url: "https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/", title: "Mastering LLM Techniques: Inference Optimization (NVIDIA Technical Blog)", trust: 0.95}
-- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/", title: "NVIDIA GeForce RTX 4090", trust: 0.95}
-- {url: "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/", title: "NVIDIA GeForce RTX 5090", trust: 0.95}
-- {url: "https://www.nvidia.com/en-us/data-center/h100/", title: "NVIDIA H100 Tensor Core GPU", trust: 0.95}
-- {url: "https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/", title: "Apple unveils M1 Ultra (Apple Newsroom)", trust: 0.95}
+- url: https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/
+  title: 'Mastering LLM Techniques: Inference Optimization (NVIDIA Technical Blog)'
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/
+  title: NVIDIA GeForce RTX 4090
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+  title: NVIDIA GeForce RTX 5090
+  trust: 0.95
+- url: https://www.nvidia.com/en-us/data-center/h100/
+  title: NVIDIA H100 Tensor Core GPU
+  trust: 0.95
+- url: https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/
+  title: Apple unveils M1 Ultra (Apple Newsroom)
+  trust: 0.95
 ---
+
+

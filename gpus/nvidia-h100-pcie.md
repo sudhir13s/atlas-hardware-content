@@ -2,12 +2,12 @@
 id: gpu/nvidia-h100-pcie
 type: gpu
 slug: nvidia-h100-pcie
-schema_version: 2.0
+schema_version: 3.0
 title: H100 PCIe
 vendor: NVIDIA
 segment: datacenter
-series: Hopper
 generation: Hopper
+architecture: gpu-architecture/hopper
 compute_platform: cuda
 compute_capability: 9.0
 release_date: '2022-03-22'
@@ -81,6 +81,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM2e at 2,000 GB/s on a dual-slot, passively cooled PCIe Gen5 card.

@@ -2,12 +2,12 @@
 id: gpu/nvidia-a6000
 type: gpu
 slug: nvidia-a6000
-schema_version: 2.0
+schema_version: 3.0
 title: RTX A6000
 vendor: NVIDIA
 segment: workstation
-series: Ampere
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.6
 signal_strength: medium
@@ -92,6 +92,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA workstation GPU on the Ampere architecture with 48 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.

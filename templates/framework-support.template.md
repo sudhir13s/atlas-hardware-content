@@ -2,7 +2,7 @@
 id: framework-support/<slug>
 type: framework-support
 slug: <slug>                       # the framework, e.g. pytorch, onnx-runtime
-schema_version: 2.1
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Framework name>"
 framework: framework/<slug>        # optional: the framework record this is about, when the Atlas has one
 checked: <YYYY-MM-DD>              # the day every platform source was last read

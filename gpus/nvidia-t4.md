@@ -2,12 +2,12 @@
 id: gpu/nvidia-t4
 type: gpu
 slug: nvidia-t4
-schema_version: 2.0
+schema_version: 3.0
 title: T4
 vendor: NVIDIA
 segment: datacenter
-series: Turing
 generation: Turing
+architecture: gpu-architecture/turing
 compute_platform: cuda
 compute_capability: 7.5
 release_date: '2018-09-12'
@@ -93,6 +93,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Turing architecture with 16 GB of GDDR6 at 320 GB/s in a 70 W low-profile PCIe card.

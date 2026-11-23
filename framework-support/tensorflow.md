@@ -2,7 +2,7 @@
 id: framework-support/tensorflow
 type: framework-support
 slug: tensorflow
-schema_version: 2.1
+schema_version: 3.0
 title: TensorFlow
 framework: framework/tensorflow
 checked: '2026-11-22'
@@ -38,3 +38,5 @@ sources:
   title: ROCm compatibility matrix (AMD)
   trust: 0.9
 ---
+
+

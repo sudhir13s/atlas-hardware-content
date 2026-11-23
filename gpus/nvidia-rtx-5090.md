@@ -2,12 +2,13 @@
 id: gpu/nvidia-rtx-5090
 type: gpu
 slug: nvidia-rtx-5090
-schema_version: 2.0
+schema_version: 3.0
 title: GeForce RTX 5090
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 50
 generation: Blackwell
+architecture: gpu-architecture/blackwell
 compute_platform: cuda
 compute_capability: 12.0
 release_date: '2025-01-30'
@@ -89,6 +90,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA consumer GPU on the Blackwell architecture with 32 GB of GDDR7 at 1792 GB/s.

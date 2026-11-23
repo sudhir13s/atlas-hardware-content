@@ -2,7 +2,7 @@
 id: framework-support/triton
 type: framework-support
 slug: triton
-schema_version: 2.0
+schema_version: 3.0
 title: Triton
 checked: '2026-11-22'
 platforms:
@@ -24,3 +24,5 @@ sources:
   title: Triton repository README, compatibility (triton-lang)
   trust: 0.9
 ---
+
+

@@ -2,7 +2,7 @@
 id: gpu/google-tpu-v5e
 type: gpu
 slug: google-tpu-v5e
-schema_version: 2.0
+schema_version: 3.0
 title: TPU v5e
 vendor: Google
 segment: datacenter
@@ -74,6 +74,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Google Cloud TPU with one TensorCore and 16 GiB of HBM at 819 GB/s per chip, offered for both training and inference.

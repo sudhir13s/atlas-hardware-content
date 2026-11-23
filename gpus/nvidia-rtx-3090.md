@@ -2,12 +2,13 @@
 id: gpu/nvidia-rtx-3090
 type: gpu
 slug: nvidia-rtx-3090
-schema_version: 2.0
+schema_version: 3.0
 title: GeForce RTX 3090
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 30
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.6
 release_date: '2020-09-24'
@@ -94,6 +95,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA consumer GPU on the Ampere architecture with 24 GB of GDDR6X at 936 GB/s, and NVLink (SLI-Ready) for two cards.

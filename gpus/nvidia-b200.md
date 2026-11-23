@@ -2,12 +2,12 @@
 id: gpu/nvidia-b200
 type: gpu
 slug: nvidia-b200
-schema_version: 2.0
+schema_version: 3.0
 title: B200
 vendor: NVIDIA
 segment: datacenter
-series: Blackwell
 generation: Blackwell
+architecture: gpu-architecture/blackwell
 compute_platform: cuda
 compute_capability: 10.0
 release_date: '2024-03-18'
@@ -73,6 +73,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Blackwell architecture with 180 GB of HBM3e at up to 8 TB/s in the SXM form factor.

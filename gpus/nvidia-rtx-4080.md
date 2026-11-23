@@ -2,12 +2,13 @@
 id: gpu/nvidia-rtx-4080
 type: gpu
 slug: nvidia-rtx-4080
-schema_version: 2.0
+schema_version: 3.0
 title: GeForce RTX 4080
 vendor: NVIDIA
 segment: consumer
 series: GeForce RTX 40
 generation: Ada Lovelace
+architecture: gpu-architecture/ada-lovelace
 compute_platform: cuda
 compute_capability: 8.9
 release_date: '2022-11-16'
@@ -87,6 +88,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA consumer GPU on the Ada Lovelace architecture with 16 GB of GDDR6X at 716.8 GB/s.

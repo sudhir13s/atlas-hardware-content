@@ -2,12 +2,13 @@
 id: gpu/amd-mi250x
 type: gpu
 slug: amd-mi250x
-schema_version: 2.0
+schema_version: 3.0
 title: Instinct MI250X
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 2
+architecture: gpu-architecture/cdna-2
 compute_platform: rocm
 release_date: '2021-11-08'
 signal_strength: medium
@@ -84,6 +85,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-AMD datacenter GPU on the CDNA 2 architecture with two graphics compute dies and 128 GB of HBM2e at 3.2 TB/s in the OAM form factor.

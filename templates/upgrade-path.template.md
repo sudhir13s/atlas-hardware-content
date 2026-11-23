@@ -2,13 +2,13 @@
 id: upgrade-path/<slug>
 type: upgrade-path
 slug: <slug>
-schema_version: 1.0
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Path Title>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel
 family: "<e.g. Datacenter, GeForce (consumer)>"
 steps:
-  - { gpu_id: "<GPU>", architecture_id: gpu-architecture/<slug>, year: <YYYY> }
-  - { gpu_id: "<GPU>", architecture_id: gpu-architecture/<slug>, year: <YYYY> }
+  - { gpu_id: gpu/<slug>, architecture_id: gpu-architecture/<slug>, year: <YYYY> }           # the product has a record
+  - { gpu_name: "<product or family>", architecture_id: gpu-architecture/<slug>, year: <YYYY> }   # it has none
 tags: [<tag>]
 updated: <YYYY-MM-DD>
 sources:

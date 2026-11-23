@@ -2,7 +2,7 @@
 id: framework-support/oneapi
 type: framework-support
 slug: oneapi
-schema_version: 2.0
+schema_version: 3.0
 title: oneAPI
 checked: '2026-11-22'
 platforms:
@@ -27,3 +27,5 @@ sources:
   title: Intel oneAPI Base Toolkit system requirements (Intel)
   trust: 0.95
 ---
+
+

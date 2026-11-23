@@ -2,7 +2,7 @@
 id: gpu/apple-m5
 type: gpu
 slug: apple-m5
-schema_version: 2.2
+schema_version: 3.0
 title: M5
 vendor: Apple
 segment: consumer
@@ -59,6 +59,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on third-generation 3-nanometer technology, with 16GB, 24GB or 32GB of unified memory at 153GB/s in Macs and an 8-core or 10-core GPU, used in 14-inch MacBook Pro (M5) and MacBook Air (M5).

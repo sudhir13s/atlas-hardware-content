@@ -2,7 +2,7 @@
 id: framework-support/vllm
 type: framework-support
 slug: vllm
-schema_version: 2.1
+schema_version: 3.0
 title: vLLM
 framework: framework/vllm
 checked: '2026-11-22'
@@ -42,3 +42,5 @@ sources:
   title: Installation (vLLM documentation)
   trust: 0.95
 ---
+
+

@@ -2,12 +2,12 @@
 id: gpu/nvidia-a100-40gb
 type: gpu
 slug: nvidia-a100-40gb
-schema_version: 2.0
+schema_version: 3.0
 title: A100 40GB
 vendor: NVIDIA
 segment: datacenter
-series: Ampere
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.0
 release_date: '2020-05-14'
@@ -92,6 +92,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Ampere architecture with 40 GB of HBM2 at 1,555 GB/s in the SXM form factor.

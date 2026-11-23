@@ -2,18 +2,21 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/gpu.schema.json",
   "title": "gpu",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "gpu" },
+    "schema_version": { "const": 3.0 },
     "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel", "Apple", "Google"] },
     "segment": { "type": "string", "enum": ["datacenter", "workstation", "consumer", "laptop"], "description": "'laptop' = a GPU built into laptops (e.g. a GeForce RTX Laptop GPU), not the desktop card of the same name" },
-    "series": { "type": "string", "description": "product family, e.g. 'Hopper', 'GeForce RTX 40', 'Instinct'" },
-    "generation": { "type": "string", "description": "architecture generation as the vendor names it, e.g. 'Ada Lovelace', 'CDNA 3', 'M4'" },
+    "series": { "type": "string", "minLength": 1, "description": "product family, e.g. 'GeForce RTX 40', 'Instinct', 'Apple Silicon'; absent when the maker names no family other than the architecture generation, never a copy of `generation`" },
+    "generation": { "type": "string", "description": "architecture generation as the vendor names it, e.g. 'Ada Lovelace', 'CDNA 3', 'M4'; the text a consumer shows" },
+    "architecture": { "type": "string", "pattern": "^gpu-architecture/[a-z0-9]+(?:-[a-z0-9]+)*$", "description": "FK → gpu-architecture/<slug>: the record of `generation`, when exactly one has that name; absent otherwise" },
     "compute_platform": { "$ref": "#/$defs/compute_platform" },
     "compute_capability": { "type": "number", "exclusiveMinimum": 0, "description": "NVIDIA only: the CUDA compute capability as NVIDIA lists it (CUDA GPUs page or the architecture whitepaper); absent when NVIDIA lists none" },
     "release_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "the maker's announced availability or launch date; the announcement date only when the maker gives nothing more exact than a month or quarter; absent when the maker states no date" },
     "signal_strength": { "type": "string", "enum": ["high", "medium", "low"], "description": "how much AI-practitioner attention the product draws" },
-    "summary": { "type": "string", "minLength": 1, "description": "one-sentence description; the Overview section repeats it" },
+    "summary": { "type": "string", "minLength": 1, "description": "one-sentence description; its only home, the body does not repeat it" },
     "aliases": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "other written names, e.g. 'H100 SXM5'" },
     "specifications": { "$ref": "#/$defs/specifications" },
     "performance": { "$ref": "#/$defs/performance" },
@@ -25,7 +28,7 @@
     "notable_users": { "$ref": "#/$defs/labels" },
     "image": { "type": "string", "description": "public path of the product photo, e.g. '/images/gpus/nvidia-h100-sxm.jpg'" }
   },
-  "required": ["vendor", "segment", "series", "generation", "signal_strength", "specifications", "performance", "ml_capabilities", "market", "compute_platform"],
+  "required": ["vendor", "segment", "generation", "signal_strength", "specifications", "performance", "ml_capabilities", "market", "compute_platform"],
   "$defs": {
     "labels": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "compute_platform": {

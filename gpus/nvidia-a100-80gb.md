@@ -2,12 +2,12 @@
 id: gpu/nvidia-a100-80gb
 type: gpu
 slug: nvidia-a100-80gb
-schema_version: 2.0
+schema_version: 3.0
 title: A100 80GB
 vendor: NVIDIA
 segment: datacenter
-series: Ampere
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.0
 release_date: '2020-11-16'
@@ -94,6 +94,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Ampere architecture with 80 GB of HBM2e at 2,039 GB/s in the SXM form factor.

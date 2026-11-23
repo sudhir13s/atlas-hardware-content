@@ -2,12 +2,13 @@
 id: gpu/amd-mi100
 type: gpu
 slug: amd-mi100
-schema_version: 2.0
+schema_version: 3.0
 title: Instinct MI100
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA
+architecture: gpu-architecture/cdna
 compute_platform: rocm
 release_date: '2020-11-16'
 signal_strength: low
@@ -71,6 +72,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-AMD datacenter GPU on the CDNA architecture with 32 GB of HBM2 at 1.2 TB/s on a PCIe add-in card.

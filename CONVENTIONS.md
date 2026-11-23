@@ -16,12 +16,17 @@ this file is the `hardware`-domain instance.
 
 - `id` = `<type>/<slug>` (e.g. `gpu-architecture/hopper`). Globally unique, **immutable**.
 - All cross-references use IDs, never titles:
-  - `predecessor`, `successor` → `gpu-architecture/<slug>`
+  - `predecessors[]` (architectures), `architecture` (GPUs) → `gpu-architecture/<slug>`
+  - `representative_gpus[]` (architectures), `gpu_id` (timeline events), `steps[].gpu_id`
+    (upgrade paths) → `gpu/<slug>`
   - `architecture_id` (timeline events), `steps[].architecture_id` (upgrade paths) → `gpu-architecture/<slug>`
   - `related` (glossary) → `glossary-term/<slug>`
   - `platforms[].gpus` (framework support) → `gpu/<slug>`
   - `framework` (framework support) → `framework/<slug>`, a record of the frameworks content repo
-- `gpu_id` and `steps[].gpu_id` are **free-form product strings** (e.g. `"H100 SXM"`), not IDs.
+- A product with no `gpu` record is written in `gpu_name` (`"Tesla V100"`), never in `gpu_id`;
+  an event or a step has one or the other. A `gpu` record is not created to make a name an ID.
+- **No stored reverse link.** An architecture lists what came before it; what came after is read
+  from the records that name it.
 - Every referenced ID must resolve to an existing file. Dangling references fail validation.
 
 ## Frontmatter
@@ -34,8 +39,9 @@ step lists) so it stays machine-parseable.
 - `tags`: lowercase, hyphen-separated.
 - `updated`: ISO date (`YYYY-MM-DD`).
 - `sources[]`: `{ url, title, trust }` — `trust` in `[0,1]`. Open-source-first; cite, do not copy.
-- `schema_version`: the `major.minor` the file was authored against; the repo's current version is in
-  `meta.json` and `schema/registry.json`.
+- `schema_version`: the version of the type's schema. Every schema fixes the value (`3.0`) and a
+  record with any other is refused; a breaking change raises it and converts every record.
+- **No unknown fields** on any type, at the top level or inside a block of fixed shape.
 
 ## Body sections
 
@@ -47,7 +53,6 @@ step lists) so it stays machine-parseable.
   - `glossary-term` → `Definition` and `Why You Care`
   - `upgrade-path` → `Overview`
   - `name-decoder` → `How To Read`
-  - `gpu` → optional `Overview` (the `summary`, verbatim)
   - `guide` → optional `Overview` (lead-in) and `Takeaway` (closing rule or footnote)
 
 ## Per-type specifics
@@ -74,7 +79,11 @@ step lists) so it stays machine-parseable.
   and carries `observed_at` and `source`. `msrp_usd` is only the maker's own published launch price
   (press release, newsroom post or product page), with that page in `msrp_source` and the
   announcement date in `msrp_announced`; no reseller, news or analyst figure, and absent when the
-  maker published none (most datacenter parts; Apple chips, whose Macs carry the price). Body: Overview.
+  maker published none (most datacenter parts; Apple chips, whose Macs carry the price).
+  `generation` is the architecture as the maker names it and the text shown; `architecture` is the
+  ID of the `gpu-architecture` record of that name, when there is exactly one. `series` is the
+  product family and is absent when the maker names none besides the generation. No body section:
+  the prose is `summary`, stored once.
 - **guide** — one file per block of the Buying Guide page: `page_section` says which page section
   shows it, `order` = position, `title` = the heading. Lists (`decisions`, `mistakes`, `points`) and
   the one `table` are frontmatter rows of strings (see the schema); lead-in and closing text are the
@@ -92,15 +101,16 @@ step lists) so it stays machine-parseable.
 
 - **gpu-architecture** — one file per generation. Carries `vendor`, `year`, `process_node`,
   `segment`, `memory_tech`, `interconnect`, `key_innovation`, and the arrays `representative_gpus`,
-  `innovations`, `precision_support`; plus `predecessor`/`successor` (IDs) forming the lineage DAG.
+  `innovations`, `precision_support`; plus `predecessors[]` (IDs, the direct line first) forming the
+  lineage DAG.
   Body: What Changed.
 - **timeline-event** — a dated release or milestone. `event_type` is `release` | `milestone`
   (this is the consumer's `type` field; the frontmatter `type` is always `timeline-event`).
-  Optional `architecture_id` (ID) and `gpu_id` (free string). Body: Description.
+  Optional `architecture_id` (ID) and the product: `gpu_id` (ID) or `gpu_name`. Body: Description.
 - **glossary-term** — `term`, `category`, `examples[]`, optional `related[]` (glossary IDs).
   Body: Definition → Why You Care.
 - **upgrade-path** — `vendor`, `family`, and an ordered `steps[]` of
-  `{ gpu_id, architecture_id, year }`. Body: Overview.
+  `{ gpu_id | gpu_name, architecture_id, year }`. Body: Overview.
 - **name-decoder** — `vendor`, `prefixes[]`, `numbering`, `suffixes[]`, and worked `examples[]` of
   `{ name, parts:[{token, explains}] }`. Body: How To Read.
 

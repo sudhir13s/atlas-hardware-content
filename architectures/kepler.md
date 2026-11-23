@@ -2,31 +2,49 @@
 id: gpu-architecture/kepler
 type: gpu-architecture
 slug: kepler
-schema_version: 1.0
-title: "NVIDIA Kepler"
-name: "Kepler"
+schema_version: 3.0
+title: NVIDIA Kepler
+name: Kepler
 vendor: NVIDIA
-codename: "GK104 / GK110 / GK210"
+codename: GK104 / GK110 / GK210
 year: 2012
-successor: gpu-architecture/maxwell
-process_node: "TSMC 28nm"
-segment: "consumer + datacenter"
+process_node: TSMC 28nm
+segment: consumer + datacenter
 representative_gpus: []
-key_innovation: "The SMX streaming multiprocessor ran more cores at the lower GPU clock instead of a doubled shader clock; NVIDIA states its priority for Kepler was performance per watt."
-innovations: ["SMX streaming multiprocessor", "GPU Boost dynamic clocking", "Dynamic Parallelism (GPU launches its own work)", "Hyper-Q (32 hardware work queues)"]
-precision_support: ["FP64", "FP32"]
-memory_tech: "GDDR5"
-interconnect: "PCI Express Gen 3"
-tags: [nvidia, kepler, cuda, datacenter]
+key_innovation: The SMX streaming multiprocessor ran more cores at the lower GPU clock instead of a doubled shader clock; NVIDIA states its priority for Kepler was performance per watt.
+innovations:
+- SMX streaming multiprocessor
+- GPU Boost dynamic clocking
+- Dynamic Parallelism (GPU launches its own work)
+- Hyper-Q (32 hardware work queues)
+precision_support:
+- FP64
+- FP32
+memory_tech: GDDR5
+interconnect: PCI Express Gen 3
+tags:
+- nvidia
+- kepler
+- cuda
+- datacenter
 updated: '2026-11-21'
 sources:
-  - { url: "https://nvidianews.nvidia.com/news/nvidia-launches-first-geforce-gpus-based-on-next-generation-kepler-architecture", title: "NVIDIA Launches First GeForce GPUs Based on Next-Generation Kepler Architecture (March 22, 2012)", trust: 0.95 }
-  - { url: "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/documents/NVIDIA-Kepler-GK110-GK210-Architecture-Whitepaper.pdf", title: "NVIDIA Kepler GK110/GK210 Architecture Whitepaper", trust: 0.95 }
-  - { url: "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/TeslaK80-datasheet.pdf", title: "NVIDIA Tesla K40 and K80 GPU Accelerators Datasheet", trust: 0.95 }
-  - { url: "https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf", title: "NVIDIA A100 Tensor Core GPU Architecture Whitepaper", trust: 0.95 }
+- url: https://nvidianews.nvidia.com/news/nvidia-launches-first-geforce-gpus-based-on-next-generation-kepler-architecture
+  title: NVIDIA Launches First GeForce GPUs Based on Next-Generation Kepler Architecture (March 22, 2012)
+  trust: 0.95
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/documents/NVIDIA-Kepler-GK110-GK210-Architecture-Whitepaper.pdf
+  title: NVIDIA Kepler GK110/GK210 Architecture Whitepaper
+  trust: 0.95
+- url: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/TeslaK80-datasheet.pdf
+  title: NVIDIA Tesla K40 and K80 GPU Accelerators Datasheet
+  trust: 0.95
+- url: https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf
+  title: NVIDIA A100 Tensor Core GPU Architecture Whitepaper
+  trust: 0.95
 ---
 
 ## What Changed
+
 NVIDIA launched Kepler on March 22, 2012 with the **GeForce GTX 680**, built on TSMC's 28 nm process.
 NVIDIA states that its priority for Kepler was **performance per watt**.
 

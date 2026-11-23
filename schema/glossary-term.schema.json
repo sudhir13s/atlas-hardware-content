@@ -2,9 +2,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/glossary-term.schema.json",
   "title": "glossary-term",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "glossary-term" },
+    "schema_version": { "const": 3.0 },
     "term": { "type": "string" },
     "category": {
       "type": "string",

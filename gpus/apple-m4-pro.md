@@ -2,7 +2,7 @@
 id: gpu/apple-m4-pro
 type: gpu
 slug: apple-m4-pro
-schema_version: 2.2
+schema_version: 3.0
 title: M4 Pro
 vendor: Apple
 segment: workstation
@@ -61,6 +61,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on second-generation 3-nanometer technology, with 24GB, 48GB or 64GB of unified memory at 273GB/s and a 16-core or 20-core GPU, used in MacBook Pro (2024) and Mac mini (2024).

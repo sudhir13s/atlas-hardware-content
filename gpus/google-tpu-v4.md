@@ -2,7 +2,7 @@
 id: gpu/google-tpu-v4
 type: gpu
 slug: google-tpu-v4
-schema_version: 2.0
+schema_version: 3.0
 title: TPU v4
 vendor: Google
 segment: datacenter
@@ -71,6 +71,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Google Cloud TPU with two TensorCores and 32 GiB of HBM2 at 1,200 GB/s per chip, scaling to 4,096 chips in a Pod.

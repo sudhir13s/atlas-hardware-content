@@ -2,7 +2,7 @@
 id: gpu/apple-m6
 type: gpu
 slug: apple-m6
-schema_version: 2.2
+schema_version: 3.0
 title: M6
 vendor: Apple
 segment: consumer
@@ -59,6 +59,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Apple system on a chip built on a 2-nanometer process, with 16GB, 24GB or 32GB of unified memory at up to 170GB/s and a 12-core GPU, used in Mac mini (M6) and 14-inch MacBook Pro (M6).

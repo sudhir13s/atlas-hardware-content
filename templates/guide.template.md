@@ -2,7 +2,7 @@
 id: guide/<slug>
 type: guide
 slug: <slug>
-schema_version: 1.2
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Heading the page shows>"
 page_section: <quick-decision | background | power | further-reading>
 order: <position in the buying guide>

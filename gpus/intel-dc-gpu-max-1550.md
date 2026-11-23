@@ -2,7 +2,7 @@
 id: gpu/intel-dc-gpu-max-1550
 type: gpu
 slug: intel-dc-gpu-max-1550
-schema_version: 2.0
+schema_version: 3.0
 title: Data Center GPU Max 1550
 vendor: Intel
 segment: datacenter
@@ -83,6 +83,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Intel Data Center GPU Max Series GPU on the Xe-HPC microarchitecture with 128 GB of HBM2e at 3,276.8 GB/s and 128 Xe-cores in a 600 W OAM module.

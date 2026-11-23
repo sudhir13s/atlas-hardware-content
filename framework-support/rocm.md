@@ -2,7 +2,7 @@
 id: framework-support/rocm
 type: framework-support
 slug: rocm
-schema_version: 2.0
+schema_version: 3.0
 title: ROCm
 checked: '2026-11-22'
 platforms:
@@ -26,3 +26,5 @@ sources:
   title: System requirements (Linux), supported GPUs (AMD ROCm documentation)
   trust: 0.95
 ---
+
+

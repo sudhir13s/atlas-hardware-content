@@ -2,12 +2,13 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 2.3
+schema_version: 3.0              # the schema's current version; the schema refuses any other
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
 segment: datacenter                # datacenter | workstation | consumer | laptop (a laptop GPU, not the desktop card)
-series: "<product family>"
-generation: "<architecture generation>"
+series: "<product family>"         # optional; omit when the maker names none besides the generation
+generation: "<architecture generation>"   # as the maker names it; the text shown
+architecture: gpu-architecture/<slug>     # optional; the record of that generation, when exactly one has the name
 compute_platform: cuda              # cuda | rocm | apple-silicon | intel-gpu | intel-gaudi | google-tpu
 compute_capability: <number>       # NVIDIA only, as NVIDIA lists it; absent when NVIDIA lists none
 release_date: "<YYYY-MM-DD>"       # optional; maker's availability or launch date (see CONVENTIONS.md)
@@ -76,6 +77,3 @@ updated: <YYYY-MM-DD>
 sources:
   - { url: "<url>", title: "<title>", trust: 0.9 }
 ---
-
-## Overview
-<The summary, verbatim.>

@@ -2,12 +2,12 @@
 id: gpu/nvidia-a5000
 type: gpu
 slug: nvidia-a5000
-schema_version: 2.0
+schema_version: 3.0
 title: RTX A5000
 vendor: NVIDIA
 segment: workstation
-series: Ampere
 generation: Ampere
+architecture: gpu-architecture/ampere
 compute_platform: cuda
 compute_capability: 8.6
 release_date: '2021-04-12'
@@ -83,6 +83,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA workstation GPU on the Ampere architecture with 24 GB of GDDR6 with ECC at 768 GB/s, and NVLink to connect two cards.

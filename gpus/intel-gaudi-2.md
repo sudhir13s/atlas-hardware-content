@@ -2,7 +2,7 @@
 id: gpu/intel-gaudi-2
 type: gpu
 slug: intel-gaudi-2
-schema_version: 2.0
+schema_version: 3.0
 title: Gaudi 2
 vendor: Intel
 segment: datacenter
@@ -78,6 +78,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-Intel AI accelerator with 96 GB of HBM2e at 2.46 TB/s, 24 Tensor Processor Cores and 24 integrated 100 GbE RoCE ports, in the OAM form factor.

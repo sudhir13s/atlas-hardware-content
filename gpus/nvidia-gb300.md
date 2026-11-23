@@ -2,11 +2,10 @@
 id: gpu/nvidia-gb300
 type: gpu
 slug: nvidia-gb300
-schema_version: 2.0
+schema_version: 3.0
 title: GB300 Grace Blackwell Ultra Superchip
 vendor: NVIDIA
 segment: datacenter
-series: Blackwell Ultra
 generation: Blackwell Ultra
 compute_platform: cuda
 compute_capability: 10.3
@@ -71,6 +70,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA superchip that joins two Blackwell Ultra GPUs, each with 288 GB of HBM3e at 8 TB/s, to one Grace CPU.

@@ -2,7 +2,7 @@
 id: framework-support/deepspeed
 type: framework-support
 slug: deepspeed
-schema_version: 2.1
+schema_version: 3.0
 title: DeepSpeed
 framework: framework/deepspeed
 checked: '2026-11-22'
@@ -53,3 +53,5 @@ sources:
   title: DeepSpeed repository README, requirements and contributed hardware support (DeepSpeed)
   trust: 0.9
 ---
+
+

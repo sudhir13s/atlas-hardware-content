@@ -2,10 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/guide.schema.json",
   "title": "guide",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "description": "One block of the GPU Buying Guide page. `page_section` says where the page shows it. The title is the heading, the optional body sections Overview and Takeaway are the lead-in and the closing rule, and the lists and table below are rows of strings exactly as the page shows them. A `further-reading` block keeps its links in `sources`.",
   "properties": {
     "type": { "const": "guide" },
+    "schema_version": { "const": 3.0 },
     "page_section": {
       "enum": ["quick-decision", "background", "power", "further-reading"],
       "description": "the page section that shows the block; blocks of one section follow `order`"

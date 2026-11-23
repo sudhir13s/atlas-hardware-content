@@ -2,12 +2,13 @@
 id: gpu/amd-mi210
 type: gpu
 slug: amd-mi210
-schema_version: 2.0
+schema_version: 3.0
 title: Instinct MI210
 vendor: AMD
 segment: datacenter
 series: Instinct
 generation: CDNA 2
+architecture: gpu-architecture/cdna-2
 compute_platform: rocm
 release_date: '2022-03-22'
 signal_strength: low
@@ -82,6 +83,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-AMD datacenter GPU on the CDNA 2 architecture with 64 GB of HBM2e at 1.6 TB/s on a PCIe add-in card.

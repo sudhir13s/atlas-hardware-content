@@ -2,12 +2,12 @@
 id: gpu/nvidia-l40
 type: gpu
 slug: nvidia-l40
-schema_version: 2.0
+schema_version: 3.0
 title: L40
 vendor: NVIDIA
 segment: datacenter
-series: Ada Lovelace
 generation: Ada Lovelace
+architecture: gpu-architecture/ada-lovelace
 compute_platform: cuda
 compute_capability: 8.9
 release_date: '2022-09-20'
@@ -97,6 +97,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Ada Lovelace architecture with 48 GB of GDDR6 with ECC at 864 GB/s in a 300 W dual-slot PCIe card.

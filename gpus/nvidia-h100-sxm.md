@@ -2,12 +2,12 @@
 id: gpu/nvidia-h100-sxm
 type: gpu
 slug: nvidia-h100-sxm
-schema_version: 2.0
+schema_version: 3.0
 title: H100 SXM
 vendor: NVIDIA
 segment: datacenter
-series: Hopper
 generation: Hopper
+architecture: gpu-architecture/hopper
 compute_platform: cuda
 compute_capability: 9.0
 release_date: '2022-09-20'
@@ -95,6 +95,4 @@ sources:
   trust: 0.95
 ---
 
-## Overview
 
-NVIDIA datacenter GPU on the Hopper architecture with 80 GB of HBM3 at 3.35 TB/s in the SXM5 form factor.

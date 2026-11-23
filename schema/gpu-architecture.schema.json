@@ -2,18 +2,30 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/gpu-architecture.schema.json",
   "title": "gpu-architecture",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "gpu-architecture" },
+    "schema_version": { "const": 3.0 },
     "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
     "name": { "type": "string" },
     "codename": { "type": "string" },
     "year": { "type": "integer" },
-    "predecessor": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
-    "successor": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
+    "predecessors": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^gpu-architecture/[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "description": "FKs → gpu-architecture/<slug>: the architectures this one follows, the direct line first. The architectures that follow this one are not stored; a consumer reads them from the records that name it here"
+    },
     "process_node": { "type": "string", "description": "e.g. 'TSMC 4N', 'Samsung 8nm'" },
     "segment": { "type": "string", "description": "e.g. 'consumer', 'datacenter', 'consumer + datacenter'" },
-    "representative_gpus": { "type": "array", "items": { "type": "string" } },
+    "representative_gpus": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^gpu/[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "description": "FKs → gpu/<slug>"
+    },
     "key_innovation": { "type": "string" },
     "innovations": { "type": "array", "items": { "type": "string" } },
     "precision_support": { "type": "array", "items": { "type": "string" } },

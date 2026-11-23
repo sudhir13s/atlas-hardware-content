@@ -5,6 +5,34 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 3.0 (references as IDs, one stored lineage direction, strict schemas; breaking)
+
+All 138 records were converted by the consumer's `atlas migrate hardware-restructure`. The
+conversion only moved, renamed, derived or deleted; `updated` was left alone and no `gpu` record
+was created.
+
+- **Changed** `timeline-event.gpu_id` and `upgrade-path.steps[].gpu_id` from product names to
+  `gpu/<slug>` IDs where exactly one `gpu` record is written that way (9 of 17 events, 10 of 18
+  steps). A product no one record stands for moved to the new `gpu_name` (8 events, 8 steps:
+  A100, H100, B200 / GB200, Tesla V100, Tesla P100, Tesla T4, GeForce GTX 680, GeForce GTX 1080
+  Ti, GeForce RTX 2080 Ti, Radeon RX 5700 XT, Radeon RX 6900 XT, Iris Xe MAX Graphics (DG1)).
+- **Changed** `gpu-architecture.representative_gpus` from bare slugs to `gpu/<slug>` IDs (25).
+- **Changed** `gpu-architecture.predecessor` to the list `predecessors` (15 records) and
+  **removed** `successor` (14 records): the architectures after one are read from the records
+  that name it. The one edge only a `successor` stated, Ada Lovelace to Blackwell, moved to
+  Blackwell's `predecessors`. Ampere and GCN now each have two followers, which the single
+  `successor` could not say.
+- **Added** `gpu.architecture`, the ID of the `gpu-architecture` record named as the GPU's
+  `generation`, on the 31 records where exactly one has that name. `generation` stays the text
+  shown; the other 20 (Apple M-series, Cloud TPU, Gaudi 2 and 3, Blackwell Ultra, Alchemist,
+  Xe-HPC) have no architecture record.
+- **Removed** `gpu.series` on the 19 records where it only repeated `generation`; `series` is
+  now optional and never a copy.
+- **Removed** the Overview body section of all 51 GPUs: a word-for-word copy of `summary`,
+  which is now its only home. `gpu` has no body section.
+- **Changed** `schema_version` to a constant of each schema (`3.0`), and to strict: no unknown
+  field at the top level of any type, in `sources[]`, a step or a name-decoder entry.
+
 ### Schema 2.3 (laptop GPUs)
 
 - **Added** the `gpu` `segment` value `laptop`: a GPU built into laptops, kept apart from the

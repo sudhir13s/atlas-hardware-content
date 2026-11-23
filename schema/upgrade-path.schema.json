@@ -2,18 +2,22 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/hardware/upgrade-path.schema.json",
   "title": "upgrade-path",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "upgrade-path" },
+    "schema_version": { "const": 3.0 },
     "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel"] },
     "family": { "type": "string", "description": "e.g. 'Datacenter', 'GeForce (consumer)'" },
     "steps": {
       "type": "array",
       "items": {
-        "type": "object",
-        "required": ["gpu_id", "architecture_id", "year"],
+        "type": "object", "unevaluatedProperties": false,
+        "required": ["architecture_id", "year"],
+        "oneOf": [{ "required": ["gpu_id"] }, { "required": ["gpu_name"] }],
         "properties": {
-          "gpu_id": { "type": "string" },
+          "gpu_id": { "type": "string", "pattern": "^gpu/[a-z0-9]+(?:-[a-z0-9]+)*$", "description": "FK → gpu/<slug>: the step's product, when it has a record" },
+          "gpu_name": { "type": "string", "minLength": 1, "description": "the product or product family as written, when no single gpu record is it" },
           "architecture_id": { "type": "string", "description": "FK → gpu-architecture/<slug>" },
           "year": { "type": "integer" }
         }

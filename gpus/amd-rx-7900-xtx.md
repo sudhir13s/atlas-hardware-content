@@ -2,12 +2,13 @@
 id: gpu/amd-rx-7900-xtx
 type: gpu
 slug: amd-rx-7900-xtx
-schema_version: 2.0
+schema_version: 3.0
 title: Radeon RX 7900 XTX
 vendor: AMD
 segment: consumer
 series: Radeon RX 7000
 generation: RDNA 3
+architecture: gpu-architecture/rdna-3
 compute_platform: rocm
 release_date: '2022-12-13'
 signal_strength: low
@@ -69,6 +70,4 @@ sources:
   title: GetDeploying open datasets (getdeploying.com/dataset), CC BY 4.0; credit GetDeploying and link to the CC BY 4.0 licence.
 ---
 
-## Overview
 
-AMD consumer graphics card on the RDNA 3 architecture with 24 GB of GDDR6 at 960 GB/s and 96 compute units.

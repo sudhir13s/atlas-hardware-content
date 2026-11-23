@@ -2,7 +2,7 @@
 id: framework-support/onnx-runtime
 type: framework-support
 slug: onnx-runtime
-schema_version: 2.1
+schema_version: 3.0
 title: ONNX Runtime
 framework: framework/onnx-runtime
 checked: '2026-11-22'
@@ -32,3 +32,5 @@ sources:
   title: Execution Providers (ONNX Runtime documentation)
   trust: 0.95
 ---
+
+
