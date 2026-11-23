@@ -5,6 +5,15 @@ All notable changes to `ai-hardware-content`. Grouped by schema version / releas
 
 ## [Unreleased]
 
+### Schema 2.3 (laptop GPUs)
+
+- **Added** the `gpu` `segment` value `laptop`: a GPU built into laptops, kept apart from the
+  desktop card of the same name. Records authored against 2.0 to 2.2 stay valid.
+- **Added** 3 `gpu` records for NVIDIA's GeForce RTX 50 Series Laptop GPUs, one per memory tier:
+  RTX 5060 Laptop GPU (8 GB), RTX 5080 Laptop GPU (16 GB) and RTX 5090 Laptop GPU (24 GB) (51 `gpu`
+  records in all). Each holds only what NVIDIA's laptop, compare and newsroom pages state; none has
+  a price or a compute capability, because NVIDIA publishes neither for laptop GPUs.
+
 ### Schema 2.2 (unified-memory sizes of Apple chips)
 
 - **Added** the optional `gpu` field `specifications.memory_options_gb`: for a chip with unified

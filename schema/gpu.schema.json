@@ -6,7 +6,7 @@
   "properties": {
     "type": { "const": "gpu" },
     "vendor": { "type": "string", "enum": ["NVIDIA", "AMD", "Intel", "Apple", "Google"] },
-    "segment": { "type": "string", "enum": ["datacenter", "workstation", "consumer"] },
+    "segment": { "type": "string", "enum": ["datacenter", "workstation", "consumer", "laptop"], "description": "'laptop' = a GPU built into laptops (e.g. a GeForce RTX Laptop GPU), not the desktop card of the same name" },
     "series": { "type": "string", "description": "product family, e.g. 'Hopper', 'GeForce RTX 40', 'Instinct'" },
     "generation": { "type": "string", "description": "architecture generation as the vendor names it, e.g. 'Ada Lovelace', 'CDNA 3', 'M4'" },
     "compute_platform": { "$ref": "#/$defs/compute_platform" },

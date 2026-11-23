@@ -58,7 +58,10 @@ step lists) so it stays machine-parseable.
   `{name, bandwidth_gb_per_s?, note?}`, `process_node` `{nodes_nm[], note?}`), `performance`
   (peak `*_tflops` / `int8_tops`, with `basis` `dense` or `sparse` when the maker states it),
   `ml_capabilities`. `compute_platform` names the acceleration platform frameworks target (`cuda`,
-  `rocm`, `apple-silicon`, `intel-gpu`, `intel-gaudi`, `google-tpu`); `compute_capability` is
+  `rocm`, `apple-silicon`, `intel-gpu`, `intel-gaudi`, `google-tpu`). `segment: laptop` marks a GPU
+  built into laptops, a separate record from the desktop card of the same name (slug ends in
+  `-laptop`, title is the maker's "… Laptop GPU" name); the maker's power range for it, which the
+  laptop maker sets, stays in `key_features`, never `tdp_watts`. `compute_capability` is
   NVIDIA's own figure (CUDA GPUs page or the architecture whitepaper). A value the vendor does not publish is **absent**, never
   `0` or `"Unknown"`; no field is kept only because it was once required. `release_date` is the
   maker's announced availability or launch date, and the announcement date only when the maker gives

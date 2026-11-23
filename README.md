@@ -16,7 +16,7 @@ It is the `hardware` domain of a multi-repo reference library
 
 | Type | Folder | What it captures |
 |------|--------|------------------|
-| `gpu` | `gpus/` | One GPU or accelerator (48 of them, NVIDIA, AMD, Intel, Apple, Google): structured specifications (memory, compute units, interconnect, process node, form factor), peak performance, ML capabilities, compute platform, and an agent-owned `market` block (price, cloud rental) |
+| `gpu` | `gpus/` | One GPU or accelerator (51 of them, NVIDIA, AMD, Intel, Apple, Google; desktop, data-centre and laptop parts): structured specifications (memory, compute units, interconnect, process node, form factor), peak performance, ML capabilities, compute platform, and an agent-owned `market` block (price, cloud rental) |
 | `guide` | `guides/` | One block of the GPU Buying Guide page (quick decisions, memory bandwidth, quantization, power and cost, mistakes, reading links, …) with its lists and table as rows |
 | `framework-support` | `framework-support/` | One framework (PyTorch, TensorFlow, JAX, …): the compute platforms its own documentation states it supports, each with its source page; a GPU's support follows from its compute platform |
 | `gpu-architecture` | `architectures/` | A GPU/accelerator generation: process node, memory, interconnect, key innovation, precision support, and predecessor/successor lineage |

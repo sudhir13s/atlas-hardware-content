@@ -2,10 +2,10 @@
 id: gpu/<slug>
 type: gpu
 slug: <slug>
-schema_version: 2.2
+schema_version: 2.3
 title: "<Product name>"
 vendor: NVIDIA                     # NVIDIA | AMD | Intel | Apple | Google
-segment: datacenter                # datacenter | workstation | consumer
+segment: datacenter                # datacenter | workstation | consumer | laptop (a laptop GPU, not the desktop card)
 series: "<product family>"
 generation: "<architecture generation>"
 compute_platform: cuda              # cuda | rocm | apple-silicon | intel-gpu | intel-gaudi | google-tpu
