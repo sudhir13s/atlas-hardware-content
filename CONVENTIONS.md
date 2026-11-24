@@ -61,7 +61,9 @@ step lists) so it stays machine-parseable.
   that is a number or a unit is a field, never text: `specifications` (`memory_gb`,
   `memory_bandwidth_gb_per_s`, `tdp_watts`, `form_factor[]`, `pcie_gen`, `interconnect`
   `{name, bandwidth_gb_per_s?, note?}`, `process_node` `{nodes_nm[], note?}`), `performance`
-  (peak `*_tflops` / `int8_tops`, with `basis` `dense` or `sparse` when the maker states it),
+  (peak `*_tflops` / `int8_tops`, dense and for one GPU or chip; a figure the maker gives only
+  with sparsity is halved only when the maker states dense is half, and a figure given only per
+  module is left out),
   `ml_capabilities`. `compute_platform` names the acceleration platform frameworks target (`cuda`,
   `rocm`, `apple-silicon`, `intel-gpu`, `intel-gaudi`, `google-tpu`). `segment: laptop` marks a GPU
   built into laptops, a separate record from the desktop card of the same name (slug ends in

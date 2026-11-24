@@ -38,10 +38,10 @@ performance:
   fp16_tflops: 165.2
   bf16_tflops: 165.2
   tf32_tflops: 82.6
-  fp8_tflops: 660.6
+  fp8_tflops: 330.3
   int8_tops: 660.6
   basis: dense
-  performance_basis_note: Dense peaks at GPU Boost Clock from NVIDIA's Ada whitepaper; fp16 and bf16 are Tensor TFLOPS with FP32 accumulate, fp8 with FP16 accumulate (FP32 accumulate 330.3); with sparsity NVIDIA lists twice the Tensor figures.
+  performance_basis_note: Dense peaks at GPU Boost Clock from NVIDIA's Ada whitepaper; fp16, bf16 and fp8 are Tensor TFLOPS with FP32 accumulate (with FP16 accumulate NVIDIA lists FP16 330.3 and FP8 660.6); with sparsity NVIDIA lists twice the Tensor figures.
 ml_capabilities:
   inference: true
   training: true
@@ -70,7 +70,7 @@ tags:
 - nvidia
 - consumer
 - ada-lovelace
-updated: '2026-11-22'
+updated: '2026-11-24'
 sources:
 - url: https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf
   title: NVIDIA Ada GPU Architecture Whitepaper (NVIDIA)

@@ -33,14 +33,9 @@ specifications:
     - 4
     note: TSMC 4NP (Blackwell GPUs)
 performance:
-  fp32_tflops: 160.0
-  fp16_tflops: 10000.0
-  bf16_tflops: 10000.0
-  tf32_tflops: 5000.0
-  fp8_tflops: 20000.0
-  int8_tops: 20000.0
-  basis: sparse
-  performance_basis_note: per superchip; NVIDIA lists the Tensor Core figures (TF32, BF16, FP16, FP8, INT8) with sparsity and states dense is one-half; FP32 is a non-Tensor Core figure.
+  fp8_tflops: 5000.0
+  basis: dense
+  performance_basis_note: dense, per Blackwell GPU (NVIDIA lists FP8 at 5 PFLOPS dense, 10 sparse); NVIDIA gives the other Tensor Core figures and FP32 only per superchip (two GPUs), e.g. FP16/BF16 10 PFLOPS with sparsity, so they are left out.
 ml_capabilities:
   inference: true
   training: true
@@ -64,10 +59,13 @@ tags:
 - nvidia
 - datacenter
 - blackwell
-updated: '2026-11-22'
+updated: '2026-11-24'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/gb200-nvl72/
   title: NVIDIA GB200 NVL72 (NVIDIA)
+  trust: 0.95
+- url: https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/
+  title: Inside NVIDIA Blackwell Ultra (NVIDIA Technical Blog)
   trust: 0.95
 - url: https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing
   title: NVIDIA Blackwell Platform Arrives to Power a New Era of Computing (NVIDIA Newsroom)

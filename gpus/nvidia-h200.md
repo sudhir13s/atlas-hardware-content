@@ -33,13 +33,13 @@ specifications:
     note: TSMC 4N
 performance:
   fp32_tflops: 67.0
-  fp16_tflops: 1979.0
-  bf16_tflops: 1979.0
-  tf32_tflops: 989.0
-  fp8_tflops: 3958.0
-  int8_tops: 3958.0
-  basis: sparse
-  performance_basis_note: NVIDIA lists the Tensor Core figures (TF32, BF16, FP16, FP8, INT8) with sparsity; FP32 is a non-Tensor Core figure. NVIDIA marks the H200 specifications preliminary.
+  fp16_tflops: 989.5
+  bf16_tflops: 989.5
+  tf32_tflops: 494.5
+  fp8_tflops: 1979.0
+  int8_tops: 1979.0
+  basis: dense
+  performance_basis_note: dense; NVIDIA lists the Tensor Core figures "With sparsity" at twice these (TF32 989, FP16/BF16 1,979, FP8 3,958 TFLOPS, INT8 3,958 TOPS); FP32 is a non-Tensor Core figure. NVIDIA marks the H200 specifications preliminary.
 ml_capabilities:
   inference: true
   training: true
@@ -70,7 +70,7 @@ tags:
 - nvidia
 - datacenter
 - hopper
-updated: '2026-11-22'
+updated: '2026-11-24'
 sources:
 - url: https://www.nvidia.com/en-us/data-center/h200/
   title: NVIDIA H200 GPU (NVIDIA)

@@ -84,15 +84,15 @@
     "performance": {
       "type": "object",
       "additionalProperties": false,
-      "description": "peak figures as the maker gives them; `basis` says whether they assume sparsity",
+      "description": "the maker's peak figures, always dense (no structured sparsity) and for ONE GPU (one chip or accelerator for TPU and Gaudi), even when unit_kind is 'module'; a figure the maker gives only with sparsity is halved only when the maker states sparse is twice dense, and a figure the maker gives only per module is left out",
       "properties": {
-        "fp32_tflops": { "type": "number", "minimum": 0 },
-        "fp16_tflops": { "type": "number", "minimum": 0 },
-        "bf16_tflops": { "type": "number", "minimum": 0 },
-        "tf32_tflops": { "type": "number", "minimum": 0 },
-        "fp8_tflops": { "type": "number", "minimum": 0 },
-        "int8_tops": { "type": "number", "minimum": 0 },
-        "basis": { "type": "string", "enum": ["dense", "sparse"], "description": "whether the Tensor or matrix figures assume structured sparsity, when the maker states it; absent when the maker does not say" },
+        "fp32_tflops": { "type": "number", "minimum": 0, "description": "FP32 peak, one GPU; the non-Tensor (vector) figure unless only a matrix figure is published" },
+        "fp16_tflops": { "type": "number", "minimum": 0, "description": "FP16 Tensor Core / matrix peak, dense, one GPU; where the maker lists FP16 and FP32 accumulate (GeForce whitepapers), the FP32-accumulate figure" },
+        "bf16_tflops": { "type": "number", "minimum": 0, "description": "BF16 Tensor Core / matrix peak, dense, one GPU; the FP32-accumulate figure where the maker lists both" },
+        "tf32_tflops": { "type": "number", "minimum": 0, "description": "TF32 Tensor Core / matrix peak, dense, one GPU" },
+        "fp8_tflops": { "type": "number", "minimum": 0, "description": "FP8 Tensor Core / matrix peak, dense, one GPU; where the maker lists FP16 and FP32 accumulate (GeForce whitepapers), the FP32-accumulate figure" },
+        "int8_tops": { "type": "number", "minimum": 0, "description": "INT8 Tensor Core / matrix peak in TOPS, dense, one GPU" },
+        "basis": { "type": "string", "enum": ["dense", "sparse"], "description": "whether the Tensor or matrix figures assume structured sparsity, when the maker states it; figures are stored dense, so 'sparse' is not used for new records; absent when the maker does not say" },
         "performance_basis_note": { "type": "string", "description": "what the figures assume (dense or sparse), when a source states it" }
       }
     },
