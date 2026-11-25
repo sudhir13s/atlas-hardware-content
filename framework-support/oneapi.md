@@ -4,6 +4,7 @@ type: framework-support
 slug: oneapi
 schema_version: 3.0
 title: oneAPI
+framework: framework/oneapi
 checked: '2026-11-22'
 platforms:
 - platform: intel-gpu

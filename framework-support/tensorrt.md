@@ -4,6 +4,7 @@ type: framework-support
 slug: tensorrt
 schema_version: 3.0
 title: TensorRT
+framework: framework/tensorrt
 checked: '2026-11-22'
 platforms:
 - platform: cuda

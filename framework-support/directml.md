@@ -4,6 +4,7 @@ type: framework-support
 slug: directml
 schema_version: 3.0
 title: DirectML
+framework: framework/directml
 checked: '2026-11-22'
 platforms:
 - platform: cuda

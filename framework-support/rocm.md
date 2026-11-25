@@ -4,6 +4,7 @@ type: framework-support
 slug: rocm
 schema_version: 3.0
 title: ROCm
+framework: framework/rocm
 checked: '2026-11-22'
 platforms:
 - platform: rocm

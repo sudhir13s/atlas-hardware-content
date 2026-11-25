@@ -4,6 +4,7 @@ type: framework-support
 slug: mlx
 schema_version: 3.0
 title: MLX
+framework: framework/mlx
 checked: '2026-11-22'
 platforms:
 - platform: apple-silicon

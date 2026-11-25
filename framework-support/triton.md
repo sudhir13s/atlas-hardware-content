@@ -4,6 +4,7 @@ type: framework-support
 slug: triton
 schema_version: 3.0
 title: Triton
+framework: framework/triton
 checked: '2026-11-22'
 platforms:
 - platform: cuda
